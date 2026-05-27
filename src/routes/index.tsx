@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
-import wordmarkWhite from "@/assets/second_line_wordmark_white.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,9 +52,9 @@ function Index() {
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
           <img
-            src={wordmarkWhite}
+            src={slMonogramWhite}
             alt="Second Line Clothing"
-            className="mx-auto w-[90%] sm:w-[700px] h-auto"
+            className="mx-auto w-[60%] sm:w-[320px] h-auto"
           />
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">
             Born from the streets of Louisiana.

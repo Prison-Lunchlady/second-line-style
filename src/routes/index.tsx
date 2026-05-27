@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import secondLineLogo from "@/assets/second_line_logo_transparent.png";
-import slLogoWhite from "@/assets/SL_logo_white.png";
+import slMonogramWhite from "@/assets/SL_logo_white.png";
+import wordmarkWhite from "@/assets/second_line_wordmark_white.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,7 +32,7 @@ function Index() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <img src={secondLineLogo} alt="Second Line Clothing" style={{ height: '50px', width: 'auto' }} />
+            <img src={slMonogramWhite} alt="Second Line Clothing" style={{ height: '50px', width: 'auto' }} />
           </a>
           <ul className="flex items-center gap-6 sm:gap-8 text-sm font-semibold tracking-widest uppercase">
             <li><a href="#shop" className="hover:text-primary transition-colors">Shop</a></li>
@@ -53,9 +53,9 @@ function Index() {
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
           <img
-            src={slLogoWhite}
+            src={wordmarkWhite}
             alt="Second Line Clothing"
-            className="mx-auto w-[85%] sm:w-[500px] h-auto"
+            className="mx-auto w-[90%] sm:w-[700px] h-auto"
           />
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">
             Born from the streets of Louisiana.
@@ -94,7 +94,7 @@ function Index() {
                       "linear-gradient(135deg, oklch(0.2 0.01 280), oklch(0.25 0.03 300))",
                   }}
                 >
-                  <img src={secondLineLogo} alt="" className="h-16 w-16 object-contain opacity-20" />
+                  <img src={slMonogramWhite} alt="" className="h-16 w-16 object-contain opacity-20" />
                 </div>
               </div>
               <div className="p-4 sm:p-5">

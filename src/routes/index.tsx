@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import { Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -31,7 +31,7 @@ function Index() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logo} alt="Second Line Clothing logo" className="h-10 w-10 rounded-sm bg-primary p-1" />
+            <img src={logo} alt="Second Line Clothing logo" className="h-10 w-10 object-contain invert" />
             <span className="font-display font-bold tracking-widest text-sm sm:text-base hidden sm:block" style={{ fontFamily: "var(--font-display)" }}>
               SECOND LINE
             </span>
@@ -54,7 +54,7 @@ function Index() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
-          <img src={logo} alt="SL monogram" className="mx-auto mb-8 h-24 w-24 sm:h-32 sm:w-32 bg-primary rounded-md p-2" />
+          <img src={logo} alt="SL monogram" className="mx-auto mb-8 h-32 w-32 sm:h-44 sm:w-44 object-contain invert" />
           <h1
             className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-[0.95]"
             style={{ fontFamily: "var(--font-display)" }}
@@ -100,7 +100,7 @@ function Index() {
                       "linear-gradient(135deg, oklch(0.2 0.01 280), oklch(0.25 0.03 300))",
                   }}
                 >
-                  <img src={logo} alt="" className="h-16 w-16 opacity-20 bg-primary rounded-sm p-1" />
+                  <img src={logo} alt="" className="h-16 w-16 object-contain opacity-20 invert" />
                 </div>
               </div>
               <div className="p-4 sm:p-5">
@@ -190,7 +190,7 @@ function Index() {
       <footer className="border-t border-border bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" className="h-8 w-8 bg-primary rounded-sm p-1" />
+            <img src={logo} alt="" className="h-8 w-8 object-contain invert" />
             <span className="font-display font-bold tracking-widest text-sm" style={{ fontFamily: "var(--font-display)" }}>
               SECOND LINE CLOTHING
             </span>

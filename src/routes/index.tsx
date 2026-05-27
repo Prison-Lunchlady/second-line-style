@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import secondLineLogo from "@/assets/second_line_logo_transparent.png";
+import slLogoWhite from "@/assets/SL_logo_white.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,14 +52,11 @@ function Index() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
-          <h1
-            className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-[0.95]"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            SECOND LINE
-            <br />
-            <span className="text-primary">CLOTHING</span>
-          </h1>
+          <img
+            src={slLogoWhite}
+            alt="Second Line Clothing"
+            className="mx-auto w-[85%] sm:w-[500px] h-auto"
+          />
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">
             Born from the streets of Louisiana.
           </p>

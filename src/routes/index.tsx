@@ -54,7 +54,7 @@ function Index() {
           <img
             src={slMonogramWhite}
             alt="Second Line Clothing"
-            className="mx-auto w-[60%] sm:w-[320px] h-auto"
+            className="mx-auto w-[85%] sm:w-[600px] h-auto"
           />
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">
             Born from the streets of Louisiana.

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import secondLineLogo from "../assets/second_line_logo_transparent.png";
+import secondLineLogo from "@/assets/second_line_logo_transparent.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({

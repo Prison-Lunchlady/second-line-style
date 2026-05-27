@@ -95,7 +95,7 @@ function Index() {
                       "linear-gradient(135deg, oklch(0.2 0.01 280), oklch(0.25 0.03 300))",
                   }}
                 >
-                  <img src={logo} alt="" className="h-16 w-16 object-contain opacity-20 invert" />
+                  <img src="/assets/second_line_logo_transparent.png" alt="" className="h-16 w-16 object-contain opacity-20" />
                 </div>
               </div>
               <div className="p-4 sm:p-5">

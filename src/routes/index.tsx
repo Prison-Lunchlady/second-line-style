@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "@/assets/second_line_logo_transparent.png";
 import { Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -31,7 +30,7 @@ function Index() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logo} alt="Second Line Clothing logo" style={{ height: "50px" }} />
+            <img src="/assets/second_line_logo_transparent.png" alt="Second Line Clothing" style={{ height: "50px" }} />
           </a>
           <ul className="flex items-center gap-6 sm:gap-8 text-sm font-semibold tracking-widest uppercase">
             <li><a href="#shop" className="hover:text-primary transition-colors">Shop</a></li>
@@ -186,7 +185,6 @@ function Index() {
       <footer className="border-t border-border bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" className="h-8 w-8 object-contain invert" />
             <span className="font-display font-bold tracking-widest text-sm" style={{ fontFamily: "var(--font-display)" }}>
               SECOND LINE CLOTHING
             </span>

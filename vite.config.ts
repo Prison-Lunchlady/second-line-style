@@ -12,4 +12,5 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: { build: { assetsInlineLimit: 1048576 } },
 });

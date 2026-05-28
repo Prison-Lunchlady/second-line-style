@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
+import nukeMockup from "@/assets/nuke_mockup.png";
+import cortanaMockup from "@/assets/cortana_mockup.png";
+import duffyMockup from "@/assets/duffy_mockup.png";
+import brccMockup from "@/assets/brcc_dropout_mockup.png";
+import straitjacketMockup from "@/assets/strait_jacket_mockup.png";
+import womensCropMockup from "@/assets/womens_crop_top_mockup.png";
+import lowlifeMockup from "@/assets/lowlife_mockup.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,13 +22,13 @@ export const Route = createFileRoute("/")({
 });
 
 const PRODUCTS = [
-  { name: "Louisiana Lowlife Tee", shopifyId: "product-component-1779926175640" },
-  { name: "Women's Lowlife Crop Top", shopifyId: "product-component-1779926207875" },
-  { name: "Straitjacket Tee", shopifyId: "product-component-1779926229305" },
-  { name: "BRCC Dropout Tee", shopifyId: "product-component-1779926255322" },
-  { name: "Duffy Circa 2008 Tee", shopifyId: "product-component-1779926288210" },
-  { name: "NOLA Nuke Tee", shopifyId: "product-component-1779926312939" },
-  { name: "Cortana Mall Tee", shopifyId: "product-component-1779926333820" },
+  { name: "Louisiana Lowlife Tee", price: "$35", image: lowlifeMockup, url: "https://second-line-clothing.myshopify.com/products/unisex-t-shirt" },
+  { name: "Women's Lowlife Crop Top", price: "$35", image: womensCropMockup, url: "https://second-line-clothing.myshopify.com/products/women-s-crop-top" },
+  { name: "Straitjacket Tee", price: "$35", image: straitjacketMockup, url: "https://second-line-clothing.myshopify.com/products/mens-t-shirt" },
+  { name: "BRCC Dropout Tee", price: "$35", image: brccMockup, url: "https://second-line-clothing.myshopify.com/products/unisex-classic-tee" },
+  { name: "Duffy Circa 2008 Tee", price: "$35", image: duffyMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-duffy-tee" },
+  { name: "NOLA Nuke Tee", price: "$35", image: nukeMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-nuke-tee" },
+  { name: "Cortana Mall Tee", price: "$35", image: cortanaMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-cortana-mall-tee" },
 ];
 
 function Index() {
@@ -82,9 +89,31 @@ function Index() {
           {PRODUCTS.map((p) => (
             <article
               key={p.name}
-              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors p-4"
+              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors"
             >
-              <div id={p.shopifyId} />
+              <a href={p.url} target="_blank" rel="noopener noreferrer" className="block">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </a>
+              <div className="p-4 sm:p-5">
+                <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight">
+                  {p.name}
+                </h3>
+                <p className="mt-2 text-primary font-bold text-lg">{p.price}</p>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 block w-full py-2.5 bg-primary text-primary-foreground font-bold text-xs tracking-widest uppercase rounded-sm hover:brightness-110 transition-all text-center"
+                >
+                  Add to Cart
+                </a>
+              </div>
             </article>
           ))}
         </div>

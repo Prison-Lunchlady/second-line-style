@@ -101,11 +101,9 @@ function ProductCard({ p }: { p: typeof PRODUCTS[0] }) {
   const cartUrl = `https://second-line-clothing.myshopify.com/cart/${selectedVariant}:1`;
   return (
     <article className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors">
-      <a href={cartUrl} target="_blank" rel="noopener noreferrer" className="block">
-        <div className="aspect-[3/4] overflow-hidden">
-          <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-      </a>
+      <div className="aspect-[3/4] overflow-hidden cursor-pointer">
+        <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+      </div>
       <div className="p-4 sm:p-5">
         <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white">{p.name}</h3>
         <p className="mt-2 text-primary font-bold text-lg">{p.price}</p>

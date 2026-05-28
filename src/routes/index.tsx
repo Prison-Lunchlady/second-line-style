@@ -3,13 +3,18 @@ import { Instagram, ShoppingCart, X, Trash2 } from "lucide-react";
 import { useState } from "react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import nukeMockup from "@/assets/nuke_mockup.png";
-import cortanaMockup from "@/assets/cortana_mockup.png";
+import nukeBlack from "@/assets/nuke_black.png";
+import nukeGreen from "@/assets/nuke_green.png";
+import cortanaBlack from "@/assets/cortana_black.png";
+import cortanaNavy from "@/assets/cortana_navy.png";
 import duffyMockup from "@/assets/duffy_mockup.png";
 import brccMockup from "@/assets/brcc_dropout_mockup.png";
 import straitjacketMockup from "@/assets/strait_jacket_mockup.png";
 import womensCropMockup from "@/assets/womens_crop_top_mockup.png";
 import lowlifeMockup from "@/assets/lowlife_mockup.png";
 import carlottaMockup from "@/assets/carlotta_mockup.png";
+import carlottaGrey from "@/assets/carlotta_grey.png";
+import carlottaSand from "@/assets/carlotta_sand.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,88 +32,133 @@ const PRODUCTS = [
   {
     name: "Louisiana Lowlife Tee", price: 28, image: lowlifeMockup,
     variants: [
-      { label: "XS", id: "53251612541222" }, { label: "S", id: "53251612573990" },
-      { label: "M", id: "53251612606758" }, { label: "L", id: "53251612639526" },
-      { label: "XL", id: "53251612672294" }, { label: "2XL", id: "53251612705062" },
-      { label: "3XL", id: "53251612737830" }, { label: "4XL", id: "53251612770598" },
-      { label: "5XL", id: "53251612803366" },
+      { label: "XS", id: "53251612541222", image: lowlifeMockup },
+      { label: "S", id: "53251612573990", image: lowlifeMockup },
+      { label: "M", id: "53251612606758", image: lowlifeMockup },
+      { label: "L", id: "53251612639526", image: lowlifeMockup },
+      { label: "XL", id: "53251612672294", image: lowlifeMockup },
+      { label: "2XL", id: "53251612705062", image: lowlifeMockup },
+      { label: "3XL", id: "53251612737830", image: lowlifeMockup },
+      { label: "4XL", id: "53251612770598", image: lowlifeMockup },
+      { label: "5XL", id: "53251612803366", image: lowlifeMockup },
     ]
   },
   {
     name: "Women's Lowlife Crop Top", price: 30, image: womensCropMockup,
     variants: [
-      { label: "XS", id: "53251619127590" }, { label: "S", id: "53251619160358" },
-      { label: "M", id: "53251619193126" }, { label: "L", id: "53251619225894" },
-      { label: "XL", id: "53251619258662" },
+      { label: "XS", id: "53251619127590", image: womensCropMockup },
+      { label: "S", id: "53251619160358", image: womensCropMockup },
+      { label: "M", id: "53251619193126", image: womensCropMockup },
+      { label: "L", id: "53251619225894", image: womensCropMockup },
+      { label: "XL", id: "53251619258662", image: womensCropMockup },
     ]
   },
   {
     name: "Straitjacket Tee", price: 36, image: straitjacketMockup,
     variants: [
-      { label: "XS", id: "53251656548646" }, { label: "S", id: "53251656581414" },
-      { label: "M", id: "53251656614182" }, { label: "L", id: "53251656646950" },
-      { label: "XL", id: "53251656679718" }, { label: "2XL", id: "53251656712486" },
+      { label: "XS", id: "53251656548646", image: straitjacketMockup },
+      { label: "S", id: "53251656581414", image: straitjacketMockup },
+      { label: "M", id: "53251656614182", image: straitjacketMockup },
+      { label: "L", id: "53251656646950", image: straitjacketMockup },
+      { label: "XL", id: "53251656679718", image: straitjacketMockup },
+      { label: "2XL", id: "53251656712486", image: straitjacketMockup },
     ]
   },
   {
     name: "BRCC Dropout Tee", price: 24, image: brccMockup,
     variants: [
-      { label: "S", id: "53251669262630" }, { label: "M", id: "53251669295398" },
-      { label: "L", id: "53251669328166" }, { label: "XL", id: "53251669360934" },
-      { label: "2XL", id: "53251669393702" }, { label: "3XL", id: "53251669426470" },
-      { label: "4XL", id: "53251669459238" }, { label: "5XL", id: "53251669492006" },
+      { label: "S", id: "53251669262630", image: brccMockup },
+      { label: "M", id: "53251669295398", image: brccMockup },
+      { label: "L", id: "53251669328166", image: brccMockup },
+      { label: "XL", id: "53251669360934", image: brccMockup },
+      { label: "2XL", id: "53251669393702", image: brccMockup },
+      { label: "3XL", id: "53251669426470", image: brccMockup },
+      { label: "4XL", id: "53251669459238", image: brccMockup },
+      { label: "5XL", id: "53251669492006", image: brccMockup },
     ]
   },
   {
     name: "Duffy Circa 2008 Tee", price: 24, image: duffyMockup,
     variants: [
-      { label: "S", id: "53251712680230" }, { label: "M", id: "53251712712998" },
-      { label: "L", id: "53251712745766" }, { label: "XL", id: "53251712778534" },
-      { label: "2XL", id: "53251712811302" }, { label: "3XL", id: "53251712844070" },
-      { label: "4XL", id: "53251712876838" }, { label: "5XL", id: "53251712909606" },
+      { label: "S", id: "53251712680230", image: duffyMockup },
+      { label: "M", id: "53251712712998", image: duffyMockup },
+      { label: "L", id: "53251712745766", image: duffyMockup },
+      { label: "XL", id: "53251712778534", image: duffyMockup },
+      { label: "2XL", id: "53251712811302", image: duffyMockup },
+      { label: "3XL", id: "53251712844070", image: duffyMockup },
+      { label: "4XL", id: "53251712876838", image: duffyMockup },
+      { label: "5XL", id: "53251712909606", image: duffyMockup },
     ]
   },
   {
-    name: "NOLA Nuke Tee", price: 26, image: nukeMockup,
+    name: "NOLA Nuke Tee", price: 26, image: nukeBlack,
     variants: [
-      { label: "Black / S", id: "53251726901542" }, { label: "Black / M", id: "53251726934310" },
-      { label: "Black / L", id: "53251726967078" }, { label: "Black / XL", id: "53251726999846" },
-      { label: "Black / 2XL", id: "53251727032614" }, { label: "Black / 3XL", id: "53251727065382" },
-      { label: "Purple / S", id: "53251727163686" }, { label: "Purple / M", id: "53251727196454" },
-      { label: "Purple / L", id: "53251727229222" }, { label: "Purple / XL", id: "53251727261990" },
-      { label: "Purple / 2XL", id: "53251727294758" }, { label: "Purple / 3XL", id: "53251727327526" },
-      { label: "Turf Green / S", id: "53251727360294" }, { label: "Turf Green / M", id: "53251727393062" },
-      { label: "Turf Green / L", id: "53251727425830" }, { label: "Turf Green / XL", id: "53251727458598" },
-      { label: "Turf Green / 2XL", id: "53251727491366" }, { label: "Turf Green / 3XL", id: "53251727524134" },
+      { label: "Black / S", id: "53251726901542", image: nukeBlack },
+      { label: "Black / M", id: "53251726934310", image: nukeBlack },
+      { label: "Black / L", id: "53251726967078", image: nukeBlack },
+      { label: "Black / XL", id: "53251726999846", image: nukeBlack },
+      { label: "Black / 2XL", id: "53251727032614", image: nukeBlack },
+      { label: "Black / 3XL", id: "53251727065382", image: nukeBlack },
+      { label: "Purple / S", id: "53251727163686", image: nukeMockup },
+      { label: "Purple / M", id: "53251727196454", image: nukeMockup },
+      { label: "Purple / L", id: "53251727229222", image: nukeMockup },
+      { label: "Purple / XL", id: "53251727261990", image: nukeMockup },
+      { label: "Purple / 2XL", id: "53251727294758", image: nukeMockup },
+      { label: "Purple / 3XL", id: "53251727327526", image: nukeMockup },
+      { label: "Turf Green / S", id: "53251727360294", image: nukeGreen },
+      { label: "Turf Green / M", id: "53251727393062", image: nukeGreen },
+      { label: "Turf Green / L", id: "53251727425830", image: nukeGreen },
+      { label: "Turf Green / XL", id: "53251727458598", image: nukeGreen },
+      { label: "Turf Green / 2XL", id: "53251727491366", image: nukeGreen },
+      { label: "Turf Green / 3XL", id: "53251727524134", image: nukeGreen },
     ]
   },
   {
-    name: "Cortana Mall Tee", price: 24, image: cortanaMockup,
+    name: "Cortana Mall Tee", price: 24, image: cortanaBlack,
     variants: [
-      { label: "Black / S", id: "53251740860710" }, { label: "Black / M", id: "53251740893478" },
-      { label: "Black / L", id: "53251740926246" }, { label: "Black / XL", id: "53251740959014" },
-      { label: "Black / 2XL", id: "53251740991782" }, { label: "Black / 3XL", id: "53251741024550" },
-      { label: "Black / 4XL", id: "53251741057318" }, { label: "Black / 5XL", id: "53251741090086" },
-      { label: "Navy / S", id: "53251741122854" }, { label: "Navy / M", id: "53251741155622" },
-      { label: "Navy / L", id: "53251741188390" }, { label: "Navy / XL", id: "53251741221158" },
-      { label: "Navy / 2XL", id: "53251741253926" }, { label: "Navy / 3XL", id: "53251741286694" },
-      { label: "Navy / 4XL", id: "53251741319462" }, { label: "Navy / 5XL", id: "53251741352230" },
+      { label: "Black / S", id: "53251740860710", image: cortanaBlack },
+      { label: "Black / M", id: "53251740893478", image: cortanaBlack },
+      { label: "Black / L", id: "53251740926246", image: cortanaBlack },
+      { label: "Black / XL", id: "53251740959014", image: cortanaBlack },
+      { label: "Black / 2XL", id: "53251740991782", image: cortanaBlack },
+      { label: "Black / 3XL", id: "53251741024550", image: cortanaBlack },
+      { label: "Black / 4XL", id: "53251741057318", image: cortanaBlack },
+      { label: "Black / 5XL", id: "53251741090086", image: cortanaBlack },
+      { label: "Navy / S", id: "53251741122854", image: cortanaNavy },
+      { label: "Navy / M", id: "53251741155622", image: cortanaNavy },
+      { label: "Navy / L", id: "53251741188390", image: cortanaNavy },
+      { label: "Navy / XL", id: "53251741221158", image: cortanaNavy },
+      { label: "Navy / 2XL", id: "53251741253926", image: cortanaNavy },
+      { label: "Navy / 3XL", id: "53251741286694", image: cortanaNavy },
+      { label: "Navy / 4XL", id: "53251741319462", image: cortanaNavy },
+      { label: "Navy / 5XL", id: "53251741352230", image: cortanaNavy },
     ]
   },
   {
     name: "Carlotta St. Block Party Tee", price: 28, image: carlottaMockup,
     variants: [
-      { label: "Sport Grey / S", id: "53252407230758" }, { label: "Sport Grey / M", id: "53252407263526" },
-      { label: "Sport Grey / L", id: "53252407296294" }, { label: "Sport Grey / XL", id: "53252407329062" },
-      { label: "Sport Grey / 2XL", id: "53252407361830" }, { label: "Sport Grey / 3XL", id: "53252407394598" },
-      { label: "Sport Grey / 4XL", id: "53252407427366" }, { label: "Sport Grey / 5XL", id: "53252407460134" },
-      { label: "Sand / S", id: "53252407492902" }, { label: "Sand / M", id: "53252407525670" },
-      { label: "Sand / L", id: "53252407558438" }, { label: "Sand / XL", id: "53252407591206" },
-      { label: "Sand / 2XL", id: "53252407623974" }, { label: "Sand / 3XL", id: "53252407656742" },
-      { label: "White / S", id: "53252407689510" }, { label: "White / M", id: "53252407722278" },
-      { label: "White / L", id: "53252407755046" }, { label: "White / XL", id: "53252407787814" },
-      { label: "White / 2XL", id: "53252407820582" }, { label: "White / 3XL", id: "53252407853350" },
-      { label: "White / 4XL", id: "53252407886118" }, { label: "White / 5XL", id: "53252407918886" },
+      { label: "Sport Grey / S", id: "53252407230758", image: carlottaGrey },
+      { label: "Sport Grey / M", id: "53252407263526", image: carlottaGrey },
+      { label: "Sport Grey / L", id: "53252407296294", image: carlottaGrey },
+      { label: "Sport Grey / XL", id: "53252407329062", image: carlottaGrey },
+      { label: "Sport Grey / 2XL", id: "53252407361830", image: carlottaGrey },
+      { label: "Sport Grey / 3XL", id: "53252407394598", image: carlottaGrey },
+      { label: "Sport Grey / 4XL", id: "53252407427366", image: carlottaGrey },
+      { label: "Sport Grey / 5XL", id: "53252407460134", image: carlottaGrey },
+      { label: "Sand / S", id: "53252407492902", image: carlottaSand },
+      { label: "Sand / M", id: "53252407525670", image: carlottaSand },
+      { label: "Sand / L", id: "53252407558438", image: carlottaSand },
+      { label: "Sand / XL", id: "53252407591206", image: carlottaSand },
+      { label: "Sand / 2XL", id: "53252407623974", image: carlottaSand },
+      { label: "Sand / 3XL", id: "53252407656742", image: carlottaSand },
+      { label: "White / S", id: "53252407689510", image: carlottaMockup },
+      { label: "White / M", id: "53252407722278", image: carlottaMockup },
+      { label: "White / L", id: "53252407755046", image: carlottaMockup },
+      { label: "White / XL", id: "53252407787814", image: carlottaMockup },
+      { label: "White / 2XL", id: "53252407820582", image: carlottaMockup },
+      { label: "White / 3XL", id: "53252407853350", image: carlottaMockup },
+      { label: "White / 4XL", id: "53252407886118", image: carlottaMockup },
+      { label: "White / 5XL", id: "53252407918886", image: carlottaMockup },
     ]
   },
 ];
@@ -123,19 +173,20 @@ type CartItem = {
 };
 
 function ProductCard({ p, onAddToCart }: { p: typeof PRODUCTS[0]; onAddToCart: (item: CartItem) => void }) {
-  const [selectedVariant, setSelectedVariant] = useState(p.variants[0].id);
+  const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [added, setAdded] = useState(false);
 
-  const selectedLabel = p.variants.find(v => v.id === selectedVariant)?.label || "";
+  const selectedVariant = p.variants.find(v => v.id === selectedVariantId) || p.variants[0];
+  const currentImage = selectedVariant.image;
 
   const handleAdd = () => {
     onAddToCart({
-      id: selectedVariant,
+      id: selectedVariantId,
       name: p.name,
-      variant: selectedLabel,
+      variant: selectedVariant.label,
       price: p.price,
-      image: p.image,
+      image: currentImage,
       qty: 1,
     });
     setAdded(true);
@@ -146,19 +197,19 @@ function ProductCard({ p, onAddToCart }: { p: typeof PRODUCTS[0]; onAddToCart: (
     <article className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors">
       {lightboxOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 cursor-pointer" onClick={() => setLightboxOpen(false)}>
-          <img src={p.image} alt={p.name} className="max-h-[90vh] max-w-[90vw] object-contain" onClick={(e) => e.stopPropagation()} />
+          <img src={currentImage} alt={p.name} className="max-h-[90vh] max-w-[90vw] object-contain" onClick={(e) => e.stopPropagation()} />
           <button onClick={() => setLightboxOpen(false)} className="absolute top-4 right-6 text-white text-4xl font-bold hover:text-primary">&times;</button>
         </div>
       )}
       <div className="aspect-[3/4] overflow-hidden cursor-zoom-in" onClick={() => setLightboxOpen(true)}>
-        <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <img src={currentImage} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>
       <div className="p-4 sm:p-5">
         <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white">{p.name}</h3>
         <p className="mt-2 text-primary font-bold text-lg">${p.price}</p>
         <select
-          value={selectedVariant}
-          onChange={(e) => setSelectedVariant(e.target.value)}
+          value={selectedVariantId}
+          onChange={(e) => setSelectedVariantId(e.target.value)}
           className="mt-3 w-full px-3 py-2 bg-input border border-border rounded-sm text-foreground text-sm focus:outline-none focus:border-primary"
         >
           {p.variants.map((v) => (
@@ -197,7 +248,6 @@ function CartDrawer({ cart, onClose, onRemove, onQtyChange }: {
             <X className="h-6 w-6" />
           </button>
         </div>
-
         {cart.length === 0 ? (
           <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground gap-4">
             <ShoppingCart className="h-16 w-16 opacity-30" />
@@ -225,19 +275,13 @@ function CartDrawer({ cart, onClose, onRemove, onQtyChange }: {
             ))}
           </div>
         )}
-
         {cart.length > 0 && (
           <div className="px-6 py-4 border-t border-border space-y-3">
             <div className="flex justify-between text-white font-bold text-lg">
               <span>Subtotal</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <a
-              href={checkoutUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-3 bg-primary text-primary-foreground font-bold text-sm tracking-widest uppercase rounded-sm hover:brightness-110 transition-all text-center"
-            >
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-primary text-primary-foreground font-bold text-sm tracking-widest uppercase rounded-sm hover:brightness-110 transition-all text-center">
               Checkout
             </a>
             <button onClick={onClose} className="block w-full py-3 border border-border text-white font-bold text-sm tracking-widest uppercase rounded-sm hover:border-primary transition-all text-center">
@@ -257,29 +301,20 @@ function Index() {
   const addToCart = (item: CartItem) => {
     setCart(prev => {
       const existing = prev.find(i => i.id === item.id);
-      if (existing) {
-        return prev.map(i => i.id === item.id ? { ...i, qty: i.qty + 1 } : i);
-      }
+      if (existing) return prev.map(i => i.id === item.id ? { ...i, qty: i.qty + 1 } : i);
       return [...prev, item];
     });
     setCartOpen(true);
   };
 
-  const removeFromCart = (id: string) => {
-    setCart(prev => prev.filter(i => i.id !== id));
-  };
-
-  const updateQty = (id: string, qty: number) => {
-    setCart(prev => prev.map(i => i.id === id ? { ...i, qty } : i));
-  };
-
+  const removeFromCart = (id: string) => setCart(prev => prev.filter(i => i.id !== id));
+  const updateQty = (id: string, qty: number) => setCart(prev => prev.map(i => i.id === id ? { ...i, qty } : i));
   const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {cartOpen && <CartDrawer cart={cart} onClose={() => setCartOpen(false)} onRemove={removeFromCart} onQtyChange={updateQty} />}
 
-      {/* Sticky Header */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
@@ -293,9 +328,7 @@ function Index() {
               <button onClick={() => setCartOpen(true)} className="relative hover:text-primary transition-colors">
                 <ShoppingCart className="h-6 w-6" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                    {totalItems}
-                  </span>
+                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">{totalItems}</span>
                 )}
               </button>
             </li>
@@ -303,7 +336,6 @@ function Index() {
         </nav>
       </header>
 
-      {/* Hero */}
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at 20% 30%, oklch(0.5 0.2 300 / 0.5), transparent 50%), radial-gradient(circle at 80% 70%, oklch(0.82 0.14 85 / 0.35), transparent 55%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
@@ -314,44 +346,29 @@ function Index() {
         <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
       </section>
 
-      {/* Shop */}
       <section id="shop" className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
-            THE <span className="text-primary">DROP</span>
-          </h2>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>THE <span className="text-primary">DROP</span></h2>
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {PRODUCTS.map((p) => (
-            <ProductCard key={p.name} p={p} onAddToCart={addToCart} />
-          ))}
+          {PRODUCTS.map((p) => <ProductCard key={p.name} p={p} onAddToCart={addToCart} />)}
         </div>
       </section>
 
-      {/* About */}
       <section id="about" className="relative border-y border-border bg-card">
         <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(circle at 70% 50%, oklch(0.5 0.2 300 / 0.6), transparent 60%)" }} />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center">
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
-            THE <span className="text-primary">STORY</span>
-          </h2>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>THE <span className="text-primary">STORY</span></h2>
           <div className="mt-3 mb-8 h-0.5 w-24 mx-auto bg-secondary" />
-          <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            Second Line Clothing was built on Louisiana culture, memory, and the spirit of the second line. We make gear for people who know where they're from and aren't afraid to show it.
-          </p>
-          <p className="mt-6 text-xl sm:text-2xl font-bold text-primary tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
-            Born in Louisiana. Made for the streets.
-          </p>
+          <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground">Second Line Clothing was built on Louisiana culture, memory, and the spirit of the second line. We make gear for people who know where they're from and aren't afraid to show it.</p>
+          <p className="mt-6 text-xl sm:text-2xl font-bold text-primary tracking-wide" style={{ fontFamily: "var(--font-display)" }}>Born in Louisiana. Made for the streets.</p>
         </div>
       </section>
 
-      {/* Contact */}
       <section id="contact" className="max-w-2xl mx-auto px-4 sm:px-6 py-20">
         <div className="mb-10 text-center">
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
-            GET IN <span className="text-primary">TOUCH</span>
-          </h2>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>GET IN <span className="text-primary">TOUCH</span></h2>
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
         </div>
         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -362,20 +379,15 @@ function Index() {
         </form>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-border bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img src={slMonogramWhite} alt="Second Line Clothing" style={{ height: '48px', width: 'auto' }} />
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:text-primary transition-colors">
-              <Instagram className="h-5 w-5" />
-            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></a>
             <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="p-2 hover:text-primary transition-colors">
-              <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
-                <path d="M19.6 6.3a5.4 5.4 0 0 1-3.3-1.1 5.4 5.4 0 0 1-2-3.2H11v13.2a2.8 2.8 0 1 1-2-2.7V9.3a5.9 5.9 0 1 0 5 5.9V9.7a8.3 8.3 0 0 0 5 1.6V8.1a5.5 5.5 0 0 1-1.4-1.8z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true"><path d="M19.6 6.3a5.4 5.4 0 0 1-3.3-1.1 5.4 5.4 0 0 1-2-3.2H11v13.2a2.8 2.8 0 1 1-2-2.7V9.3a5.9 5.9 0 1 0 5 5.9V9.7a8.3 8.3 0 0 0 5 1.6V8.1a5.5 5.5 0 0 1-1.4-1.8z"/></svg>
             </a>
           </div>
           <p className="text-xs text-muted-foreground tracking-wide">© {new Date().getFullYear()} Second Line Clothing. All rights reserved.</p>

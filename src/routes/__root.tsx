@@ -107,26 +107,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <body>
         {children}
         <Scripts />
-        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) { if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); } } else { loadScript(); }
-  function loadScript() { var script = document.createElement('script'); script.async = true; script.src = scriptURL; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); script.onload = ShopifyBuyInit; }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({ domain: 'xrxem1-qq.myshopify.com', storefrontAccessToken: 'a211558bd14db7c4ca1349b870789407' });
-    var opts = { "product": { "styles": { "button": { ":hover": { "background-color": "#d89500" }, "background-color": "#f0a500", ":focus": { "background-color": "#d89500" } } }, "text": { "button": "Add to cart" } }, "modalProduct": { "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true }, "styles": { "button": { ":hover": { "background-color": "#d89500" }, "background-color": "#f0a500", ":focus": { "background-color": "#d89500" } } }, "text": { "button": "Add to cart" } }, "cart": { "styles": { "button": { ":hover": { "background-color": "#d89500" }, "background-color": "#f0a500", ":focus": { "background-color": "#d89500" } } }, "text": { "total": "Subtotal", "button": "Checkout" } }, "toggle": { "styles": { "toggle": { "background-color": "#f0a500", ":hover": { "background-color": "#d89500" }, ":focus": { "background-color": "#d89500" } } } } };
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('product', { id: '10558726865190', node: document.getElementById('product-component-1779926175640'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-      ui.createComponent('product', { id: '10558782341414', node: document.getElementById('product-component-1779926207875'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-      ui.createComponent('product', { id: '10558762058022', node: document.getElementById('product-component-1779926229305'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-      ui.createComponent('product', { id: '10558681841958', node: document.getElementById('product-component-1779926255322'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-      ui.createComponent('product', { id: '10558773166374', node: document.getElementById('product-component-1779926288210'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-      ui.createComponent('product', { id: '10558716838182', node: document.getElementById('product-component-1779926312939'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-      ui.createComponent('product', { id: '10558685413670', node: document.getElementById('product-component-1779926333820'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-    });
-  }
-})();
-        `}} />
       </body>
     </html>
   );

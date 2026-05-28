@@ -98,10 +98,33 @@ const PRODUCTS = [
 
 function ProductCard({ p }: { p: typeof PRODUCTS[0] }) {
   const [selectedVariant, setSelectedVariant] = useState(p.variants[0].id);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const cartUrl = `https://second-line-clothing.myshopify.com/cart/${selectedVariant}:1`;
   return (
     <article className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors">
-      <div className="aspect-[3/4] overflow-hidden cursor-pointer">
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 cursor-pointer"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <img
+            src={p.image}
+            alt={p.name}
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-6 text-white text-4xl font-bold hover:text-primary"
+          >
+            &times;
+          </button>
+        </div>
+      )}
+      <div
+        className="aspect-[3/4] overflow-hidden cursor-zoom-in"
+        onClick={() => setLightboxOpen(true)}
+      >
         <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>
       <div className="p-4 sm:p-5">

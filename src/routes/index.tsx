@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
+import { useState } from "react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import nukeMockup from "@/assets/nuke_mockup.png";
 import cortanaMockup from "@/assets/cortana_mockup.png";
@@ -22,14 +23,113 @@ export const Route = createFileRoute("/")({
 });
 
 const PRODUCTS = [
-  { name: "Louisiana Lowlife Tee", price: "$28", image: lowlifeMockup, url: "https://second-line-clothing.myshopify.com/cart/53251612541222:1" },
-  { name: "Women's Lowlife Crop Top", price: "$30", image: womensCropMockup, url: "https://second-line-clothing.myshopify.com/cart/53251619127590:1" },
-  { name: "Straitjacket Tee", price: "$36", image: straitjacketMockup, url: "https://second-line-clothing.myshopify.com/cart/53251656548646:1" },
-  { name: "BRCC Dropout Tee", price: "$24", image: brccMockup, url: "https://second-line-clothing.myshopify.com/cart/53251669262630:1" },
-  { name: "Duffy Circa 2008 Tee", price: "$24", image: duffyMockup, url: "https://second-line-clothing.myshopify.com/cart/53251712680230:1" },
-  { name: "NOLA Nuke Tee", price: "$26", image: nukeMockup, url: "https://second-line-clothing.myshopify.com/cart/53251726901542:1" },
-  { name: "Cortana Mall Tee", price: "$24", image: cortanaMockup, url: "https://second-line-clothing.myshopify.com/cart/53251740860710:1" },
+  {
+    name: "Louisiana Lowlife Tee", price: "$28", image: lowlifeMockup,
+    variants: [
+      { label: "XS", id: "53251612541222" }, { label: "S", id: "53251612573990" },
+      { label: "M", id: "53251612606758" }, { label: "L", id: "53251612639526" },
+      { label: "XL", id: "53251612672294" }, { label: "2XL", id: "53251612705062" },
+      { label: "3XL", id: "53251612737830" }, { label: "4XL", id: "53251612770598" },
+      { label: "5XL", id: "53251612803366" },
+    ]
+  },
+  {
+    name: "Women's Lowlife Crop Top", price: "$30", image: womensCropMockup,
+    variants: [
+      { label: "XS", id: "53251619127590" }, { label: "S", id: "53251619160358" },
+      { label: "M", id: "53251619193126" }, { label: "L", id: "53251619225894" },
+      { label: "XL", id: "53251619258662" },
+    ]
+  },
+  {
+    name: "Straitjacket Tee", price: "$36", image: straitjacketMockup,
+    variants: [
+      { label: "XS", id: "53251656548646" }, { label: "S", id: "53251656581414" },
+      { label: "M", id: "53251656614182" }, { label: "L", id: "53251656646950" },
+      { label: "XL", id: "53251656679718" }, { label: "2XL", id: "53251656712486" },
+    ]
+  },
+  {
+    name: "BRCC Dropout Tee", price: "$24", image: brccMockup,
+    variants: [
+      { label: "S", id: "53251669262630" }, { label: "M", id: "53251669295398" },
+      { label: "L", id: "53251669328166" }, { label: "XL", id: "53251669360934" },
+      { label: "2XL", id: "53251669393702" }, { label: "3XL", id: "53251669426470" },
+      { label: "4XL", id: "53251669459238" }, { label: "5XL", id: "53251669492006" },
+    ]
+  },
+  {
+    name: "Duffy Circa 2008 Tee", price: "$24", image: duffyMockup,
+    variants: [
+      { label: "S", id: "53251712680230" }, { label: "M", id: "53251712712998" },
+      { label: "L", id: "53251712745766" }, { label: "XL", id: "53251712778534" },
+      { label: "2XL", id: "53251712811302" }, { label: "3XL", id: "53251712844070" },
+      { label: "4XL", id: "53251712876838" }, { label: "5XL", id: "53251712909606" },
+    ]
+  },
+  {
+    name: "NOLA Nuke Tee", price: "$26", image: nukeMockup,
+    variants: [
+      { label: "Black / S", id: "53251726901542" }, { label: "Black / M", id: "53251726934310" },
+      { label: "Black / L", id: "53251726967078" }, { label: "Black / XL", id: "53251726999846" },
+      { label: "Black / 2XL", id: "53251727032614" }, { label: "Black / 3XL", id: "53251727065382" },
+      { label: "Purple / S", id: "53251727163686" }, { label: "Purple / M", id: "53251727196454" },
+      { label: "Purple / L", id: "53251727229222" }, { label: "Purple / XL", id: "53251727261990" },
+      { label: "Purple / 2XL", id: "53251727294758" }, { label: "Purple / 3XL", id: "53251727327526" },
+      { label: "Turf Green / S", id: "53251727360294" }, { label: "Turf Green / M", id: "53251727393062" },
+      { label: "Turf Green / L", id: "53251727425830" }, { label: "Turf Green / XL", id: "53251727458598" },
+      { label: "Turf Green / 2XL", id: "53251727491366" }, { label: "Turf Green / 3XL", id: "53251727524134" },
+    ]
+  },
+  {
+    name: "Cortana Mall Tee", price: "$24", image: cortanaMockup,
+    variants: [
+      { label: "Black / S", id: "53251740860710" }, { label: "Black / M", id: "53251740893478" },
+      { label: "Black / L", id: "53251740926246" }, { label: "Black / XL", id: "53251740959014" },
+      { label: "Black / 2XL", id: "53251740991782" }, { label: "Black / 3XL", id: "53251741024550" },
+      { label: "Black / 4XL", id: "53251741057318" }, { label: "Black / 5XL", id: "53251741090086" },
+      { label: "Navy / S", id: "53251741122854" }, { label: "Navy / M", id: "53251741155622" },
+      { label: "Navy / L", id: "53251741188390" }, { label: "Navy / XL", id: "53251741221158" },
+      { label: "Navy / 2XL", id: "53251741253926" }, { label: "Navy / 3XL", id: "53251741286694" },
+      { label: "Navy / 4XL", id: "53251741319462" }, { label: "Navy / 5XL", id: "53251741352230" },
+    ]
+  },
 ];
+
+function ProductCard({ p }: { p: typeof PRODUCTS[0] }) {
+  const [selectedVariant, setSelectedVariant] = useState(p.variants[0].id);
+  const cartUrl = `https://second-line-clothing.myshopify.com/cart/${selectedVariant}:1`;
+  return (
+    <article className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors">
+      <a href={cartUrl} target="_blank" rel="noopener noreferrer" className="block">
+        <div className="aspect-[3/4] overflow-hidden">
+          <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+      </a>
+      <div className="p-4 sm:p-5">
+        <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white">{p.name}</h3>
+        <p className="mt-2 text-primary font-bold text-lg">{p.price}</p>
+        <select
+          value={selectedVariant}
+          onChange={(e) => setSelectedVariant(e.target.value)}
+          className="mt-3 w-full px-3 py-2 bg-input border border-border rounded-sm text-foreground text-sm focus:outline-none focus:border-primary"
+        >
+          {p.variants.map((v) => (
+            <option key={v.id} value={v.id}>{v.label}</option>
+          ))}
+        </select>
+        <a
+          href={cartUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 block w-full py-2.5 bg-primary text-primary-foreground font-bold text-xs tracking-widest uppercase rounded-sm hover:brightness-110 transition-all text-center"
+        >
+          Add to Cart
+        </a>
+      </div>
+    </article>
+  );
+}
 
 function Index() {
   return (
@@ -87,34 +187,7 @@ function Index() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {PRODUCTS.map((p) => (
-            <article
-              key={p.name}
-              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors"
-            >
-              <a href={p.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </a>
-              <div className="p-4 sm:p-5">
-                <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white">
-                  {p.name}
-                </h3>
-                <p className="mt-2 text-primary font-bold text-lg">{p.price}</p>
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 block w-full py-2.5 bg-primary text-primary-foreground font-bold text-xs tracking-widest uppercase rounded-sm hover:brightness-110 transition-all text-center"
-                >
-                  Add to Cart
-                </a>
-              </div>
-            </article>
+            <ProductCard key={p.name} p={p} />
           ))}
         </div>
       </section>

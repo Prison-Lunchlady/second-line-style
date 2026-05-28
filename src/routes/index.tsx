@@ -101,7 +101,7 @@ function Index() {
                 </div>
               </a>
               <div className="p-4 sm:p-5">
-                <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight">
+                <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white">
                   {p.name}
                 </h3>
                 <p className="mt-2 text-primary font-bold text-lg">{p.price}</p>

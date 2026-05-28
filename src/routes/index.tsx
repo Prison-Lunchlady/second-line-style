@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
 });
 
 const PRODUCTS = [
-  { name: "Louisiana Lowlife Tee", price: "$35" },
-  { name: "NOLA Second Line Hoodie", price: "$70" },
-  { name: "Straitjacket Tee", price: "$35" },
-  { name: "Duffy Circa 2008 Tee", price: "$35" },
-  { name: "BRCC Dropout Tee", price: "$35" },
-  { name: "Mall of Cortana Tee", price: "$35" },
-  { name: "Carlotta St. Block Party Tee", price: "$35" },
+  { name: "Louisiana Lowlife Tee", shopifyId: "product-component-1779926175640" },
+  { name: "Women's Lowlife Crop Top", shopifyId: "product-component-1779926207875" },
+  { name: "Straitjacket Tee", shopifyId: "product-component-1779926229305" },
+  { name: "BRCC Dropout Tee", shopifyId: "product-component-1779926255322" },
+  { name: "Duffy Circa 2008 Tee", shopifyId: "product-component-1779926288210" },
+  { name: "NOLA Nuke Tee", shopifyId: "product-component-1779926312939" },
+  { name: "Cortana Mall Tee", shopifyId: "product-component-1779926333820" },
 ];
 
 function Index() {
@@ -78,37 +78,13 @@ function Index() {
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {PRODUCTS.map((p) => (
             <article
               key={p.name}
-              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors"
+              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors p-4"
             >
-              {/* Product image placeholder */}
-              <div className="aspect-square bg-muted relative overflow-hidden">
-                <div
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, oklch(0.2 0.01 280), oklch(0.25 0.03 300))",
-                  }}
-                >
-                  <img src={slMonogramWhite} alt="" className="h-24 w-24 object-contain opacity-40" />
-                </div>
-              </div>
-              <div className="p-4 sm:p-5">
-                <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight min-h-[2.5rem]">
-                  {p.name}
-                </h3>
-                <p className="mt-2 text-primary font-bold text-lg">{p.price}</p>
-                {/* SHOPIFY BUY BUTTON EMBED — replace this block with the Shopify embed code for "{p.name}" */}
-                <button
-                  type="button"
-                  className="mt-3 w-full py-2.5 bg-primary text-primary-foreground font-bold text-xs tracking-widest uppercase rounded-sm hover:brightness-110 transition-all"
-                >
-                  Add to Cart
-                </button>
-              </div>
+              <div id={p.shopifyId} />
             </article>
           ))}
         </div>

@@ -9,6 +9,7 @@ import brccMockup from "@/assets/brcc_dropout_mockup.png";
 import straitjacketMockup from "@/assets/strait_jacket_mockup.png";
 import womensCropMockup from "@/assets/womens_crop_top_mockup.png";
 import lowlifeMockup from "@/assets/lowlife_mockup.png";
+import carlottaMockup from "@/assets/carlotta_mockup.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,6 +93,22 @@ const PRODUCTS = [
       { label: "Navy / L", id: "53251741188390" }, { label: "Navy / XL", id: "53251741221158" },
       { label: "Navy / 2XL", id: "53251741253926" }, { label: "Navy / 3XL", id: "53251741286694" },
       { label: "Navy / 4XL", id: "53251741319462" }, { label: "Navy / 5XL", id: "53251741352230" },
+    ]
+  },
+  {
+    name: "Carlotta St. Block Party Tee", price: "$28", image: carlottaMockup,
+    variants: [
+      { label: "Sport Grey / S", id: "53252407230758" }, { label: "Sport Grey / M", id: "53252407263526" },
+      { label: "Sport Grey / L", id: "53252407296294" }, { label: "Sport Grey / XL", id: "53252407329062" },
+      { label: "Sport Grey / 2XL", id: "53252407361830" }, { label: "Sport Grey / 3XL", id: "53252407394598" },
+      { label: "Sport Grey / 4XL", id: "53252407427366" }, { label: "Sport Grey / 5XL", id: "53252407460134" },
+      { label: "Sand / S", id: "53252407492902" }, { label: "Sand / M", id: "53252407525670" },
+      { label: "Sand / L", id: "53252407558438" }, { label: "Sand / XL", id: "53252407591206" },
+      { label: "Sand / 2XL", id: "53252407623974" }, { label: "Sand / 3XL", id: "53252407656742" },
+      { label: "White / S", id: "53252407689510" }, { label: "White / M", id: "53252407722278" },
+      { label: "White / L", id: "53252407755046" }, { label: "White / XL", id: "53252407787814" },
+      { label: "White / 2XL", id: "53252407820582" }, { label: "White / 3XL", id: "53252407853350" },
+      { label: "White / 4XL", id: "53252407886118" }, { label: "White / 5XL", id: "53252407918886" },
     ]
   },
 ];

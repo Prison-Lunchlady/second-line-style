@@ -22,13 +22,13 @@ export const Route = createFileRoute("/")({
 });
 
 const PRODUCTS = [
-  { name: "Louisiana Lowlife Tee", price: "$35", image: lowlifeMockup, url: "https://second-line-clothing.myshopify.com/products/unisex-t-shirt" },
-  { name: "Women's Lowlife Crop Top", price: "$35", image: womensCropMockup, url: "https://second-line-clothing.myshopify.com/products/women-s-crop-top" },
-  { name: "Straitjacket Tee", price: "$35", image: straitjacketMockup, url: "https://second-line-clothing.myshopify.com/products/mens-t-shirt" },
-  { name: "BRCC Dropout Tee", price: "$35", image: brccMockup, url: "https://second-line-clothing.myshopify.com/products/unisex-classic-tee" },
-  { name: "Duffy Circa 2008 Tee", price: "$35", image: duffyMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-duffy-tee" },
-  { name: "NOLA Nuke Tee", price: "$35", image: nukeMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-nuke-tee" },
-  { name: "Cortana Mall Tee", price: "$35", image: cortanaMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-cortana-mall-tee" },
+  { name: "Louisiana Lowlife Tee", price: "$28", image: lowlifeMockup, url: "https://second-line-clothing.myshopify.com/products/unisex-t-shirt" },
+  { name: "Women's Lowlife Crop Top", price: "$30", image: womensCropMockup, url: "https://second-line-clothing.myshopify.com/products/women-s-crop-top" },
+  { name: "Straitjacket Tee", price: "$36", image: straitjacketMockup, url: "https://second-line-clothing.myshopify.com/products/mens-t-shirt" },
+  { name: "BRCC Dropout Tee", price: "$24", image: brccMockup, url: "https://second-line-clothing.myshopify.com/products/unisex-classic-tee" },
+  { name: "Duffy Circa 2008 Tee", price: "$24", image: duffyMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-duffy-tee" },
+  { name: "NOLA Nuke Tee", price: "$26", image: nukeMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-nuke-tee" },
+  { name: "Cortana Mall Tee", price: "$24", image: cortanaMockup, url: "https://second-line-clothing.myshopify.com/products/second-line-clothing-cortana-mall-tee" },
 ];
 
 function Index() {

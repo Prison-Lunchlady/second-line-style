@@ -15,6 +15,7 @@ import lowlifeMockup from "@/assets/lowlife_mockup.png";
 import carlottaMockup from "@/assets/carlotta_mockup.png";
 import carlottaGrey from "@/assets/carlotta_grey.png";
 import carlottaSand from "@/assets/carlotta_sand.png";
+import barrySealMockup from "@/assets/barry_seal_mockup.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -159,6 +160,27 @@ const PRODUCTS = [
       { label: "White / 3XL", id: "53252407853350", image: carlottaMockup },
       { label: "White / 4XL", id: "53252407886118", image: carlottaMockup },
       { label: "White / 5XL", id: "53252407918886", image: carlottaMockup },
+    ]
+  },
+  {
+    name: "Barry Seal Flight School Tee", price: 24, image: barrySealMockup,
+    variants: [
+      { label: "Sport Grey / S", id: "53264102129958", image: barrySealMockup },
+      { label: "Sport Grey / M", id: "53264102162726", image: barrySealMockup },
+      { label: "Sport Grey / L", id: "53264102195494", image: barrySealMockup },
+      { label: "Sport Grey / XL", id: "53264102228262", image: barrySealMockup },
+      { label: "Sport Grey / 2XL", id: "53264102261030", image: barrySealMockup },
+      { label: "Sport Grey / 3XL", id: "53264102293798", image: barrySealMockup },
+      { label: "Sport Grey / 4XL", id: "53264102326566", image: barrySealMockup },
+      { label: "Sport Grey / 5XL", id: "53264102359334", image: barrySealMockup },
+      { label: "White / S", id: "53264102392102", image: barrySealMockup },
+      { label: "White / M", id: "53264102424870", image: barrySealMockup },
+      { label: "White / L", id: "53264102457638", image: barrySealMockup },
+      { label: "White / XL", id: "53264102490406", image: barrySealMockup },
+      { label: "White / 2XL", id: "53264102523174", image: barrySealMockup },
+      { label: "White / 3XL", id: "53264102555942", image: barrySealMockup },
+      { label: "White / 4XL", id: "53264102588710", image: barrySealMockup },
+      { label: "White / 5XL", id: "53264102621478", image: barrySealMockup },
     ]
   },
 ];

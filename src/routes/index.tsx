@@ -17,6 +17,7 @@ import carlottaGrey from "@/assets/carlotta_grey.png";
 import carlottaSand from "@/assets/carlotta_sand.png";
 import barrySealMockup from "@/assets/barry_seal_mockup.png";
 import barrySealGrey from "@/assets/barry_seal_grey.png";
+import barrySealBlack from "@/assets/barry_seal_black.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -182,6 +183,19 @@ const PRODUCTS = [
       { label: "White / 3XL", id: "53264102555942", image: barrySealMockup },
       { label: "White / 4XL", id: "53264102588710", image: barrySealMockup },
       { label: "White / 5XL", id: "53264102621478", image: barrySealMockup },
+    ]
+  },
+  {
+    name: "Barry Seal Flight School Black Tee", price: 24, image: barrySealBlack,
+    variants: [
+      { label: "S", id: "53264108749094", image: barrySealBlack },
+      { label: "M", id: "53264108781862", image: barrySealBlack },
+      { label: "L", id: "53264108814630", image: barrySealBlack },
+      { label: "XL", id: "53264108847398", image: barrySealBlack },
+      { label: "2XL", id: "53264108880166", image: barrySealBlack },
+      { label: "3XL", id: "53264108912934", image: barrySealBlack },
+      { label: "4XL", id: "53264108945702", image: barrySealBlack },
+      { label: "5XL", id: "53264108978470", image: barrySealBlack },
     ]
   },
 ];

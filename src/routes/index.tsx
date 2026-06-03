@@ -408,10 +408,22 @@ function Index() {
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>GET IN <span className="text-primary">TOUCH</span></h2>
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
         </div>
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-          <input type="text" required placeholder="Name" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
-          <input type="email" required placeholder="Email" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
-          <textarea required rows={5} placeholder="Message" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none" />
+        <form
+          className="space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+            const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+            const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+            const subject = encodeURIComponent(`Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            window.location.href = `mailto:contact@haiglerdigital.com?subject=${subject}&body=${body}`;
+          }}
+        >
+          <input name="name" type="text" required placeholder="Name" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
+          <input name="email" type="email" required placeholder="Email" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
+          <textarea name="message" required rows={5} placeholder="Message" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none" />
           <button type="submit" className="w-full py-3 bg-primary text-primary-foreground font-bold tracking-widest uppercase rounded-sm hover:brightness-110 transition-all">Send Message</button>
         </form>
       </section>

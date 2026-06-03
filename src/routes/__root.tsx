@@ -72,15 +72,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Second Line Clothing" },
+      { title: "Second Line Clothing — Louisiana Streetwear" },
       { name: "description", content: "Second Line Clothing - street wear born from the streets of Louisiana" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Second Line Clothing" },
+      { property: "og:title", content: "Second Line Clothing — Louisiana Streetwear" },
       { property: "og:description", content: "Second Line Clothing - street wear born from the streets of Louisiana" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Second Line Clothing" },
+      { name: "twitter:title", content: "Second Line Clothing — Louisiana Streetwear" },
       { name: "twitter:description", content: "Second Line Clothing - street wear born from the streets of Louisiana" },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fkxVQFBXkMMhWxhFGgwVSGQKnIw2/social-images/social-1779918298062-logo.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fkxVQFBXkMMhWxhFGgwVSGQKnIw2/social-images/social-1779918298062-logo.webp" },
@@ -89,6 +89,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Second Line Clothing",
+          url: "https://secondlineclothing.haiglerdigital.com",
+          description: "New Orleans–inspired streetwear rooted in Louisiana culture and second line tradition.",
+          sameAs: [
+            "https://www.instagram.com/second_line_clothing",
+            "https://www.facebook.com/profile.php?id=61590223002408",
+            "https://www.tiktok.com/@second.line.cloth",
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Second Line Clothing",
+          url: "https://secondlineclothing.haiglerdigital.com",
+        }),
       },
     ],
   }),

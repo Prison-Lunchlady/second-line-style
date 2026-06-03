@@ -24,8 +24,35 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Second Line Clothing — Born from the streets of Louisiana" },
       { name: "description", content: "New Orleans–inspired streetwear rooted in Louisiana culture and second line tradition. Bold tees, hoodies, and gear." },
-      { property: "og:title", content: "Second Line Clothing" },
+      { property: "og:title", content: "Second Line Clothing — Louisiana Streetwear" },
       { property: "og:description", content: "Born from the streets of Louisiana. Streetwear rooted in New Orleans second line culture." },
+      { property: "og:url", content: "https://secondlineclothing.haiglerdigital.com/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://secondlineclothing.haiglerdigital.com/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: PRODUCTS.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Product",
+              name: p.name,
+              offers: {
+                "@type": "Offer",
+                price: p.price,
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+              },
+            },
+          })),
+        }),
+      },
     ],
   }),
   component: Index,

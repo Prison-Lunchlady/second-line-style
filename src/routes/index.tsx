@@ -24,8 +24,35 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Second Line Clothing — Born from the streets of Louisiana" },
       { name: "description", content: "New Orleans–inspired streetwear rooted in Louisiana culture and second line tradition. Bold tees, hoodies, and gear." },
-      { property: "og:title", content: "Second Line Clothing" },
+      { property: "og:title", content: "Second Line Clothing — Louisiana Streetwear" },
       { property: "og:description", content: "Born from the streets of Louisiana. Streetwear rooted in New Orleans second line culture." },
+      { property: "og:url", content: "https://secondlineclothing.haiglerdigital.com/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://secondlineclothing.haiglerdigital.com/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: PRODUCTS.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Product",
+              name: p.name,
+              offers: {
+                "@type": "Offer",
+                price: p.price,
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+              },
+            },
+          })),
+        }),
+      },
     ],
   }),
   component: Index,
@@ -247,6 +274,7 @@ function ProductCard({ p, onAddToCart }: { p: typeof PRODUCTS[0]; onAddToCart: (
         <select
           value={selectedVariantId}
           onChange={(e) => setSelectedVariantId(e.target.value)}
+          aria-label={`Select size for ${p.name}`}
           className="mt-3 w-full px-3 py-2 bg-input border border-border rounded-sm text-foreground text-sm focus:outline-none focus:border-primary"
         >
           {p.variants.map((v) => (
@@ -281,7 +309,7 @@ function CartDrawer({ cart, onClose, onRemove, onQtyChange }: {
       <div className="relative w-full max-w-md bg-background border-l border-border flex flex-col h-full shadow-2xl">
         <div className="flex items-center justify-between px-6 py-4 border-b border-border">
           <h2 className="text-lg font-black uppercase tracking-widest text-white">Your Cart</h2>
-          <button onClick={onClose} className="text-muted-foreground hover:text-white transition-colors">
+          <button onClick={onClose} aria-label="Close cart" className="text-muted-foreground hover:text-white transition-colors">
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -305,7 +333,7 @@ function CartDrawer({ cart, onClose, onRemove, onQtyChange }: {
                     <button onClick={() => onQtyChange(item.id, item.qty + 1)} className="w-6 h-6 bg-card border border-border rounded text-white text-sm hover:border-primary">+</button>
                   </div>
                 </div>
-                <button onClick={() => onRemove(item.id)} className="text-muted-foreground hover:text-red-400 transition-colors flex-shrink-0">
+                <button onClick={() => onRemove(item.id)} aria-label={`Remove ${item.name} from cart`} className="text-muted-foreground hover:text-red-400 transition-colors flex-shrink-0">
                   <Trash2 className="h-4 w-4" />
                 </button>
               </div>
@@ -362,7 +390,7 @@ function Index() {
             <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
             <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             <li>
-              <button onClick={() => setCartOpen(true)} className="relative hover:text-primary transition-colors">
+              <button onClick={() => setCartOpen(true)} aria-label={`Open cart${totalItems > 0 ? ` (${totalItems} items)` : ""}`} className="relative hover:text-primary transition-colors">
                 <ShoppingCart className="h-6 w-6" />
                 {totalItems > 0 && (
                   <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">{totalItems}</span>
@@ -376,6 +404,7 @@ function Index() {
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at 20% 30%, oklch(0.5 0.2 300 / 0.5), transparent 50%), radial-gradient(circle at 80% 70%, oklch(0.82 0.14 85 / 0.35), transparent 55%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
+          <h1 className="sr-only">Second Line Clothing — Born from the streets of Louisiana</h1>
           <img src={slMonogramWhite} alt="Second Line Clothing" className="mx-auto w-[85%] sm:w-[600px] h-auto" />
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">Born from the streets of Louisiana.</p>
           <a href="#shop" className="inline-block mt-10 px-10 py-4 bg-primary text-primary-foreground font-bold tracking-widest uppercase rounded-sm hover:brightness-110 transition-all shadow-lg shadow-primary/20">Shop Now</a>
@@ -421,9 +450,9 @@ function Index() {
             window.location.href = `mailto:contact@haiglerdigital.com?subject=${subject}&body=${body}`;
           }}
         >
-          <input name="name" type="text" required placeholder="Name" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
-          <input name="email" type="email" required placeholder="Email" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
-          <textarea name="message" required rows={5} placeholder="Message" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none" />
+          <input name="name" type="text" required placeholder="Name" aria-label="Your name" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
+          <input name="email" type="email" required placeholder="Email" aria-label="Your email address" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" />
+          <textarea name="message" required rows={5} placeholder="Message" aria-label="Your message" className="w-full px-4 py-3 bg-input border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none" />
           <button type="submit" className="w-full py-3 bg-primary text-primary-foreground font-bold tracking-widest uppercase rounded-sm hover:brightness-110 transition-all">Send Message</button>
         </form>
       </section>

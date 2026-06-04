@@ -12,12 +12,15 @@ import brccMockup from "@/assets/brcc_dropout_mockup.png";
 import straitjacketMockup from "@/assets/strait_jacket_mockup.png";
 import womensCropMockup from "@/assets/womens_crop_top_mockup.png";
 import lowlifeMockup from "@/assets/lowlife_mockup.png";
+import lowlifePurpleGoldAsset from "@/assets/lowlife_purple_gold.png.asset.json";
 import carlottaMockup from "@/assets/carlotta_mockup.png";
 import carlottaGrey from "@/assets/carlotta_grey.png";
 import carlottaSand from "@/assets/carlotta_sand.png";
 import barrySealMockup from "@/assets/barry_seal_mockup.png";
 import barrySealGrey from "@/assets/barry_seal_grey.png";
 import barrySealBlack from "@/assets/barry_seal_black.png";
+
+const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -77,6 +77,17 @@ const PRODUCTS = [
     ]
   },
   {
+    name: "LOWLIFE Purple & Gold Tee", price: 25, image: lowlifePurpleGold,
+    variants: [
+      { label: "S", id: "53299623461158", image: lowlifePurpleGold },
+      { label: "M", id: "53299623493926", image: lowlifePurpleGold },
+      { label: "L", id: "53299623526694", image: lowlifePurpleGold },
+      { label: "XL", id: "53299623559462", image: lowlifePurpleGold },
+      { label: "2XL", id: "53299623592230", image: lowlifePurpleGold },
+      { label: "3XL", id: "53299623624998", image: lowlifePurpleGold },
+    ]
+  },
+  {
     name: "Women's Lowlife Crop Top", price: 30, image: womensCropMockup,
     variants: [
       { label: "XS", id: "53251619127590", image: womensCropMockup },

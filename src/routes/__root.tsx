@@ -74,6 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Second Line Clothing — Louisiana Streetwear" },
       { name: "description", content: "Second Line Clothing - street wear born from the streets of Louisiana" },
+      { name: "google-site-verification", content: "EhaiocrmfowjkbzZTbw-rRg788JrKQWle_lJbg_3P-M" },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Second Line Clothing — Louisiana Streetwear" },
       { property: "og:description", content: "Second Line Clothing - street wear born from the streets of Louisiana" },

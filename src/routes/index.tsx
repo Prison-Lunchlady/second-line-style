@@ -274,10 +274,7 @@ function ProductCard({ p, onAddToCart }: { p: typeof PRODUCTS[0]; onAddToCart: (
   return (
     <article className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors">
       {lightboxOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 cursor-pointer" onClick={() => setLightboxOpen(false)}>
-          <img src={currentImage} alt={p.name} className="max-h-[90vh] max-w-[90vw] object-contain" onClick={(e) => e.stopPropagation()} />
-          <button onClick={() => setLightboxOpen(false)} className="absolute top-4 right-6 text-white text-4xl font-bold hover:text-primary">&times;</button>
-        </div>
+        <ImageLightbox src={currentImage} alt={p.name} onClose={() => setLightboxOpen(false)} />
       )}
       <div className="aspect-[3/4] overflow-hidden cursor-zoom-in" onClick={() => setLightboxOpen(true)}>
         <img src={currentImage} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />

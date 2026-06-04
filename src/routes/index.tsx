@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, ShoppingCart, X, Trash2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import nukeMockup from "@/assets/nuke_mockup.png";
 import nukeBlack from "@/assets/nuke_black.png";

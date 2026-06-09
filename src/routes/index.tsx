@@ -80,25 +80,21 @@ const PRODUCTS = [
     ]
   },
   {
-    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 28, image: "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/unisex-classic-tee-graphite-heather-front-and-back-6a283824dea5c.jpg?v=1781021348",
-    variants: (() => {
-      const graphite = "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/unisex-classic-tee-graphite-heather-front-and-back-6a283824dea5c.jpg?v=1781021348";
-      const white = "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/unisex-classic-tee-white-front-and-back-6a283824de908.jpg?v=1781021352";
-      return [
-        { label: "Graphite Heather / S", id: "53321989259558", image: graphite },
-        { label: "Graphite Heather / M", id: "53321989292326", image: graphite },
-        { label: "Graphite Heather / L", id: "53321989325094", image: graphite },
-        { label: "Graphite Heather / XL", id: "53321989357862", image: graphite },
-        { label: "Graphite Heather / 2XL", id: "53321989390630", image: graphite },
-        { label: "Graphite Heather / 3XL", id: "53321989423398", image: graphite },
-        { label: "White / S", id: "53321989456166", image: white },
-        { label: "White / M", id: "53321989488934", image: white },
-        { label: "White / L", id: "53321989521702", image: white },
-        { label: "White / XL", id: "53321989554470", image: white },
-        { label: "White / 2XL", id: "53321989587238", image: white },
-        { label: "White / 3XL", id: "53321989620006", image: white },
-      ];
-    })(),
+    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 28, image: swampPatrolUnit,
+    variants: [
+      { label: "Graphite Heather / S", id: "53321989259558", image: swampPatrolUnit },
+      { label: "Graphite Heather / M", id: "53321989292326", image: swampPatrolUnit },
+      { label: "Graphite Heather / L", id: "53321989325094", image: swampPatrolUnit },
+      { label: "Graphite Heather / XL", id: "53321989357862", image: swampPatrolUnit },
+      { label: "Graphite Heather / 2XL", id: "53321989390630", image: swampPatrolUnit },
+      { label: "Graphite Heather / 3XL", id: "53321989423398", image: swampPatrolUnit },
+      { label: "White / S", id: "53321989456166", image: swampPatrolUnit },
+      { label: "White / M", id: "53321989488934", image: swampPatrolUnit },
+      { label: "White / L", id: "53321989521702", image: swampPatrolUnit },
+      { label: "White / XL", id: "53321989554470", image: swampPatrolUnit },
+      { label: "White / 2XL", id: "53321989587238", image: swampPatrolUnit },
+      { label: "White / 3XL", id: "53321989620006", image: swampPatrolUnit },
+    ],
   },
   {
     name: "LOWLIFE Purple & Gold Tee", price: 25, image: lowlifePurpleGold,

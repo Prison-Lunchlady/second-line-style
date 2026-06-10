@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
-import { PRODUCTS, getProductBySlug, type Product } from "@/lib/products";
+import { getProductBySlug, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -183,5 +183,3 @@ function ProductPage() {
     </div>
   );
 }
-
-export const _slugs = PRODUCTS.map((p) => p.slug);

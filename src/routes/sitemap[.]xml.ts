@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { PRODUCTS } from "@/lib/products";
 
 const BASE_URL = "https://secondlineclothing.haiglerdigital.com";
 
@@ -9,7 +10,11 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/products/swamp-patrol-unit-tee", changefreq: "weekly", priority: "0.8" },
+          ...PRODUCTS.map((p) => ({
+            path: `/product/${p.slug}`,
+            changefreq: "weekly",
+            priority: "0.8",
+          })),
         ];
         const urls = entries.map(
           (e) =>

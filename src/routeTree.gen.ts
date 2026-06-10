@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProductsSwampPatrolUnitTeeRouteImport } from './routes/products.swamp-patrol-unit-tee'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -24,12 +23,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsSwampPatrolUnitTeeRoute =
-  ProductsSwampPatrolUnitTeeRouteImport.update({
-    id: '/products/swamp-patrol-unit-tee',
-    path: '/products/swamp-patrol-unit-tee',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ProductSlugRoute = ProductSlugRouteImport.update({
   id: '/product/$slug',
   path: '/product/$slug',
@@ -40,47 +33,30 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/product/$slug': typeof ProductSlugRoute
-  '/products/swamp-patrol-unit-tee': typeof ProductsSwampPatrolUnitTeeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/product/$slug': typeof ProductSlugRoute
-  '/products/swamp-patrol-unit-tee': typeof ProductsSwampPatrolUnitTeeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/product/$slug': typeof ProductSlugRoute
-  '/products/swamp-patrol-unit-tee': typeof ProductsSwampPatrolUnitTeeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/sitemap.xml'
-    | '/product/$slug'
-    | '/products/swamp-patrol-unit-tee'
+  fullPaths: '/' | '/sitemap.xml' | '/product/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/sitemap.xml'
-    | '/product/$slug'
-    | '/products/swamp-patrol-unit-tee'
-  id:
-    | '__root__'
-    | '/'
-    | '/sitemap.xml'
-    | '/product/$slug'
-    | '/products/swamp-patrol-unit-tee'
+  to: '/' | '/sitemap.xml' | '/product/$slug'
+  id: '__root__' | '/' | '/sitemap.xml' | '/product/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductSlugRoute: typeof ProductSlugRoute
-  ProductsSwampPatrolUnitTeeRoute: typeof ProductsSwampPatrolUnitTeeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,13 +75,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products/swamp-patrol-unit-tee': {
-      id: '/products/swamp-patrol-unit-tee'
-      path: '/products/swamp-patrol-unit-tee'
-      fullPath: '/products/swamp-patrol-unit-tee'
-      preLoaderRoute: typeof ProductsSwampPatrolUnitTeeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/product/$slug': {
       id: '/product/$slug'
       path: '/product/$slug'
@@ -120,8 +89,17 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductSlugRoute: ProductSlugRoute,
-  ProductsSwampPatrolUnitTeeRoute: ProductsSwampPatrolUnitTeeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

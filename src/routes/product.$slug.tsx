@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
-import { PRODUCTS, getProductBySlug } from "@/lib/products";
+import { PRODUCTS, getProductBySlug, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -11,7 +11,7 @@ import { ImageLightbox } from "@/components/ImageLightbox";
 const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
 
 export const Route = createFileRoute("/product/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { product: Product } => {
     const product = getProductBySlug(params.slug);
     if (!product) throw notFound();
     return { product };

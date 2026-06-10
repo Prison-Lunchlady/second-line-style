@@ -16,9 +16,11 @@ import barrySealMockup from "@/assets/barry_seal_mockup.png";
 import barrySealGrey from "@/assets/barry_seal_grey.png";
 import barrySealBlack from "@/assets/barry_seal_black.png";
 import swampPatrolAsset from "@/assets/swamp_patrol_unit_mockup.png.asset.json";
+import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const swampPatrolUnit = swampPatrolAsset.url;
+const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
 
 export type Variant = { label: string; id: string; image: string };
 export type Product = {
@@ -64,12 +66,12 @@ const RAW: Omit<Product, "slug">[] = [
       { label: "Graphite Heather / XL", id: "53321989357862", image: swampPatrolUnit },
       { label: "Graphite Heather / 2XL", id: "53321989390630", image: swampPatrolUnit },
       { label: "Graphite Heather / 3XL", id: "53321989423398", image: swampPatrolUnit },
-      { label: "White / S", id: "53321989456166", image: swampPatrolUnit },
-      { label: "White / M", id: "53321989488934", image: swampPatrolUnit },
-      { label: "White / L", id: "53321989521702", image: swampPatrolUnit },
-      { label: "White / XL", id: "53321989554470", image: swampPatrolUnit },
-      { label: "White / 2XL", id: "53321989587238", image: swampPatrolUnit },
-      { label: "White / 3XL", id: "53321989620006", image: swampPatrolUnit },
+      { label: "White / S", id: "53321989456166", image: swampPatrolUnitWhite },
+      { label: "White / M", id: "53321989488934", image: swampPatrolUnitWhite },
+      { label: "White / L", id: "53321989521702", image: swampPatrolUnitWhite },
+      { label: "White / XL", id: "53321989554470", image: swampPatrolUnitWhite },
+      { label: "White / 2XL", id: "53321989587238", image: swampPatrolUnitWhite },
+      { label: "White / 3XL", id: "53321989620006", image: swampPatrolUnitWhite },
     ],
   },
   {

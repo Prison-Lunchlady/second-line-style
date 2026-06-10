@@ -87,7 +87,7 @@ function NotFound() {
 }
 
 function ProductPage() {
-  const { product: p } = Route.useLoaderData();
+  const { product: p } = Route.useLoaderData() as { product: Product };
   const { addToCart } = useCart();
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);

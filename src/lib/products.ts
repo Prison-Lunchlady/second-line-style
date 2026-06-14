@@ -9,6 +9,7 @@ import straitjacketMockup from "@/assets/strait_jacket_mockup.png";
 import womensCropMockup from "@/assets/womens_crop_top_mockup.png";
 import lowlifeMockup from "@/assets/lowlife_mockup.png";
 import lowlifePurpleGoldAsset from "@/assets/lowlife_purple_gold.png.asset.json";
+import lowlifeGreyAsset from "@/assets/lowlife_grey_model.png.asset.json";
 import carlottaMockup from "@/assets/carlotta_mockup.png";
 import carlottaGrey from "@/assets/carlotta_grey.png";
 import carlottaSand from "@/assets/carlotta_sand.png";
@@ -19,6 +20,7 @@ import swampPatrolAsset from "@/assets/swamp_patrol_unit_mockup.png.asset.json";
 import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
+const lowlifeGrey = lowlifeGreyAsset.url;
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
 
@@ -43,17 +45,24 @@ export function slugify(name: string): string {
 
 const RAW: Omit<Product, "slug">[] = [
   {
-    name: "Louisiana Lowlife Tee", price: 28, image: lowlifeMockup,
+    name: "Louisiana Lowlife Tee", price: 25, image: lowlifeMockup,
     variants: [
-      { label: "XS", id: "53251612541222", image: lowlifeMockup },
-      { label: "S", id: "53251612573990", image: lowlifeMockup },
-      { label: "M", id: "53251612606758", image: lowlifeMockup },
-      { label: "L", id: "53251612639526", image: lowlifeMockup },
-      { label: "XL", id: "53251612672294", image: lowlifeMockup },
-      { label: "2XL", id: "53251612705062", image: lowlifeMockup },
-      { label: "3XL", id: "53251612737830", image: lowlifeMockup },
-      { label: "4XL", id: "53251612770598", image: lowlifeMockup },
-      { label: "5XL", id: "53251612803366", image: lowlifeMockup },
+      { label: "Black / S", id: "53342808047910", image: lowlifeMockup },
+      { label: "Black / M", id: "53342808080678", image: lowlifeMockup },
+      { label: "Black / L", id: "53342808113446", image: lowlifeMockup },
+      { label: "Black / XL", id: "53342808146214", image: lowlifeMockup },
+      { label: "Black / 2XL", id: "53342808178982", image: lowlifeMockup },
+      { label: "Black / 3XL", id: "53342808211750", image: lowlifeMockup },
+      { label: "Black / 4XL", id: "53342808244518", image: lowlifeMockup },
+      { label: "Black / 5XL", id: "53342808277286", image: lowlifeMockup },
+      { label: "Sport Grey / S", id: "53342808310054", image: lowlifeGrey },
+      { label: "Sport Grey / M", id: "53342808342822", image: lowlifeGrey },
+      { label: "Sport Grey / L", id: "53342808375590", image: lowlifeGrey },
+      { label: "Sport Grey / XL", id: "53342808408358", image: lowlifeGrey },
+      { label: "Sport Grey / 2XL", id: "53342808441126", image: lowlifeGrey },
+      { label: "Sport Grey / 3XL", id: "53342808473894", image: lowlifeGrey },
+      { label: "Sport Grey / 4XL", id: "53342808506662", image: lowlifeGrey },
+      { label: "Sport Grey / 5XL", id: "53342808539430", image: lowlifeGrey },
     ],
   },
   {

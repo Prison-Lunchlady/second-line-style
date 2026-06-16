@@ -68,6 +68,10 @@ export const Route = createFileRoute("/product/$slug")({
 });
 
 function NotFound() {
+  return _NotFound();
+}
+
+function _NotFound() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SiteHeader />

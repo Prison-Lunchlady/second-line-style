@@ -254,7 +254,13 @@ const RAW: Omit<Product, "slug">[] = [
   },
 ];
 
-export const PRODUCTS: Product[] = RAW.map((p) => ({ ...p, slug: slugify(p.name) }));
+const ALL_PRODUCTS: Product[] = RAW.map((p) => ({ ...p, slug: slugify(p.name) }));
+
+export function isProductAvailable(p: Product, now: number = Date.now()): boolean {
+  return p.availableUntil == null || now < p.availableUntil;
+}
+
+export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable(p));
 
 export function getProductBySlug(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);

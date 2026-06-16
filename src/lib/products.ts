@@ -73,7 +73,7 @@ const RAW: Omit<Product, "slug">[] = [
     name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 28, image: swampPatrolUnit,
     coverImage: swampPatrolLimited,
     availableUntil: new Date(2026, 6, 1, 0, 0, 0).getTime(),
-    description: "Some lessons are learned the hard way. A Louisiana-inspired graphic tee featuring a bayou chase gone wrong — built for boat launches, bait shops, crawfish boils, and anywhere common sense takes a day off.",
+    description: "Some lessons are learned the hard way. A Louisiana-inspired graphic tee featuring a bayou chase gone wrong.",
     variants: [
       { label: "Graphite Heather / S", id: "53321989259558", image: swampPatrolUnit },
       { label: "Graphite Heather / M", id: "53321989292326", image: swampPatrolUnit },

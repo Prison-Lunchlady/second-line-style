@@ -86,6 +86,39 @@ function NotFound() {
   );
 }
 
+function Countdown({ endsAt }: { endsAt: number }) {
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const remaining = Math.max(0, endsAt - now);
+  if (remaining === 0) return null;
+  const s = Math.floor(remaining / 1000);
+  const days = Math.floor(s / 86400);
+  const hours = Math.floor((s % 86400) / 3600);
+  const minutes = Math.floor((s % 3600) / 60);
+  const seconds = s % 60;
+  const cell = (v: number, label: string) => (
+    <div className="flex flex-col items-center px-3 py-2 bg-background/60 rounded-sm min-w-[60px]">
+      <span className="text-2xl sm:text-3xl font-black text-primary tabular-nums leading-none">{v.toString().padStart(2, "0")}</span>
+      <span className="mt-1 text-[10px] tracking-widest uppercase text-muted-foreground">{label}</span>
+    </div>
+  );
+  return (
+    <div className="mt-6 p-4 bg-card border border-primary/40 rounded-sm">
+      <p className="text-xs font-bold tracking-widest uppercase text-primary">Limited Release — Available Until 6/30</p>
+      <div className="mt-3 flex gap-2 sm:gap-3">
+        {cell(days, "Days")}
+        {cell(hours, "Hours")}
+        {cell(minutes, "Mins")}
+        {cell(seconds, "Secs")}
+      </div>
+      <p className="mt-3 text-xs text-muted-foreground italic">No restocks. No reruns. Once the patrol stands down, this shirt retires.</p>
+    </div>
+  );
+}
+
 function ProductPage() {
   const { product: p } = Route.useLoaderData() as { product: Product };
   const { addToCart } = useCart();

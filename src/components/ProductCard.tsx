@@ -7,9 +7,10 @@ export function ProductCard({ p }: { p: Product }) {
   const { addToCart } = useCart();
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);
+  const [userPicked, setUserPicked] = useState(false);
 
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
-  const currentImage = selectedVariant.image;
+  const currentImage = !userPicked && p.coverImage ? p.coverImage : selectedVariant.image;
 
   const handleAdd = () => {
     addToCart({
@@ -36,7 +37,7 @@ export function ProductCard({ p }: { p: Product }) {
         <p className="mt-2 text-primary font-bold text-lg">${p.price}</p>
         <select
           value={selectedVariantId}
-          onChange={(e) => setSelectedVariantId(e.target.value)}
+          onChange={(e) => { setSelectedVariantId(e.target.value); setUserPicked(true); }}
           aria-label={`Select size for ${p.name}`}
           className="mt-3 w-full px-3 py-2 bg-input border border-border rounded-sm text-foreground text-sm focus:outline-none focus:border-primary"
         >

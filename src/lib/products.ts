@@ -18,11 +18,13 @@ import barrySealGrey from "@/assets/barry_seal_grey.png";
 import barrySealBlack from "@/assets/barry_seal_black.png";
 import swampPatrolAsset from "@/assets/swamp_patrol_unit_mockup.png.asset.json";
 import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.json";
+import swampPatrolLimitedAsset from "@/assets/swamp_patrol_unit_limited.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
+const swampPatrolLimited = swampPatrolLimitedAsset.url;
 
 export type Variant = { label: string; id: string; image: string };
 export type Product = {
@@ -32,6 +34,8 @@ export type Product = {
   image: string;
   description?: string;
   variants: Variant[];
+  coverImage?: string;
+  availableUntil?: number;
 };
 
 export function slugify(name: string): string {
@@ -67,6 +71,8 @@ const RAW: Omit<Product, "slug">[] = [
   },
   {
     name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 28, image: swampPatrolUnit,
+    coverImage: swampPatrolLimited,
+    availableUntil: new Date(2026, 6, 1, 0, 0, 0).getTime(),
     description: "Some lessons are learned the hard way. A Louisiana-inspired graphic tee featuring a bayou chase gone wrong — built for boat launches, bait shops, crawfish boils, and anywhere common sense takes a day off.",
     variants: [
       { label: "Graphite Heather / S", id: "53321989259558", image: swampPatrolUnit },
@@ -248,7 +254,13 @@ const RAW: Omit<Product, "slug">[] = [
   },
 ];
 
-export const PRODUCTS: Product[] = RAW.map((p) => ({ ...p, slug: slugify(p.name) }));
+const ALL_PRODUCTS: Product[] = RAW.map((p) => ({ ...p, slug: slugify(p.name) }));
+
+export function isProductAvailable(p: Product, now: number = Date.now()): boolean {
+  return p.availableUntil == null || now < p.availableUntil;
+}
+
+export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable(p));
 
 export function getProductBySlug(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);

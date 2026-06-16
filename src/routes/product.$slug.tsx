@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
 import { getProductBySlug, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
@@ -92,9 +92,10 @@ function ProductPage() {
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [userPicked, setUserPicked] = useState(false);
 
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
-  const currentImage = selectedVariant.image;
+  const currentImage = !userPicked && p.coverImage ? p.coverImage : selectedVariant.image;
 
   const handleAdd = () => {
     addToCart({
@@ -142,6 +143,8 @@ function ProductPage() {
             </h1>
             <p className="mt-4 text-3xl font-bold text-primary">${p.price}</p>
 
+            {p.availableUntil && <Countdown endsAt={p.availableUntil} />}
+
             {p.description && (
               <p className="mt-6 text-muted-foreground leading-relaxed">{p.description}</p>
             )}
@@ -153,7 +156,7 @@ function ProductPage() {
               <select
                 id="variant"
                 value={selectedVariantId}
-                onChange={(e) => setSelectedVariantId(e.target.value)}
+                onChange={(e) => { setSelectedVariantId(e.target.value); setUserPicked(true); }}
                 aria-label={`Select option for ${p.name}`}
                 className="w-full px-3 py-3 bg-input border border-border rounded-sm text-foreground focus:outline-none focus:border-primary"
               >

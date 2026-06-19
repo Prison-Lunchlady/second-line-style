@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as ShreveportRouteImport } from './routes/shreveport'
 import { Route as NewOrleansRouteImport } from './routes/new-orleans'
 import { Route as NatchitochesRouteImport } from './routes/natchitoches'
@@ -31,6 +32,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
+  id: '/sitemap-index.xml',
+  path: '/sitemap-index.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShreveportRoute = ShreveportRouteImport.update({
@@ -135,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
   '/shreveport': typeof ShreveportRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -155,6 +162,7 @@ export interface FileRoutesByTo {
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
   '/shreveport': typeof ShreveportRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -176,6 +184,7 @@ export interface FileRoutesById {
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
   '/shreveport': typeof ShreveportRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -198,6 +207,7 @@ export interface FileRouteTypes {
     | '/natchitoches'
     | '/new-orleans'
     | '/shreveport'
+    | '/sitemap-index.xml'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -218,6 +228,7 @@ export interface FileRouteTypes {
     | '/natchitoches'
     | '/new-orleans'
     | '/shreveport'
+    | '/sitemap-index.xml'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -238,6 +249,7 @@ export interface FileRouteTypes {
     | '/natchitoches'
     | '/new-orleans'
     | '/shreveport'
+    | '/sitemap-index.xml'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -259,6 +271,7 @@ export interface RootRouteChildren {
   NatchitochesRoute: typeof NatchitochesRoute
   NewOrleansRoute: typeof NewOrleansRoute
   ShreveportRoute: typeof ShreveportRoute
+  SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
@@ -270,6 +283,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-index.xml': {
+      id: '/sitemap-index.xml'
+      path: '/sitemap-index.xml'
+      fullPath: '/sitemap-index.xml'
+      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shreveport': {
@@ -420,6 +440,7 @@ const rootRouteChildren: RootRouteChildren = {
   NatchitochesRoute: NatchitochesRoute,
   NewOrleansRoute: NewOrleansRoute,
   ShreveportRoute: ShreveportRoute,
+  SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductSlugRoute: ProductSlugRoute,
 }

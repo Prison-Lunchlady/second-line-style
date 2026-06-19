@@ -59,9 +59,9 @@ export function CityHubPage({ city }: { city: CityHub }) {
           <ul className="mt-3 grid sm:grid-cols-2 gap-2">
             {otherCities.map((c) => (
               <li key={c.slug}>
-                <Link to={`/${c.slug}` as "/baton-rouge"} className="text-sm text-primary hover:brightness-110 underline underline-offset-4">
+                <a href={`/${c.slug}`} className="text-sm text-primary hover:brightness-110 underline underline-offset-4">
                   {c.name} — {c.region}
-                </Link>
+                </a>
               </li>
             ))}
             <li>

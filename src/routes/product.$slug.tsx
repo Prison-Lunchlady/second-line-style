@@ -51,7 +51,7 @@ export const Route = createFileRoute("/product/$slug")({
             "@context": "https://schema.org",
             "@type": "Product",
             name: p.name,
-            image,
+            image: [image],
             description,
             sku: p.slug,
             category: "Louisiana Apparel",

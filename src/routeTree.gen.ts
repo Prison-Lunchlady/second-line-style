@@ -18,6 +18,7 @@ import { Route as LouisianaStreetwearRouteImport } from './routes/louisiana-stre
 import { Route as LouisianaHumorRouteImport } from './routes/louisiana-humor'
 import { Route as LouisianaRouteImport } from './routes/louisiana'
 import { Route as LafayetteRouteImport } from './routes/lafayette'
+import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
 import { Route as HoumaRouteImport } from './routes/houma'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -72,6 +73,11 @@ const LafayetteRoute = LafayetteRouteImport.update({
   path: '/lafayette',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageSitemapDotxmlRoute = ImageSitemapDotxmlRouteImport.update({
+  id: '/image-sitemap.xml',
+  path: '/image-sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HoumaRoute = HoumaRouteImport.update({
   id: '/houma',
   path: '/houma',
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/lafayette': typeof LafayetteRoute
   '/louisiana': typeof LouisianaRoute
   '/louisiana-humor': typeof LouisianaHumorRoute
@@ -139,6 +146,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/lafayette': typeof LafayetteRoute
   '/louisiana': typeof LouisianaRoute
   '/louisiana-humor': typeof LouisianaHumorRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/lafayette': typeof LafayetteRoute
   '/louisiana': typeof LouisianaRoute
   '/louisiana-humor': typeof LouisianaHumorRoute
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/houma'
+    | '/image-sitemap.xml'
     | '/lafayette'
     | '/louisiana'
     | '/louisiana-humor'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/houma'
+    | '/image-sitemap.xml'
     | '/lafayette'
     | '/louisiana'
     | '/louisiana-humor'
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/houma'
+    | '/image-sitemap.xml'
     | '/lafayette'
     | '/louisiana'
     | '/louisiana-humor'
@@ -238,6 +250,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   FaqRoute: typeof FaqRoute
   HoumaRoute: typeof HoumaRoute
+  ImageSitemapDotxmlRoute: typeof ImageSitemapDotxmlRoute
   LafayetteRoute: typeof LafayetteRoute
   LouisianaRoute: typeof LouisianaRoute
   LouisianaHumorRoute: typeof LouisianaHumorRoute
@@ -313,6 +326,13 @@ declare module '@tanstack/react-router' {
       path: '/lafayette'
       fullPath: '/lafayette'
       preLoaderRoute: typeof LafayetteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-sitemap.xml': {
+      id: '/image-sitemap.xml'
+      path: '/image-sitemap.xml'
+      fullPath: '/image-sitemap.xml'
+      preLoaderRoute: typeof ImageSitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/houma': {
@@ -391,6 +411,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   FaqRoute: FaqRoute,
   HoumaRoute: HoumaRoute,
+  ImageSitemapDotxmlRoute: ImageSitemapDotxmlRoute,
   LafayetteRoute: LafayetteRoute,
   LouisianaRoute: LouisianaRoute,
   LouisianaHumorRoute: LouisianaHumorRoute,

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as ShreveportRouteImport } from './routes/shreveport'
 import { Route as NewOrleansRouteImport } from './routes/new-orleans'
 import { Route as NatchitochesRouteImport } from './routes/natchitoches'
@@ -18,6 +19,7 @@ import { Route as LouisianaStreetwearRouteImport } from './routes/louisiana-stre
 import { Route as LouisianaHumorRouteImport } from './routes/louisiana-humor'
 import { Route as LouisianaRouteImport } from './routes/louisiana'
 import { Route as LafayetteRouteImport } from './routes/lafayette'
+import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
 import { Route as HoumaRouteImport } from './routes/houma'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -30,6 +32,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
+  id: '/sitemap-index.xml',
+  path: '/sitemap-index.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShreveportRoute = ShreveportRouteImport.update({
@@ -70,6 +77,11 @@ const LouisianaRoute = LouisianaRouteImport.update({
 const LafayetteRoute = LafayetteRouteImport.update({
   id: '/lafayette',
   path: '/lafayette',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageSitemapDotxmlRoute = ImageSitemapDotxmlRouteImport.update({
+  id: '/image-sitemap.xml',
+  path: '/image-sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HoumaRoute = HoumaRouteImport.update({
@@ -120,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/lafayette': typeof LafayetteRoute
   '/louisiana': typeof LouisianaRoute
   '/louisiana-humor': typeof LouisianaHumorRoute
@@ -128,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
   '/shreveport': typeof ShreveportRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -139,6 +153,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/lafayette': typeof LafayetteRoute
   '/louisiana': typeof LouisianaRoute
   '/louisiana-humor': typeof LouisianaHumorRoute
@@ -147,6 +162,7 @@ export interface FileRoutesByTo {
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
   '/shreveport': typeof ShreveportRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -159,6 +175,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/lafayette': typeof LafayetteRoute
   '/louisiana': typeof LouisianaRoute
   '/louisiana-humor': typeof LouisianaHumorRoute
@@ -167,6 +184,7 @@ export interface FileRoutesById {
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
   '/shreveport': typeof ShreveportRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -180,6 +198,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/houma'
+    | '/image-sitemap.xml'
     | '/lafayette'
     | '/louisiana'
     | '/louisiana-humor'
@@ -188,6 +207,7 @@ export interface FileRouteTypes {
     | '/natchitoches'
     | '/new-orleans'
     | '/shreveport'
+    | '/sitemap-index.xml'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -199,6 +219,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/houma'
+    | '/image-sitemap.xml'
     | '/lafayette'
     | '/louisiana'
     | '/louisiana-humor'
@@ -207,6 +228,7 @@ export interface FileRouteTypes {
     | '/natchitoches'
     | '/new-orleans'
     | '/shreveport'
+    | '/sitemap-index.xml'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -218,6 +240,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/faq'
     | '/houma'
+    | '/image-sitemap.xml'
     | '/lafayette'
     | '/louisiana'
     | '/louisiana-humor'
@@ -226,6 +249,7 @@ export interface FileRouteTypes {
     | '/natchitoches'
     | '/new-orleans'
     | '/shreveport'
+    | '/sitemap-index.xml'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -238,6 +262,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   FaqRoute: typeof FaqRoute
   HoumaRoute: typeof HoumaRoute
+  ImageSitemapDotxmlRoute: typeof ImageSitemapDotxmlRoute
   LafayetteRoute: typeof LafayetteRoute
   LouisianaRoute: typeof LouisianaRoute
   LouisianaHumorRoute: typeof LouisianaHumorRoute
@@ -246,6 +271,7 @@ export interface RootRouteChildren {
   NatchitochesRoute: typeof NatchitochesRoute
   NewOrleansRoute: typeof NewOrleansRoute
   ShreveportRoute: typeof ShreveportRoute
+  SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
@@ -257,6 +283,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-index.xml': {
+      id: '/sitemap-index.xml'
+      path: '/sitemap-index.xml'
+      fullPath: '/sitemap-index.xml'
+      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shreveport': {
@@ -313,6 +346,13 @@ declare module '@tanstack/react-router' {
       path: '/lafayette'
       fullPath: '/lafayette'
       preLoaderRoute: typeof LafayetteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-sitemap.xml': {
+      id: '/image-sitemap.xml'
+      path: '/image-sitemap.xml'
+      fullPath: '/image-sitemap.xml'
+      preLoaderRoute: typeof ImageSitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/houma': {
@@ -391,6 +431,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   FaqRoute: FaqRoute,
   HoumaRoute: HoumaRoute,
+  ImageSitemapDotxmlRoute: ImageSitemapDotxmlRoute,
   LafayetteRoute: LafayetteRoute,
   LouisianaRoute: LouisianaRoute,
   LouisianaHumorRoute: LouisianaHumorRoute,
@@ -399,6 +440,7 @@ const rootRouteChildren: RootRouteChildren = {
   NatchitochesRoute: NatchitochesRoute,
   NewOrleansRoute: NewOrleansRoute,
   ShreveportRoute: ShreveportRoute,
+  SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductSlugRoute: ProductSlugRoute,
 }

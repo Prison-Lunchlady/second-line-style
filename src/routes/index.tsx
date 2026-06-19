@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import { PRODUCTS } from "@/lib/products";
+import { SITE_FAQS } from "@/lib/faq";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -41,6 +42,18 @@ export const Route = createFileRoute("/")({
                 availability: "https://schema.org/InStock",
               },
             },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: SITE_FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
         }),
       },

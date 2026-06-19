@@ -14,10 +14,15 @@ import { Route as ShreveportRouteImport } from './routes/shreveport'
 import { Route as NewOrleansRouteImport } from './routes/new-orleans'
 import { Route as NatchitochesRouteImport } from './routes/natchitoches'
 import { Route as MonroeRouteImport } from './routes/monroe'
+import { Route as LouisianaStreetwearRouteImport } from './routes/louisiana-streetwear'
+import { Route as LouisianaHumorRouteImport } from './routes/louisiana-humor'
+import { Route as LouisianaRouteImport } from './routes/louisiana'
 import { Route as LafayetteRouteImport } from './routes/lafayette'
 import { Route as HoumaRouteImport } from './routes/houma'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BatonRougeRouteImport } from './routes/baton-rouge'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -47,6 +52,21 @@ const MonroeRoute = MonroeRouteImport.update({
   path: '/monroe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LouisianaStreetwearRoute = LouisianaStreetwearRouteImport.update({
+  id: '/louisiana-streetwear',
+  path: '/louisiana-streetwear',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LouisianaHumorRoute = LouisianaHumorRouteImport.update({
+  id: '/louisiana-humor',
+  path: '/louisiana-humor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LouisianaRoute = LouisianaRouteImport.update({
+  id: '/louisiana',
+  path: '/louisiana',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LafayetteRoute = LafayetteRouteImport.update({
   id: '/lafayette',
   path: '/lafayette',
@@ -57,6 +77,11 @@ const HoumaRoute = HoumaRouteImport.update({
   path: '/houma',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -65,6 +90,11 @@ const BlogRoute = BlogRouteImport.update({
 const BatonRougeRoute = BatonRougeRouteImport.update({
   id: '/baton-rouge',
   path: '/baton-rouge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -85,10 +115,15 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
   '/lafayette': typeof LafayetteRoute
+  '/louisiana': typeof LouisianaRoute
+  '/louisiana-humor': typeof LouisianaHumorRoute
+  '/louisiana-streetwear': typeof LouisianaStreetwearRoute
   '/monroe': typeof MonroeRoute
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
@@ -99,10 +134,15 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
   '/lafayette': typeof LafayetteRoute
+  '/louisiana': typeof LouisianaRoute
+  '/louisiana-humor': typeof LouisianaHumorRoute
+  '/louisiana-streetwear': typeof LouisianaStreetwearRoute
   '/monroe': typeof MonroeRoute
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
@@ -114,10 +154,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
   '/lafayette': typeof LafayetteRoute
+  '/louisiana': typeof LouisianaRoute
+  '/louisiana-humor': typeof LouisianaHumorRoute
+  '/louisiana-streetwear': typeof LouisianaStreetwearRoute
   '/monroe': typeof MonroeRoute
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
@@ -130,10 +175,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/baton-rouge'
     | '/blog'
+    | '/faq'
     | '/houma'
     | '/lafayette'
+    | '/louisiana'
+    | '/louisiana-humor'
+    | '/louisiana-streetwear'
     | '/monroe'
     | '/natchitoches'
     | '/new-orleans'
@@ -144,10 +194,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/baton-rouge'
     | '/blog'
+    | '/faq'
     | '/houma'
     | '/lafayette'
+    | '/louisiana'
+    | '/louisiana-humor'
+    | '/louisiana-streetwear'
     | '/monroe'
     | '/natchitoches'
     | '/new-orleans'
@@ -158,10 +213,15 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/baton-rouge'
     | '/blog'
+    | '/faq'
     | '/houma'
     | '/lafayette'
+    | '/louisiana'
+    | '/louisiana-humor'
+    | '/louisiana-streetwear'
     | '/monroe'
     | '/natchitoches'
     | '/new-orleans'
@@ -173,10 +233,15 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BatonRougeRoute: typeof BatonRougeRoute
   BlogRoute: typeof BlogRouteWithChildren
+  FaqRoute: typeof FaqRoute
   HoumaRoute: typeof HoumaRoute
   LafayetteRoute: typeof LafayetteRoute
+  LouisianaRoute: typeof LouisianaRoute
+  LouisianaHumorRoute: typeof LouisianaHumorRoute
+  LouisianaStreetwearRoute: typeof LouisianaStreetwearRoute
   MonroeRoute: typeof MonroeRoute
   NatchitochesRoute: typeof NatchitochesRoute
   NewOrleansRoute: typeof NewOrleansRoute
@@ -222,6 +287,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MonroeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/louisiana-streetwear': {
+      id: '/louisiana-streetwear'
+      path: '/louisiana-streetwear'
+      fullPath: '/louisiana-streetwear'
+      preLoaderRoute: typeof LouisianaStreetwearRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/louisiana-humor': {
+      id: '/louisiana-humor'
+      path: '/louisiana-humor'
+      fullPath: '/louisiana-humor'
+      preLoaderRoute: typeof LouisianaHumorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/louisiana': {
+      id: '/louisiana'
+      path: '/louisiana'
+      fullPath: '/louisiana'
+      preLoaderRoute: typeof LouisianaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lafayette': {
       id: '/lafayette'
       path: '/lafayette'
@@ -236,6 +322,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HoumaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -248,6 +341,13 @@ declare module '@tanstack/react-router' {
       path: '/baton-rouge'
       fullPath: '/baton-rouge'
       preLoaderRoute: typeof BatonRougeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -286,10 +386,15 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BatonRougeRoute: BatonRougeRoute,
   BlogRoute: BlogRouteWithChildren,
+  FaqRoute: FaqRoute,
   HoumaRoute: HoumaRoute,
   LafayetteRoute: LafayetteRoute,
+  LouisianaRoute: LouisianaRoute,
+  LouisianaHumorRoute: LouisianaHumorRoute,
+  LouisianaStreetwearRoute: LouisianaStreetwearRoute,
   MonroeRoute: MonroeRoute,
   NatchitochesRoute: NatchitochesRoute,
   NewOrleansRoute: NewOrleansRoute,

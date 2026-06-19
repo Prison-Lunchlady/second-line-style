@@ -11,7 +11,10 @@ export function SiteFooter() {
         </div>
         <nav className="flex items-center gap-5 text-xs tracking-widest uppercase text-muted-foreground" aria-label="Footer">
           <Link to="/" className="hover:text-primary transition-colors">Shop</Link>
+          <Link to="/louisiana" className="hover:text-primary transition-colors">Louisiana</Link>
+          <Link to="/about" className="hover:text-primary transition-colors">About</Link>
           <Link to="/blog" className="hover:text-primary transition-colors">Journal</Link>
+          <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
         </nav>
         <div className="flex items-center gap-4">
           <a href="https://www.instagram.com/second_line_clothing?igsh=MXE3YXFxc3F1MHFnaQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></a>

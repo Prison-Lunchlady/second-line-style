@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { PRODUCTS } from "@/lib/products";
 import { BLOG_POSTS } from "@/lib/blog";
+import { CITY_HUBS } from "@/lib/cities";
 
 const BASE_URL = "https://secondlineclothing.haiglerdigital.com";
 
@@ -11,6 +12,11 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/louisiana", changefreq: "monthly", priority: "0.9" },
+          { path: "/louisiana-humor", changefreq: "monthly", priority: "0.7" },
+          { path: "/louisiana-streetwear", changefreq: "monthly", priority: "0.7" },
+          { path: "/about", changefreq: "monthly", priority: "0.6" },
+          { path: "/faq", changefreq: "monthly", priority: "0.5" },
           { path: "/blog", changefreq: "weekly", priority: "0.7" },
           ...PRODUCTS.map((p) => ({
             path: `/product/${p.slug}`,
@@ -21,6 +27,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/blog/${p.slug}`,
             changefreq: "monthly",
             priority: "0.6",
+          })),
+          ...CITY_HUBS.map((c) => ({
+            path: `/${c.slug}`,
+            changefreq: "monthly",
+            priority: "0.7",
           })),
         ];
         const urls = entries.map(

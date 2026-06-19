@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
 import { ImageLightbox } from "@/components/ImageLightbox";
+import { altForProduct } from "@/lib/image-alt";
 
 const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
 
@@ -22,13 +23,16 @@ export const Route = createFileRoute("/product/$slug")({
       return { meta: [{ title: "Item not found — Second Line Clothing" }] };
     }
     const url = `${ORIGIN}/product/${p.slug}`;
-    const title = `${p.name} — Second Line Clothing`;
-    const description = p.description ?? `${p.name} from Second Line Clothing — Louisiana streetwear.`;
+    const title = `${p.name} | Louisiana Graphic Tee — Second Line Clothing`;
+    const description = p.description
+      ? `${p.description} Louisiana graphic tee from Second Line Clothing.`
+      : `${p.name} — a Louisiana graphic tee from Second Line Clothing. Louisiana-inspired apparel celebrating the culture, humor, and lifestyle of the bayou state.`;
     const image = p.image.startsWith("http") ? p.image : `${ORIGIN}${p.image}`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        { name: "keywords", content: `${p.name}, Louisiana graphic tee, Louisiana apparel, Louisiana clothing, Louisiana streetwear, Southern graphic tee` },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "product" },
@@ -49,15 +53,34 @@ export const Route = createFileRoute("/product/$slug")({
             name: p.name,
             image,
             description,
-            brand: { "@type": "Brand", name: "Second Line Clothing" },
+            sku: p.slug,
+            category: "Louisiana Apparel",
+            brand: {
+              "@type": "Brand",
+              name: "Second Line Clothing",
+              url: ORIGIN,
+            },
             offers: {
               "@type": "Offer",
               url,
               price: p.price,
               priceCurrency: "USD",
               availability: "https://schema.org/InStock",
+              itemCondition: "https://schema.org/NewCondition",
               seller: { "@type": "Organization", name: "Second Line Clothing" },
             },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: ORIGIN },
+              { "@type": "ListItem", position: 2, name: "Shop", item: `${ORIGIN}/#shop` },
+              { "@type": "ListItem", position: 3, name: p.name, item: url },
+            ],
           }),
         },
       ],
@@ -148,7 +171,7 @@ function ProductPage() {
       <SiteHeader />
       <CartDrawer />
       {lightboxOpen && (
-        <ImageLightbox src={currentImage} alt={p.name} onClose={() => setLightboxOpen(false)} />
+        <ImageLightbox src={currentImage} alt={altForProduct(p, selectedVariant.label)} onClose={() => setLightboxOpen(false)} />
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 w-full">
@@ -162,7 +185,7 @@ function ProductPage() {
           <div className="aspect-[3/4] overflow-hidden rounded-sm border border-border cursor-zoom-in bg-card" onClick={() => setLightboxOpen(true)}>
             <img
               src={currentImage}
-              alt={p.name}
+              alt={altForProduct(p, selectedVariant.label)}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               width={800}
               height={1067}

@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 
 export function SiteFooter() {
@@ -8,6 +9,10 @@ export function SiteFooter() {
         <div className="flex items-center gap-3">
           <img src={slMonogramWhite} alt="Second Line Clothing" style={{ height: "48px", width: "auto" }} />
         </div>
+        <nav className="flex items-center gap-5 text-xs tracking-widest uppercase text-muted-foreground" aria-label="Footer">
+          <Link to="/" className="hover:text-primary transition-colors">Shop</Link>
+          <Link to="/blog" className="hover:text-primary transition-colors">Journal</Link>
+        </nav>
         <div className="flex items-center gap-4">
           <a href="https://www.instagram.com/second_line_clothing?igsh=MXE3YXFxc3F1MHFnaQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></a>
           <a href="https://www.facebook.com/profile.php?id=61590223002408" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="p-2 hover:text-primary transition-colors">

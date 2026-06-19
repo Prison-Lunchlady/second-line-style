@@ -10,7 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShreveportRouteImport } from './routes/shreveport'
+import { Route as NewOrleansRouteImport } from './routes/new-orleans'
+import { Route as NatchitochesRouteImport } from './routes/natchitoches'
+import { Route as MonroeRouteImport } from './routes/monroe'
+import { Route as LafayetteRouteImport } from './routes/lafayette'
+import { Route as HoumaRouteImport } from './routes/houma'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BatonRougeRouteImport } from './routes/baton-rouge'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -20,9 +27,44 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShreveportRoute = ShreveportRouteImport.update({
+  id: '/shreveport',
+  path: '/shreveport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewOrleansRoute = NewOrleansRouteImport.update({
+  id: '/new-orleans',
+  path: '/new-orleans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NatchitochesRoute = NatchitochesRouteImport.update({
+  id: '/natchitoches',
+  path: '/natchitoches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonroeRoute = MonroeRouteImport.update({
+  id: '/monroe',
+  path: '/monroe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LafayetteRoute = LafayetteRouteImport.update({
+  id: '/lafayette',
+  path: '/lafayette',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoumaRoute = HoumaRouteImport.update({
+  id: '/houma',
+  path: '/houma',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BatonRougeRoute = BatonRougeRouteImport.update({
+  id: '/baton-rouge',
+  path: '/baton-rouge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,14 +85,28 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/houma': typeof HoumaRoute
+  '/lafayette': typeof LafayetteRoute
+  '/monroe': typeof MonroeRoute
+  '/natchitoches': typeof NatchitochesRoute
+  '/new-orleans': typeof NewOrleansRoute
+  '/shreveport': typeof ShreveportRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/houma': typeof HoumaRoute
+  '/lafayette': typeof LafayetteRoute
+  '/monroe': typeof MonroeRoute
+  '/natchitoches': typeof NatchitochesRoute
+  '/new-orleans': typeof NewOrleansRoute
+  '/shreveport': typeof ShreveportRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -58,20 +114,58 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/houma': typeof HoumaRoute
+  '/lafayette': typeof LafayetteRoute
+  '/monroe': typeof MonroeRoute
+  '/natchitoches': typeof NatchitochesRoute
+  '/new-orleans': typeof NewOrleansRoute
+  '/shreveport': typeof ShreveportRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blog' | '/sitemap.xml' | '/blog/$slug' | '/product/$slug'
+  fullPaths:
+    | '/'
+    | '/baton-rouge'
+    | '/blog'
+    | '/houma'
+    | '/lafayette'
+    | '/monroe'
+    | '/natchitoches'
+    | '/new-orleans'
+    | '/shreveport'
+    | '/sitemap.xml'
+    | '/blog/$slug'
+    | '/product/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog' | '/sitemap.xml' | '/blog/$slug' | '/product/$slug'
+  to:
+    | '/'
+    | '/baton-rouge'
+    | '/blog'
+    | '/houma'
+    | '/lafayette'
+    | '/monroe'
+    | '/natchitoches'
+    | '/new-orleans'
+    | '/shreveport'
+    | '/sitemap.xml'
+    | '/blog/$slug'
+    | '/product/$slug'
   id:
     | '__root__'
     | '/'
+    | '/baton-rouge'
     | '/blog'
+    | '/houma'
+    | '/lafayette'
+    | '/monroe'
+    | '/natchitoches'
+    | '/new-orleans'
+    | '/shreveport'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
@@ -79,7 +173,14 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BatonRougeRoute: typeof BatonRougeRoute
   BlogRoute: typeof BlogRouteWithChildren
+  HoumaRoute: typeof HoumaRoute
+  LafayetteRoute: typeof LafayetteRoute
+  MonroeRoute: typeof MonroeRoute
+  NatchitochesRoute: typeof NatchitochesRoute
+  NewOrleansRoute: typeof NewOrleansRoute
+  ShreveportRoute: typeof ShreveportRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
@@ -93,11 +194,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shreveport': {
+      id: '/shreveport'
+      path: '/shreveport'
+      fullPath: '/shreveport'
+      preLoaderRoute: typeof ShreveportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-orleans': {
+      id: '/new-orleans'
+      path: '/new-orleans'
+      fullPath: '/new-orleans'
+      preLoaderRoute: typeof NewOrleansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/natchitoches': {
+      id: '/natchitoches'
+      path: '/natchitoches'
+      fullPath: '/natchitoches'
+      preLoaderRoute: typeof NatchitochesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monroe': {
+      id: '/monroe'
+      path: '/monroe'
+      fullPath: '/monroe'
+      preLoaderRoute: typeof MonroeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lafayette': {
+      id: '/lafayette'
+      path: '/lafayette'
+      fullPath: '/lafayette'
+      preLoaderRoute: typeof LafayetteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/houma': {
+      id: '/houma'
+      path: '/houma'
+      fullPath: '/houma'
+      preLoaderRoute: typeof HoumaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/baton-rouge': {
+      id: '/baton-rouge'
+      path: '/baton-rouge'
+      fullPath: '/baton-rouge'
+      preLoaderRoute: typeof BatonRougeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -136,7 +286,14 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BatonRougeRoute: BatonRougeRoute,
   BlogRoute: BlogRouteWithChildren,
+  HoumaRoute: HoumaRoute,
+  LafayetteRoute: LafayetteRoute,
+  MonroeRoute: MonroeRoute,
+  NatchitochesRoute: NatchitochesRoute,
+  NewOrleansRoute: NewOrleansRoute,
+  ShreveportRoute: ShreveportRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductSlugRoute: ProductSlugRoute,
 }

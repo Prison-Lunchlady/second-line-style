@@ -25,7 +25,8 @@ export const Route = createFileRoute("/image-sitemap.xml")({
         const urls = PRODUCTS.map((p) => {
           const images = Array.from(
             new Set([p.image, p.coverImage, ...p.variants.map((v) => v.image)].filter(Boolean) as string[]),
-          );
+          ).filter((img) => !img.startsWith("data:"));
+          if (images.length === 0) return "";
           const imageTags = images
             .map((img) => {
               const loc = escapeXml(toAbsolute(img));
@@ -46,7 +47,7 @@ export const Route = createFileRoute("/image-sitemap.xml")({
             imageTags,
             `  </url>`,
           ].join("\n");
-        });
+        }).filter(Boolean);
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,

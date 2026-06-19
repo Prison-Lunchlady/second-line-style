@@ -18,6 +18,17 @@ function toAbsolute(url: string): string {
   return `${BASE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
+function toCrawlableImageUrl(url: string): string | null {
+  const trimmed = url.trim();
+  if (!trimmed || /^data:/i.test(trimmed) || trimmed.includes("data:image")) return null;
+
+  const absoluteUrl = toAbsolute(trimmed);
+  if (!/^https:\/\//i.test(absoluteUrl) || absoluteUrl.includes("data:image")) return null;
+  if (!/\.(?:avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i.test(absoluteUrl)) return null;
+
+  return absoluteUrl;
+}
+
 export const Route = createFileRoute("/image-sitemap.xml")({
   server: {
     handlers: {
@@ -25,11 +36,13 @@ export const Route = createFileRoute("/image-sitemap.xml")({
         const urls = PRODUCTS.map((p) => {
           const images = Array.from(
             new Set([p.image, p.coverImage, ...p.variants.map((v) => v.image)].filter(Boolean) as string[]),
-          ).filter((img) => !img.startsWith("data:"));
+          )
+            .map(toCrawlableImageUrl)
+            .filter(Boolean) as string[];
           if (images.length === 0) return "";
           const imageTags = images
             .map((img) => {
-              const loc = escapeXml(toAbsolute(img));
+              const loc = escapeXml(img);
               const title = escapeXml(p.name);
               const caption = escapeXml(p.description ?? `${p.name} — Louisiana graphic tee by Second Line Clothing`);
               return [

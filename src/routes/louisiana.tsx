@@ -105,7 +105,7 @@ function LouisianaHub() {
           </Section>
 
           <Section id="music" title="Louisiana Music">
-            <p>New Orleans gave the world jazz, brass bands, and bounce. Acadiana gave the world Cajun and zydeco. Baton Rouge helped invent swamp blues. Shreveport launched country careers on the Louisiana Hayride. Monroe carries Delta gospel and blues. No state of Louisiana's size has contributed more to American music — and that musical DNA is still being made in dance halls, clubs, churches, and second lines every weekend.</p>
+            <p>New Orleans gave the world jazz, brass bands, and bounce. Acadiana gave the world Cajun and zydeco. Baton Rouge helped invent swamp blues — and more recently birthed jigga, the city's own homegrown hip-hop sound built on hard 808s, bounce-inflected drums, and unmistakable Baton Rouge slang. Shreveport launched country careers on the Louisiana Hayride. Monroe carries Delta gospel and blues. No state of Louisiana's size has contributed more to American music — and that musical DNA is still being made in dance halls, clubs, churches, and second lines every weekend.</p>
           </Section>
 
           <Section id="traditions" title="Louisiana Traditions">

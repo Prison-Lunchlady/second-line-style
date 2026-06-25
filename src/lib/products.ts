@@ -19,6 +19,7 @@ import barrySealBlackAsset from "@/assets/barry_seal_black.png.asset.json";
 import swampPatrolAsset from "@/assets/swamp_patrol_unit_mockup.png.asset.json";
 import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.json";
 import swampPatrolLimitedAsset from "@/assets/swamp_patrol_unit_limited.png.asset.json";
+import redHotSermonAsset from "@/assets/red_hot_sermon_mockup.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
@@ -41,6 +42,7 @@ const carlottaSand = carlottaSandAsset.url;
 const barrySealMockup = barrySealMockupAsset.url;
 const barrySealGrey = barrySealGreyAsset.url;
 const barrySealBlack = barrySealBlackAsset.url;
+const redHotSermon = redHotSermonAsset.url;
 
 export type Variant = { label: string; id: string; image: string };
 export type Product = {

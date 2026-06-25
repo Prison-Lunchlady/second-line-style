@@ -270,6 +270,20 @@ const RAW: Omit<Product, "slug">[] = [
       { label: "5XL", id: "53264108978470", image: barrySealBlack },
     ],
   },
+  {
+    name: "FAFO Red Hot Sermon Incoming Tee", price: 25, image: redHotSermon,
+    description: "Some headlines deserve a commemorative T-shirt. Inspired by one of the wildest Louisiana news stories in recent memory, the FAFO – Red Hot Sermon Incoming tee turns an unforgettable moment into a vintage fight poster worthy of the main event. Premium heather gray unisex tee with a large front graphic and small Second Line Clothing logo on the upper back. Designed in Louisiana.",
+    variants: [
+      { label: "Sport Grey / S", id: "53395387154726", image: redHotSermon },
+      { label: "Sport Grey / M", id: "53395387187494", image: redHotSermon },
+      { label: "Sport Grey / L", id: "53395387220262", image: redHotSermon },
+      { label: "Sport Grey / XL", id: "53395387253030", image: redHotSermon },
+      { label: "Sport Grey / 2XL", id: "53395387285798", image: redHotSermon },
+      { label: "Sport Grey / 3XL", id: "53395387318566", image: redHotSermon },
+      { label: "Sport Grey / 4XL", id: "53395387351334", image: redHotSermon },
+      { label: "Sport Grey / 5XL", id: "53395387384102", image: redHotSermon },
+    ],
+  },
 ];
 
 const ALL_PRODUCTS: Product[] = RAW.map((p) => ({ ...p, slug: slugify(p.name) }));

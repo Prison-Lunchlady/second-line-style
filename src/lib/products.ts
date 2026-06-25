@@ -20,6 +20,7 @@ import swampPatrolAsset from "@/assets/swamp_patrol_unit_mockup.png.asset.json";
 import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.json";
 import swampPatrolLimitedAsset from "@/assets/swamp_patrol_unit_limited.png.asset.json";
 import redHotSermonAsset from "@/assets/red_hot_sermon_mockup.png.asset.json";
+import redHotSermonFrontBackAsset from "@/assets/fafo_red_hot_sermon_front_back.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
@@ -43,6 +44,7 @@ const barrySealMockup = barrySealMockupAsset.url;
 const barrySealGrey = barrySealGreyAsset.url;
 const barrySealBlack = barrySealBlackAsset.url;
 const redHotSermon = redHotSermonAsset.url;
+const redHotSermonFrontBack = redHotSermonFrontBackAsset.url;
 
 export type Variant = { label: string; id: string; image: string };
 export type Product = {
@@ -54,6 +56,7 @@ export type Product = {
   variants: Variant[];
   coverImage?: string;
   availableUntil?: number;
+  sizeGuideImage?: string;
 };
 
 export function slugify(name: string): string {

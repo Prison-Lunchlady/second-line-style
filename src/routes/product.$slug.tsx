@@ -149,6 +149,7 @@ function ProductPage() {
   const [added, setAdded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [userPicked, setUserPicked] = useState(false);
+  const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
 
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
   const currentImage = !userPicked && p.coverImage ? p.coverImage : selectedVariant.image;
@@ -172,6 +173,9 @@ function ProductPage() {
       <CartDrawer />
       {lightboxOpen && (
         <ImageLightbox src={currentImage} alt={altForProduct(p, selectedVariant.label)} onClose={() => setLightboxOpen(false)} />
+      )}
+      {sizeGuideOpen && p.sizeGuideImage && (
+        <ImageLightbox src={p.sizeGuideImage} alt={`${p.name} front and back view`} onClose={() => setSizeGuideOpen(false)} />
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 w-full">
@@ -212,7 +216,11 @@ function ProductPage() {
               <select
                 id="variant"
                 value={selectedVariantId}
-                onChange={(e) => { setSelectedVariantId(e.target.value); setUserPicked(true); }}
+                onChange={(e) => {
+                  setSelectedVariantId(e.target.value);
+                  setUserPicked(true);
+                  if (p.sizeGuideImage) setSizeGuideOpen(true);
+                }}
                 aria-label={`Select option for ${p.name}`}
                 className="w-full px-3 py-3 bg-input border border-border rounded-sm text-foreground focus:outline-none focus:border-primary"
               >

@@ -19,6 +19,7 @@ import barrySealBlackAsset from "@/assets/barry_seal_black.png.asset.json";
 import swampPatrolAsset from "@/assets/swamp_patrol_unit_mockup.png.asset.json";
 import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.json";
 import swampPatrolLimitedAsset from "@/assets/swamp_patrol_unit_limited.png.asset.json";
+import redHotSermonAsset from "@/assets/red_hot_sermon_mockup.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
@@ -41,6 +42,7 @@ const carlottaSand = carlottaSandAsset.url;
 const barrySealMockup = barrySealMockupAsset.url;
 const barrySealGrey = barrySealGreyAsset.url;
 const barrySealBlack = barrySealBlackAsset.url;
+const redHotSermon = redHotSermonAsset.url;
 
 export type Variant = { label: string; id: string; image: string };
 export type Product = {
@@ -266,6 +268,20 @@ const RAW: Omit<Product, "slug">[] = [
       { label: "3XL", id: "53264108912934", image: barrySealBlack },
       { label: "4XL", id: "53264108945702", image: barrySealBlack },
       { label: "5XL", id: "53264108978470", image: barrySealBlack },
+    ],
+  },
+  {
+    name: "FAFO Red Hot Sermon Incoming Tee", price: 25, image: redHotSermon,
+    description: "Some headlines deserve a commemorative T-shirt. Inspired by one of the wildest Louisiana news stories in recent memory, the FAFO – Red Hot Sermon Incoming tee turns an unforgettable moment into a vintage fight poster worthy of the main event. Premium heather gray unisex tee with a large front graphic and small Second Line Clothing logo on the upper back. Designed in Louisiana.",
+    variants: [
+      { label: "Sport Grey / S", id: "53395387154726", image: redHotSermon },
+      { label: "Sport Grey / M", id: "53395387187494", image: redHotSermon },
+      { label: "Sport Grey / L", id: "53395387220262", image: redHotSermon },
+      { label: "Sport Grey / XL", id: "53395387253030", image: redHotSermon },
+      { label: "Sport Grey / 2XL", id: "53395387285798", image: redHotSermon },
+      { label: "Sport Grey / 3XL", id: "53395387318566", image: redHotSermon },
+      { label: "Sport Grey / 4XL", id: "53395387351334", image: redHotSermon },
+      { label: "Sport Grey / 5XL", id: "53395387384102", image: redHotSermon },
     ],
   },
 ];

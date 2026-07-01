@@ -21,6 +21,10 @@ import swampPatrolWhiteAsset from "@/assets/swamp_patrol_unit_white.png.asset.js
 import swampPatrolLimitedAsset from "@/assets/swamp_patrol_unit_limited.png.asset.json";
 import redHotSermonAsset from "@/assets/red_hot_sermon_mockup.png.asset.json";
 import redHotSermonFrontBackAsset from "@/assets/fafo_red_hot_sermon_front_back.png.asset.json";
+import raisingHellBlackFrontAsset from "@/assets/raising_hell_black_front.png.asset.json";
+import raisingHellBlackBackAsset from "@/assets/raising_hell_black_back.png.asset.json";
+import raisingHellGreyFrontAsset from "@/assets/raising_hell_grey_front.jpg.asset.json";
+import raisingHellGreyBackAsset from "@/assets/raising_hell_grey_back.jpg.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
@@ -45,6 +49,11 @@ const barrySealGrey = barrySealGreyAsset.url;
 const barrySealBlack = barrySealBlackAsset.url;
 const redHotSermon = redHotSermonAsset.url;
 const redHotSermonFrontBack = redHotSermonFrontBackAsset.url;
+const raisingHellBlack = raisingHellBlackFrontAsset.url;
+const raisingHellBlackBack = raisingHellBlackBackAsset.url;
+const raisingHellGrey = raisingHellGreyFrontAsset.url;
+const raisingHellGreyBack = raisingHellGreyBackAsset.url;
+void raisingHellBlackBack; void raisingHellGreyBack;
 
 export type Variant = { label: string; id: string; image: string };
 export type Product = {
@@ -69,6 +78,28 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  {
+    name: "Raising Hell", price: 28, image: raisingHellBlack,
+    description: "Raising Hell | Baton Rouge Collection\n\nSome things just make sense if you're from Baton Rouge.\n\nInspired by the city that built icons, started trends, and created a culture all its own, the Raising Hell tee is packed with hometown references without saying a word. From the classic color palette to the unmistakable phrase \"All The Way Dummy,\" this design is a tribute to the people who know exactly where it came from.\n\nPrinted on premium cotton with a bold front graphic and a clean Second Line chest logo, this shirt was made for those who carry Baton Rouge pride wherever they go.\n\nIf you're from the 225, you don't need it explained. You already get it.",
+    variants: [
+      { label: "Black / S", id: "53424231153958", image: raisingHellBlack },
+      { label: "Black / M", id: "53424231186726", image: raisingHellBlack },
+      { label: "Black / L", id: "53424231219494", image: raisingHellBlack },
+      { label: "Black / XL", id: "53424231252262", image: raisingHellBlack },
+      { label: "Black / 2XL", id: "53424231285030", image: raisingHellBlack },
+      { label: "Black / 3XL", id: "53424231317798", image: raisingHellBlack },
+      { label: "Black / 4XL", id: "53424231350566", image: raisingHellBlack },
+      { label: "Black / 5XL", id: "53424231383334", image: raisingHellBlack },
+      { label: "Sport Grey / S", id: "53424231416102", image: raisingHellGrey },
+      { label: "Sport Grey / M", id: "53424231448870", image: raisingHellGrey },
+      { label: "Sport Grey / L", id: "53424231481638", image: raisingHellGrey },
+      { label: "Sport Grey / XL", id: "53424231514406", image: raisingHellGrey },
+      { label: "Sport Grey / 2XL", id: "53424231547174", image: raisingHellGrey },
+      { label: "Sport Grey / 3XL", id: "53424231579942", image: raisingHellGrey },
+      { label: "Sport Grey / 4XL", id: "53424231612710", image: raisingHellGrey },
+      { label: "Sport Grey / 5XL", id: "53424231645478", image: raisingHellGrey },
+    ],
+  },
   {
     name: "Louisiana Lowlife Tee", price: 25, image: lowlifeMockup,
     variants: [

@@ -1,21 +1,29 @@
 import { useState, useRef, useEffect } from "react";
 
-export function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+export function ImageLightbox({ src, alt, images, onClose }: { src?: string; alt: string; images?: string[]; onClose: () => void }) {
+  const slides = images && images.length > 0 ? images : (src ? [src] : []);
+  const [index, setIndex] = useState(0);
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const dragRef = useRef<{ x: number; y: number; ox: number; oy: number } | null>(null);
   const pinchRef = useRef<{ dist: number; scale: number } | null>(null);
 
+  const reset = () => { setScale(1); setOffset({ x: 0, y: 0 }); };
+  const go = (delta: number) => { setIndex((i) => (i + delta + slides.length) % slides.length); reset(); };
+
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight" && slides.length > 1) go(1);
+      if (e.key === "ArrowLeft" && slides.length > 1) go(-1);
+    };
     document.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prevOverflow; };
-  }, [onClose]);
+  }, [onClose, slides.length]);
 
   const clampScale = (s: number) => Math.min(5, Math.max(1, s));
-  const reset = () => { setScale(1); setOffset({ x: 0, y: 0 }); };
 
   const onWheel = (e: React.WheelEvent) => {
     e.preventDefault();
@@ -49,10 +57,12 @@ export function ImageLightbox({ src, alt, onClose }: { src: string; alt: string;
   };
   const onTouchEnd = (e: React.TouchEvent) => { if (e.touches.length < 2) pinchRef.current = null; };
 
+  const currentSrc = slides[index] ?? "";
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 select-none" onClick={onClose} onWheel={onWheel}>
       <img
-        src={src}
+        src={currentSrc}
         alt={alt}
         draggable={false}
         onClick={(e) => e.stopPropagation()}
@@ -66,6 +76,13 @@ export function ImageLightbox({ src, alt, onClose }: { src: string; alt: string;
         style={{ transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})`, transition: dragRef.current ? "none" : "transform 0.15s ease-out", cursor: scale > 1 ? "grab" : "zoom-in", touchAction: "none" }}
         className="max-h-[90vh] max-w-[90vw] object-contain"
       />
+      {slides.length > 1 && (
+        <>
+          <button onClick={(e) => { e.stopPropagation(); go(-1); }} aria-label="Previous image" className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl font-bold hover:text-primary bg-black/40 rounded-full h-12 w-12 flex items-center justify-center">‹</button>
+          <button onClick={(e) => { e.stopPropagation(); go(1); }} aria-label="Next image" className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl font-bold hover:text-primary bg-black/40 rounded-full h-12 w-12 flex items-center justify-center">›</button>
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 text-white text-xs tracking-widest uppercase bg-black/60 border border-white/20 rounded-sm px-3 py-1">{index + 1} / {slides.length}</div>
+        </>
+      )}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black/60 border border-white/20 rounded-sm px-2 py-1">
         <button onClick={(e) => { e.stopPropagation(); setScale((s) => { const n = clampScale(s / 1.3); if (n === 1) setOffset({ x: 0, y: 0 }); return n; }); }} aria-label="Zoom out" className="text-white px-2 py-1 hover:text-primary text-lg leading-none">−</button>
         <button onClick={(e) => { e.stopPropagation(); reset(); }} aria-label="Reset zoom" className="text-white text-xs uppercase tracking-widest px-2 py-1 hover:text-primary">{Math.round(scale * 100)}%</button>

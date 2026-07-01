@@ -172,7 +172,11 @@ function ProductPage() {
       <SiteHeader />
       <CartDrawer />
       {lightboxOpen && (
-        <ImageLightbox src={currentImage} alt={altForProduct(p, selectedVariant.label)} onClose={() => setLightboxOpen(false)} />
+        <ImageLightbox
+          images={selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
+          alt={altForProduct(p, selectedVariant.label)}
+          onClose={() => setLightboxOpen(false)}
+        />
       )}
       {sizeGuideOpen && p.sizeGuideImage && (
         <ImageLightbox src={p.sizeGuideImage} alt={`${p.name} front and back view`} onClose={() => setSizeGuideOpen(false)} />

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import "@tanstack/start-client-core/serverRoute";
+import type {} from "@tanstack/react-start";
 import { PRODUCTS } from "@/lib/products";
 import { BLOG_POSTS } from "@/lib/blog";
 import { CITY_HUBS } from "@/lib/cities";

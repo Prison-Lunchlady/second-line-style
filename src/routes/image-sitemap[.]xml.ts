@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import "@tanstack/start-client-core/serverRoute";
+import type {} from "@tanstack/react-start";
 import { PRODUCTS } from "@/lib/products";
 
 const BASE_URL = "https://secondlineclothing.haiglerdigital.com";

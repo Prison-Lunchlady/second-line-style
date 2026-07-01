@@ -49,13 +49,12 @@ const barrySealGrey = barrySealGreyAsset.url;
 const barrySealBlack = barrySealBlackAsset.url;
 const redHotSermon = redHotSermonAsset.url;
 const redHotSermonFrontBack = redHotSermonFrontBackAsset.url;
-const raisingHellBlack = raisingHellBlackFrontAsset.url;
+const raisingHellBlackFront = raisingHellBlackFrontAsset.url;
 const raisingHellBlackBack = raisingHellBlackBackAsset.url;
-const raisingHellGrey = raisingHellGreyFrontAsset.url;
+const raisingHellGreyFront = raisingHellGreyFrontAsset.url;
 const raisingHellGreyBack = raisingHellGreyBackAsset.url;
-void raisingHellBlackBack; void raisingHellGreyBack;
 
-export type Variant = { label: string; id: string; image: string };
+export type Variant = { label: string; id: string; image: string; back?: string };
 export type Product = {
   slug: string;
   name: string;

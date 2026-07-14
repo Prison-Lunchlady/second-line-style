@@ -101,7 +101,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Louisiana Lowlife Tee", price: 25, image: lowlifeMockup,
+    name: "Louisiana Lowlife Tee", price: 30, image: lowlifeMockup,
     variants: [
       { label: "Black / S", id: "53342808047910", image: lowlifeMockup },
       { label: "Black / M", id: "53342808080678", image: lowlifeMockup },
@@ -137,7 +137,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 28, image: swampPatrolUnit,
+    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 30, image: swampPatrolUnit,
     coverImage: swampPatrolLimited,
     availableUntil: new Date(2026, 6, 1, 0, 0, 0).getTime(),
     description: "Some lessons are learned the hard way. A Louisiana-inspired graphic tee featuring a bayou chase gone wrong.",
@@ -157,7 +157,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "LOWLIFE Purple & Gold Tee", price: 25, image: lowlifePurpleGold,
+    name: "LOWLIFE Purple & Gold Tee", price: 30, image: lowlifePurpleGold,
     variants: [
       { label: "S", id: "53299623461158", image: lowlifePurpleGold },
       { label: "M", id: "53299623493926", image: lowlifePurpleGold },
@@ -168,7 +168,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Women's Lowlife Crop Top", price: 30, image: womensCropMockup,
+    name: "Women's Lowlife Crop Top", price: 40, image: womensCropMockup,
     variants: [
       { label: "XS", id: "53251619127590", image: womensCropMockup },
       { label: "S", id: "53251619160358", image: womensCropMockup },
@@ -178,7 +178,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Straitjacket Tee", price: 36, image: straitjacketMockup,
+    name: "Straitjacket Tee", price: 38, image: straitjacketMockup,
     variants: [
       { label: "XS", id: "53251656548646", image: straitjacketMockup },
       { label: "S", id: "53251656581414", image: straitjacketMockup },
@@ -189,7 +189,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "BRCC Dropout Tee", price: 24, image: brccMockup,
+    name: "BRCC Dropout Tee", price: 30, image: brccMockup,
     variants: [
       { label: "S", id: "53251669262630", image: brccMockup },
       { label: "M", id: "53251669295398", image: brccMockup },
@@ -202,7 +202,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Duffy Circa 2008 Tee", price: 24, image: duffyMockup,
+    name: "Duffy Circa 2008 Tee", price: 30, image: duffyMockup,
     variants: [
       { label: "S", id: "53251712680230", image: duffyMockup },
       { label: "M", id: "53251712712998", image: duffyMockup },
@@ -215,7 +215,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "NOLA Nuke Tee", price: 26, image: nukeBlack,
+    name: "NOLA Nuke Tee", price: 30, image: nukeBlack,
     variants: [
       { label: "Black / S", id: "53251726901542", image: nukeBlack },
       { label: "Black / M", id: "53251726934310", image: nukeBlack },
@@ -238,7 +238,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Cortana Mall Tee", price: 24, image: cortanaBlack,
+    name: "Cortana Mall Tee", price: 30, image: cortanaBlack,
     variants: [
       { label: "Black / S", id: "53251740860710", image: cortanaBlack },
       { label: "Black / M", id: "53251740893478", image: cortanaBlack },
@@ -259,7 +259,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Carlotta St. Block Party Tee", price: 28, image: carlottaMockup,
+    name: "Carlotta St. Block Party Tee", price: 30, image: carlottaMockup,
     variants: [
       { label: "Sport Grey / S", id: "53252407230758", image: carlottaGrey },
       { label: "Sport Grey / M", id: "53252407263526", image: carlottaGrey },
@@ -286,7 +286,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Barry Seal Flight School Tee", price: 24, image: barrySealGrey,
+    name: "Barry Seal Flight School Tee", price: 30, image: barrySealGrey,
     variants: [
       { label: "Sport Grey / S", id: "53264102129958", image: barrySealGrey },
       { label: "Sport Grey / M", id: "53264102162726", image: barrySealGrey },
@@ -307,7 +307,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Barry Seal Flight School Black Tee", price: 24, image: barrySealBlack,
+    name: "Barry Seal Flight School Black Tee", price: 30, image: barrySealBlack,
     variants: [
       { label: "S", id: "53264108749094", image: barrySealBlack },
       { label: "M", id: "53264108781862", image: barrySealBlack },

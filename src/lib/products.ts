@@ -25,6 +25,7 @@ import raisingHellBlackFrontAsset from "@/assets/raising_hell_black_front.png.as
 import raisingHellBlackBackAsset from "@/assets/raising_hell_black_back.png.asset.json";
 import raisingHellGreyFrontAsset from "@/assets/raising_hell_grey_front.jpg.asset.json";
 import raisingHellGreyBackAsset from "@/assets/raising_hell_grey_back.jpg.asset.json";
+import brWoodsPlaceholderAsset from "@/assets/br_woods_placeholder.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
@@ -53,6 +54,7 @@ const raisingHellBlackFront = raisingHellBlackFrontAsset.url;
 const raisingHellBlackBack = raisingHellBlackBackAsset.url;
 const raisingHellGreyFront = raisingHellGreyFrontAsset.url;
 const raisingHellGreyBack = raisingHellGreyBackAsset.url;
+const brWoodsPlaceholder = brWoodsPlaceholderAsset.url;
 
 export type Variant = { label: string; id: string; image: string; back?: string };
 export type Product = {
@@ -77,6 +79,20 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  {
+    name: "BR Woods Tee", price: 30, image: brWoodsPlaceholder,
+    description: "Baton Rouge in a wrapper everybody recognizes.\n\nA local remix of a corner-store classic, made for the city that stays loud, moves different, and never needs an introduction.",
+    variants: [
+      { label: "S", id: "53488951984422", image: brWoodsPlaceholder },
+      { label: "M", id: "53488952017190", image: brWoodsPlaceholder },
+      { label: "L", id: "53488952049958", image: brWoodsPlaceholder },
+      { label: "XL", id: "53488952082726", image: brWoodsPlaceholder },
+      { label: "2XL", id: "53488952115494", image: brWoodsPlaceholder },
+      { label: "3XL", id: "53488952148262", image: brWoodsPlaceholder },
+      { label: "4XL", id: "53488952181030", image: brWoodsPlaceholder },
+      { label: "5XL", id: "53488952213798", image: brWoodsPlaceholder },
+    ],
+  },
   {
     name: "Raising Hell", price: 28, image: raisingHellBlackBack,
     coverImage: raisingHellBlackBack,

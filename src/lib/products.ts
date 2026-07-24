@@ -26,6 +26,8 @@ import raisingHellBlackBackAsset from "@/assets/raising_hell_black_back.png.asse
 import raisingHellGreyFrontAsset from "@/assets/raising_hell_grey_front.jpg.asset.json";
 import raisingHellGreyBackAsset from "@/assets/raising_hell_grey_back.jpg.asset.json";
 import brWoodsAsset from "@/assets/br_woods_tee.png.asset.json";
+import pierBlackAsset from "@/assets/pier_black.png.asset.json";
+import pierGreyAsset from "@/assets/pier_grey.png.asset.json";
 
 const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
 const lowlifeGrey = lowlifeGreyAsset.url;
@@ -55,6 +57,8 @@ const raisingHellBlackBack = raisingHellBlackBackAsset.url;
 const raisingHellGreyFront = raisingHellGreyFrontAsset.url;
 const raisingHellGreyBack = raisingHellGreyBackAsset.url;
 const brWoods = brWoodsAsset.url;
+const pierBlack = pierBlackAsset.url;
+const pierGrey = pierGreyAsset.url;
 
 export type Variant = { label: string; id: string; image: string; back?: string };
 export type Product = {
@@ -79,6 +83,28 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  {
+    name: "The Pier Tee", price: 30, image: pierBlack,
+    description: "Before smartphones, before every move got posted, there was The Pier.\n\nFor generations, this abandoned stretch over the Mississippi was Baton Rouge's legendary underground hangout. People went out there to drink, fish, spray paint, explore, and disappear from the rest of the city for a while. It was dangerous, illegal, covered in graffiti, and unforgettable.\n\nBuilt in 1926, The Pier would have turned 100 years old this year.\n\nThis tee is a tribute to the people who climbed out there, crossed the missing panels, left their mark, and turned a forgotten structure into Baton Rouge folklore.\n\nThe Pier is gone.\n\nThe legend isn't.\n\nBR PIER 1926–2020\n\nCollection 001: Baton Rouge\n\nSecond Line Clothing",
+    variants: [
+      { label: "Black / S", id: "53516081103142", image: pierBlack },
+      { label: "Black / M", id: "53516081135910", image: pierBlack },
+      { label: "Black / L", id: "53516081168678", image: pierBlack },
+      { label: "Black / XL", id: "53516081201446", image: pierBlack },
+      { label: "Black / 2XL", id: "53516081234214", image: pierBlack },
+      { label: "Black / 3XL", id: "53516081266982", image: pierBlack },
+      { label: "Black / 4XL", id: "53516081299750", image: pierBlack },
+      { label: "Black / 5XL", id: "53516081332518", image: pierBlack },
+      { label: "Sport Grey / S", id: "53516081365286", image: pierGrey },
+      { label: "Sport Grey / M", id: "53516081398054", image: pierGrey },
+      { label: "Sport Grey / L", id: "53516081430822", image: pierGrey },
+      { label: "Sport Grey / XL", id: "53516081463590", image: pierGrey },
+      { label: "Sport Grey / 2XL", id: "53516081496358", image: pierGrey },
+      { label: "Sport Grey / 3XL", id: "53516081529126", image: pierGrey },
+      { label: "Sport Grey / 4XL", id: "53516081561894", image: pierGrey },
+      { label: "Sport Grey / 5XL", id: "53516081594662", image: pierGrey },
+    ],
+  },
   {
     name: "BR Woods Tee", price: 30, image: brWoods,
     description: "Baton Rouge in a wrapper everybody recognizes.\n\nA local remix of a corner-store classic, made for the city that stays loud, moves different, and never needs an introduction.",

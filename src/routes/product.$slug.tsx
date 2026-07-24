@@ -223,7 +223,6 @@ function ProductPage() {
                 onChange={(e) => {
                   setSelectedVariantId(e.target.value);
                   setUserPicked(true);
-                  if (p.sizeGuideImage) setSizeGuideOpen(true);
                 }}
                 aria-label={`Select option for ${p.name}`}
                 className="w-full px-3 py-3 bg-input border border-border rounded-sm text-foreground focus:outline-none focus:border-primary"
@@ -232,6 +231,15 @@ function ProductPage() {
                   <option key={v.id} value={v.id}>{v.label}</option>
                 ))}
               </select>
+              {p.sizeGuideImage && (
+                <button
+                  type="button"
+                  onClick={() => setSizeGuideOpen(true)}
+                  className="text-xs font-bold tracking-widest uppercase text-primary hover:brightness-110 underline underline-offset-4"
+                >
+                  View Size Guide
+                </button>
+              )}
             </div>
 
             <button

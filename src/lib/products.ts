@@ -71,6 +71,7 @@ export type Product = {
   coverImage?: string;
   availableUntil?: number;
   sizeGuideImage?: string;
+  collection?: "extras";
 };
 
 export function slugify(name: string): string {
@@ -372,5 +373,38 @@ export function isProductAvailable(p: Product, now: number = Date.now()): boolea
 export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable(p));
 
 export function getProductBySlug(slug: string): Product | undefined {
-  return PRODUCTS.find((p) => p.slug === slug);
+  return [...PRODUCTS, ...EXTRAS_PRODUCTS].find((p) => p.slug === slug);
 }
+
+/* ---------------------------------------------------------------------------
+ * EXTRAS COLLECTION
+ * ---------------------------------------------------------------------------
+ * Products shown on /extras only. They never appear on the homepage, city
+ * pages, or Louisiana collections.
+ *
+ * To add a new Extras product, append an object with this exact shape:
+ *
+ *   {
+ *     name: "My New Tee",                 // slug is generated from this
+ *     price: 30,                          // USD, number only
+ *     image: myTeeAsset.url,              // default/primary display image
+ *     coverImage: myTeeAsset.url,         // optional card cover image
+ *     description: "Long product copy...",
+ *     collection: "extras",
+ *     variants: [
+ *       // `id` is the Printify/Shopify variant id used by cart + checkout
+ *       { label: "Black / S", id: "1234567890", image: myTeeAsset.url },
+ *       { label: "Black / M", id: "1234567891", image: myTeeAsset.url },
+ *     ],
+ *   }
+ *
+ * 1. Add the image asset import at the top of this file (same as the others).
+ * 2. Paste the object into EXTRAS_RAW below.
+ * That's it — the /extras grid, product detail page, and checkout all work.
+ * ------------------------------------------------------------------------- */
+const EXTRAS_RAW: Omit<Product, "slug">[] = [];
+
+export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
+  ...p,
+  slug: slugify(p.name),
+})).filter((p) => isProductAvailable(p));

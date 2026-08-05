@@ -22,6 +22,7 @@ import { Route as LafayetteRouteImport } from './routes/lafayette'
 import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
 import { Route as HoumaRouteImport } from './routes/houma'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ExtrasRouteImport } from './routes/extras'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BatonRougeRouteImport } from './routes/baton-rouge'
 import { Route as AboutRouteImport } from './routes/about'
@@ -94,6 +95,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExtrasRoute = ExtrasRouteImport.update({
+  id: '/extras',
+  path: '/extras',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/extras': typeof ExtrasRoute
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
   '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
@@ -151,6 +158,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/extras': typeof ExtrasRoute
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
   '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
@@ -173,6 +181,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
   '/blog': typeof BlogRouteWithChildren
+  '/extras': typeof ExtrasRoute
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
   '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/baton-rouge'
     | '/blog'
+    | '/extras'
     | '/faq'
     | '/houma'
     | '/image-sitemap.xml'
@@ -217,6 +227,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/baton-rouge'
     | '/blog'
+    | '/extras'
     | '/faq'
     | '/houma'
     | '/image-sitemap.xml'
@@ -238,6 +249,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/baton-rouge'
     | '/blog'
+    | '/extras'
     | '/faq'
     | '/houma'
     | '/image-sitemap.xml'
@@ -260,6 +272,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BatonRougeRoute: typeof BatonRougeRoute
   BlogRoute: typeof BlogRouteWithChildren
+  ExtrasRoute: typeof ExtrasRoute
   FaqRoute: typeof FaqRoute
   HoumaRoute: typeof HoumaRoute
   ImageSitemapDotxmlRoute: typeof ImageSitemapDotxmlRoute
@@ -369,6 +382,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/extras': {
+      id: '/extras'
+      path: '/extras'
+      fullPath: '/extras'
+      preLoaderRoute: typeof ExtrasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -429,6 +449,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BatonRougeRoute: BatonRougeRoute,
   BlogRoute: BlogRouteWithChildren,
+  ExtrasRoute: ExtrasRoute,
   FaqRoute: FaqRoute,
   HoumaRoute: HoumaRoute,
   ImageSitemapDotxmlRoute: ImageSitemapDotxmlRoute,
@@ -447,13 +468,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

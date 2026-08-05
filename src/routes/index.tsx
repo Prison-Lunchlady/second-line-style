@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import { PRODUCTS } from "@/lib/products";
 import { SITE_FAQS } from "@/lib/faq";
@@ -86,6 +86,11 @@ function Index() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} />)}
+        </div>
+        <div className="mt-12 text-center">
+          <Link to="/extras" className="text-sm font-normal text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors">
+            Extras
+          </Link>
         </div>
       </section>
 

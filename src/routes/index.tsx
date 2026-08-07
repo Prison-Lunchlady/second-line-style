@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import { PRODUCTS } from "@/lib/products";
 import { SITE_FAQS } from "@/lib/faq";

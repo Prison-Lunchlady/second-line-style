@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import { PRODUCTS } from "@/lib/products";
 import { SITE_FAQS } from "@/lib/faq";
@@ -88,8 +89,12 @@ function Index() {
           {PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} />)}
         </div>
         <div className="mt-12 text-center">
-          <Link to="/extras" className="text-sm font-normal text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors">
+          <Link
+            to="/extras"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-sm border border-border bg-transparent text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary hover:border-primary transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
             Extras
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </section>

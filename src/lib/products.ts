@@ -6,10 +6,6 @@ import cortanaNavyAsset from "@/assets/cortana_navy.png.asset.json";
 import duffyMockupAsset from "@/assets/duffy_mockup.png.asset.json";
 import brccMockupAsset from "@/assets/brcc_dropout_mockup.png.asset.json";
 import straitjacketMockupAsset from "@/assets/strait_jacket_mockup.png.asset.json";
-import womensCropMockupAsset from "@/assets/womens_crop_top_mockup.png.asset.json";
-import lowlifeMockupAsset from "@/assets/lowlife_mockup.png.asset.json";
-import lowlifePurpleGoldAsset from "@/assets/lowlife_purple_gold.png.asset.json";
-import lowlifeGreyAsset from "@/assets/lowlife_grey_model.png.asset.json";
 import carlottaMockupAsset from "@/assets/carlotta_mockup.png.asset.json";
 import carlottaGreyAsset from "@/assets/carlotta_grey.png.asset.json";
 import carlottaSandAsset from "@/assets/carlotta_sand.png.asset.json";
@@ -28,9 +24,13 @@ import raisingHellGreyBackAsset from "@/assets/raising_hell_grey_back.jpg.asset.
 import brWoodsAsset from "@/assets/br_woods_tee.png.asset.json";
 import pierBlackAsset from "@/assets/pier_black.png.asset.json";
 import pierGreyAsset from "@/assets/pier_grey.png.asset.json";
+import knucklesFrontAsset from "@/assets/knuckles_front_model.png.asset.json";
+import knucklesBackAsset from "@/assets/knuckles_back_model.png.asset.json";
+import cernFrontAsset from "@/assets/cern_front_model.png.asset.json";
+import cernBackAsset from "@/assets/cern_back_model.png.asset.json";
+import lsuLowlifeFrontAsset from "@/assets/lsu_lowlife_front_model.png.asset.json";
+import lsuLowlifeBackAsset from "@/assets/lsu_lowlife_back_model.png.asset.json";
 
-const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
-const lowlifeGrey = lowlifeGreyAsset.url;
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
 const swampPatrolLimited = swampPatrolLimitedAsset.url;
@@ -42,8 +42,6 @@ const cortanaNavy = cortanaNavyAsset.url;
 const duffyMockup = duffyMockupAsset.url;
 const brccMockup = brccMockupAsset.url;
 const straitjacketMockup = straitjacketMockupAsset.url;
-const womensCropMockup = womensCropMockupAsset.url;
-const lowlifeMockup = lowlifeMockupAsset.url;
 const carlottaMockup = carlottaMockupAsset.url;
 const carlottaGrey = carlottaGreyAsset.url;
 const carlottaSand = carlottaSandAsset.url;
@@ -59,6 +57,12 @@ const raisingHellGreyBack = raisingHellGreyBackAsset.url;
 const brWoods = brWoodsAsset.url;
 const pierBlack = pierBlackAsset.url;
 const pierGrey = pierGreyAsset.url;
+const knucklesFront = knucklesFrontAsset.url;
+const knucklesBack = knucklesBackAsset.url;
+const cernFront = cernFrontAsset.url;
+const cernBack = cernBackAsset.url;
+const lsuLowlifeFront = lsuLowlifeFrontAsset.url;
+const lsuLowlifeBack = lsuLowlifeBackAsset.url;
 
 export type Variant = { label: string; id: string; image: string; back?: string };
 export type Product = {
@@ -84,6 +88,18 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  {
+    name: "LSU Lowlife Tee", price: 30, image: lsuLowlifeFront,
+    description: "Some people clean up for game day. Some of us show up exactly how we are.\n\nThe  Lowlife Tee was made for the ones raised on Louisiana heat, Saturday night chaos, loud tailgates, bad decisions, and stories that somehow get better every year. Purple and gold may run through the city, but this one is for the people who never needed permission to belong.\n\nWear it like a warning. Wear it like a badge. Either way, they already know where you're from.",
+    variants: [
+      { label: "S", id: "53610195058982", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "M", id: "53610195091750", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "L", id: "53610195124518", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "XL", id: "53610195157286", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "2XL", id: "53610195190054", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "3XL", id: "53610195222822", image: lsuLowlifeFront, back: lsuLowlifeBack },
+    ],
+  },
   {
     name: "The Pier Tee", price: 30, image: pierBlack,
     description: "Before smartphones, before every move got posted, there was The Pier.\n\nFor generations, this abandoned stretch over the Mississippi was Baton Rouge's legendary underground hangout. People went out there to drink, fish, spray paint, explore, and disappear from the rest of the city for a while. It was dangerous, illegal, covered in graffiti, and unforgettable.\n\nBuilt in 1926, The Pier would have turned 100 years old this year.\n\nThis tee is a tribute to the people who climbed out there, crossed the missing panels, left their mark, and turned a forgotten structure into Baton Rouge folklore.\n\nThe Pier is gone.\n\nThe legend isn't.\n\nBR PIER 1926–2020\n\nCollection 001: Baton Rouge\n\nSecond Line Clothing",
@@ -144,27 +160,6 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Louisiana Lowlife Tee", price: 30, image: lowlifeMockup,
-    variants: [
-      { label: "Black / S", id: "53342808047910", image: lowlifeMockup },
-      { label: "Black / M", id: "53342808080678", image: lowlifeMockup },
-      { label: "Black / L", id: "53342808113446", image: lowlifeMockup },
-      { label: "Black / XL", id: "53342808146214", image: lowlifeMockup },
-      { label: "Black / 2XL", id: "53342808178982", image: lowlifeMockup },
-      { label: "Black / 3XL", id: "53342808211750", image: lowlifeMockup },
-      { label: "Black / 4XL", id: "53342808244518", image: lowlifeMockup },
-      { label: "Black / 5XL", id: "53342808277286", image: lowlifeMockup },
-      { label: "Sport Grey / S", id: "53342808310054", image: lowlifeGrey },
-      { label: "Sport Grey / M", id: "53342808342822", image: lowlifeGrey },
-      { label: "Sport Grey / L", id: "53342808375590", image: lowlifeGrey },
-      { label: "Sport Grey / XL", id: "53342808408358", image: lowlifeGrey },
-      { label: "Sport Grey / 2XL", id: "53342808441126", image: lowlifeGrey },
-      { label: "Sport Grey / 3XL", id: "53342808473894", image: lowlifeGrey },
-      { label: "Sport Grey / 4XL", id: "53342808506662", image: lowlifeGrey },
-      { label: "Sport Grey / 5XL", id: "53342808539430", image: lowlifeGrey },
-    ],
-  },
-  {
     name: "FAFO Red Hot Sermon Incoming Tee", price: 25, image: redHotSermon,
     sizeGuideImage: redHotSermonFrontBack,
     description: "Some headlines deserve a commemorative T-shirt. Inspired by one of the wildest Louisiana news stories in recent memory, the FAFO – Red Hot Sermon Incoming tee turns an unforgettable moment into a vintage fight poster worthy of the main event. Premium heather gray unisex tee with a large front graphic and small Second Line Clothing logo on the upper back. Designed in Louisiana.",
@@ -197,38 +192,6 @@ const RAW: Omit<Product, "slug">[] = [
       { label: "White / XL", id: "53321989554470", image: swampPatrolUnitWhite },
       { label: "White / 2XL", id: "53321989587238", image: swampPatrolUnitWhite },
       { label: "White / 3XL", id: "53321989620006", image: swampPatrolUnitWhite },
-    ],
-  },
-  {
-    name: "LOWLIFE Purple & Gold Tee", price: 30, image: lowlifePurpleGold,
-    variants: [
-      { label: "S", id: "53299623461158", image: lowlifePurpleGold },
-      { label: "M", id: "53299623493926", image: lowlifePurpleGold },
-      { label: "L", id: "53299623526694", image: lowlifePurpleGold },
-      { label: "XL", id: "53299623559462", image: lowlifePurpleGold },
-      { label: "2XL", id: "53299623592230", image: lowlifePurpleGold },
-      { label: "3XL", id: "53299623624998", image: lowlifePurpleGold },
-    ],
-  },
-  {
-    name: "Women's Lowlife Crop Top", price: 40, image: womensCropMockup,
-    variants: [
-      { label: "XS", id: "53251619127590", image: womensCropMockup },
-      { label: "S", id: "53251619160358", image: womensCropMockup },
-      { label: "M", id: "53251619193126", image: womensCropMockup },
-      { label: "L", id: "53251619225894", image: womensCropMockup },
-      { label: "XL", id: "53251619258662", image: womensCropMockup },
-    ],
-  },
-  {
-    name: "Straitjacket Tee", price: 38, image: straitjacketMockup,
-    variants: [
-      { label: "XS", id: "53251656548646", image: straitjacketMockup },
-      { label: "S", id: "53251656581414", image: straitjacketMockup },
-      { label: "M", id: "53251656614182", image: straitjacketMockup },
-      { label: "L", id: "53251656646950", image: straitjacketMockup },
-      { label: "XL", id: "53251656679718", image: straitjacketMockup },
-      { label: "2XL", id: "53251656712486", image: straitjacketMockup },
     ],
   },
   {
@@ -402,7 +365,48 @@ export function getProductBySlug(slug: string): Product | undefined {
  * 2. Paste the object into EXTRAS_RAW below.
  * That's it — the /extras grid, product detail page, and checkout all work.
  * ------------------------------------------------------------------------- */
-const EXTRAS_RAW: Omit<Product, "slug">[] = [];
+const EXTRAS_RAW: Omit<Product, "slug">[] = [
+  {
+    name: "Knuckles Tee", price: 30, image: knucklesFront,
+    collection: "extras",
+    description: "They tried to bury you under pressure, doubt, and everything meant to break you. But you grew through it anyway, harder, louder, and impossible to ignore. Every scar became part of the story, every hit gave you something to stand on, and what was supposed to finish you only made you tougher. This one is for anybody who came out of the dirt with more bite than before.",
+    variants: [
+      { label: "S", id: "53610090037542", image: knucklesFront, back: knucklesBack },
+      { label: "M", id: "53610090070310", image: knucklesFront, back: knucklesBack },
+      { label: "L", id: "53610090103078", image: knucklesFront, back: knucklesBack },
+      { label: "XL", id: "53610090135846", image: knucklesFront, back: knucklesBack },
+      { label: "2XL", id: "53610090168614", image: knucklesFront, back: knucklesBack },
+      { label: "3XL", id: "53610090201382", image: knucklesFront, back: knucklesBack },
+      { label: "4XL", id: "53610090234150", image: knucklesFront, back: knucklesBack },
+      { label: "5XL", id: "53610090266918", image: knucklesFront, back: knucklesBack },
+    ],
+  },
+  {
+    name: "CERN Tee", price: 30, image: cernFront,
+    collection: "extras",
+    description: "They fired up the Large Hadron Collider, found the Higgs boson, and somehow we ended up in the timeline where people swear the Monopoly Man had a monocle and Sinbad starred in a genie movie. Coincidence? Probably. But this shirt is for anybody keeping one eye on CERN, one eye on reality, and both hands ready in case the timeline shifts again. Wear it before the next particle collision changes your childhood memories, your favorite logo, or the lines to one of your favorite movies.",
+    variants: [
+      { label: "S", id: "53610137551142", image: cernFront, back: cernBack },
+      { label: "M", id: "53610137583910", image: cernFront, back: cernBack },
+      { label: "L", id: "53610137616678", image: cernFront, back: cernBack },
+      { label: "XL", id: "53610137649446", image: cernFront, back: cernBack },
+      { label: "2XL", id: "53610137682214", image: cernFront, back: cernBack },
+      { label: "3XL", id: "53610137714982", image: cernFront, back: cernBack },
+    ],
+  },
+  {
+    name: "Straitjacket Tee", price: 38, image: straitjacketMockup,
+    collection: "extras",
+    variants: [
+      { label: "XS", id: "53251656548646", image: straitjacketMockup },
+      { label: "S", id: "53251656581414", image: straitjacketMockup },
+      { label: "M", id: "53251656614182", image: straitjacketMockup },
+      { label: "L", id: "53251656646950", image: straitjacketMockup },
+      { label: "XL", id: "53251656679718", image: straitjacketMockup },
+      { label: "2XL", id: "53251656712486", image: straitjacketMockup },
+    ],
+  },
+];
 
 export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
   ...p,

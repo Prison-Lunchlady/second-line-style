@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, EXTRAS_PRODUCTS } from "@/lib/products";
 
 const BASE_URL = "https://secondlineclothing.haiglerdigital.com";
 
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/image-sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const urls = PRODUCTS.map((p) => {
+        const urls = [...PRODUCTS, ...EXTRAS_PRODUCTS].map((p) => {
           const images = Array.from(
             new Set([p.image, p.coverImage, ...p.variants.map((v) => v.image)].filter(Boolean) as string[]),
           )

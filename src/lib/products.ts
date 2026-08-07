@@ -24,7 +24,7 @@ import raisingHellGreyBackAsset from "@/assets/raising_hell_grey_back.jpg.asset.
 import brWoodsAsset from "@/assets/br_woods_tee.png.asset.json";
 import pierBlackAsset from "@/assets/pier_black.png.asset.json";
 import pierGreyAsset from "@/assets/pier_grey.png.asset.json";
-import knucklesFrontAsset from "@/assets/knuckles_front_model.png.asset.json";
+import knucklesFrontV2Asset from "@/assets/knuckles_front_model_v2.png.asset.json";
 import knucklesBackAsset from "@/assets/knuckles_back_model.png.asset.json";
 import cernFrontAsset from "@/assets/cern_front_model.png.asset.json";
 import cernBackAsset from "@/assets/cern_back_model.png.asset.json";
@@ -57,7 +57,7 @@ const raisingHellGreyBack = raisingHellGreyBackAsset.url;
 const brWoods = brWoodsAsset.url;
 const pierBlack = pierBlackAsset.url;
 const pierGrey = pierGreyAsset.url;
-const knucklesFront = knucklesFrontAsset.url;
+const knucklesFront = knucklesFrontV2Asset.url;
 const knucklesBack = knucklesBackAsset.url;
 const cernFront = cernFrontAsset.url;
 const cernBack = cernBackAsset.url;

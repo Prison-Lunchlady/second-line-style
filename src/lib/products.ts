@@ -365,7 +365,48 @@ export function getProductBySlug(slug: string): Product | undefined {
  * 2. Paste the object into EXTRAS_RAW below.
  * That's it — the /extras grid, product detail page, and checkout all work.
  * ------------------------------------------------------------------------- */
-const EXTRAS_RAW: Omit<Product, "slug">[] = [];
+const EXTRAS_RAW: Omit<Product, "slug">[] = [
+  {
+    name: "Knuckles Tee", price: 30, image: knucklesFront,
+    collection: "extras",
+    description: "They tried to bury you under pressure, doubt, and everything meant to break you. But you grew through it anyway, harder, louder, and impossible to ignore. Every scar became part of the story, every hit gave you something to stand on, and what was supposed to finish you only made you tougher. This one is for anybody who came out of the dirt with more bite than before.",
+    variants: [
+      { label: "S", id: "53610090037542", image: knucklesFront, back: knucklesBack },
+      { label: "M", id: "53610090070310", image: knucklesFront, back: knucklesBack },
+      { label: "L", id: "53610090103078", image: knucklesFront, back: knucklesBack },
+      { label: "XL", id: "53610090135846", image: knucklesFront, back: knucklesBack },
+      { label: "2XL", id: "53610090168614", image: knucklesFront, back: knucklesBack },
+      { label: "3XL", id: "53610090201382", image: knucklesFront, back: knucklesBack },
+      { label: "4XL", id: "53610090234150", image: knucklesFront, back: knucklesBack },
+      { label: "5XL", id: "53610090266918", image: knucklesFront, back: knucklesBack },
+    ],
+  },
+  {
+    name: "CERN Tee", price: 30, image: cernFront,
+    collection: "extras",
+    description: "They fired up the Large Hadron Collider, found the Higgs boson, and somehow we ended up in the timeline where people swear the Monopoly Man had a monocle and Sinbad starred in a genie movie. Coincidence? Probably. But this shirt is for anybody keeping one eye on CERN, one eye on reality, and both hands ready in case the timeline shifts again. Wear it before the next particle collision changes your childhood memories, your favorite logo, or the lines to one of your favorite movies.",
+    variants: [
+      { label: "S", id: "53610137551142", image: cernFront, back: cernBack },
+      { label: "M", id: "53610137583910", image: cernFront, back: cernBack },
+      { label: "L", id: "53610137616678", image: cernFront, back: cernBack },
+      { label: "XL", id: "53610137649446", image: cernFront, back: cernBack },
+      { label: "2XL", id: "53610137682214", image: cernFront, back: cernBack },
+      { label: "3XL", id: "53610137714982", image: cernFront, back: cernBack },
+    ],
+  },
+  {
+    name: "Straitjacket Tee", price: 38, image: straitjacketMockup,
+    collection: "extras",
+    variants: [
+      { label: "XS", id: "53251656548646", image: straitjacketMockup },
+      { label: "S", id: "53251656581414", image: straitjacketMockup },
+      { label: "M", id: "53251656614182", image: straitjacketMockup },
+      { label: "L", id: "53251656646950", image: straitjacketMockup },
+      { label: "XL", id: "53251656679718", image: straitjacketMockup },
+      { label: "2XL", id: "53251656712486", image: straitjacketMockup },
+    ],
+  },
+];
 
 export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
   ...p,

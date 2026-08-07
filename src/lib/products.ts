@@ -28,9 +28,13 @@ import raisingHellGreyBackAsset from "@/assets/raising_hell_grey_back.jpg.asset.
 import brWoodsAsset from "@/assets/br_woods_tee.png.asset.json";
 import pierBlackAsset from "@/assets/pier_black.png.asset.json";
 import pierGreyAsset from "@/assets/pier_grey.png.asset.json";
+import knucklesFrontAsset from "@/assets/knuckles_front_model.png.asset.json";
+import knucklesBackAsset from "@/assets/knuckles_back_model.png.asset.json";
+import cernFrontAsset from "@/assets/cern_front_model.png.asset.json";
+import cernBackAsset from "@/assets/cern_back_model.png.asset.json";
+import lsuLowlifeFrontAsset from "@/assets/lsu_lowlife_front_model.png.asset.json";
+import lsuLowlifeBackAsset from "@/assets/lsu_lowlife_back_model.png.asset.json";
 
-const lowlifePurpleGold = lowlifePurpleGoldAsset.url;
-const lowlifeGrey = lowlifeGreyAsset.url;
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
 const swampPatrolLimited = swampPatrolLimitedAsset.url;
@@ -42,8 +46,6 @@ const cortanaNavy = cortanaNavyAsset.url;
 const duffyMockup = duffyMockupAsset.url;
 const brccMockup = brccMockupAsset.url;
 const straitjacketMockup = straitjacketMockupAsset.url;
-const womensCropMockup = womensCropMockupAsset.url;
-const lowlifeMockup = lowlifeMockupAsset.url;
 const carlottaMockup = carlottaMockupAsset.url;
 const carlottaGrey = carlottaGreyAsset.url;
 const carlottaSand = carlottaSandAsset.url;
@@ -59,6 +61,12 @@ const raisingHellGreyBack = raisingHellGreyBackAsset.url;
 const brWoods = brWoodsAsset.url;
 const pierBlack = pierBlackAsset.url;
 const pierGrey = pierGreyAsset.url;
+const knucklesFront = knucklesFrontAsset.url;
+const knucklesBack = knucklesBackAsset.url;
+const cernFront = cernFrontAsset.url;
+const cernBack = cernBackAsset.url;
+const lsuLowlifeFront = lsuLowlifeFrontAsset.url;
+const lsuLowlifeBack = lsuLowlifeBackAsset.url;
 
 export type Variant = { label: string; id: string; image: string; back?: string };
 export type Product = {

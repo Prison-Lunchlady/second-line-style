@@ -6,10 +6,6 @@ import cortanaNavyAsset from "@/assets/cortana_navy.png.asset.json";
 import duffyMockupAsset from "@/assets/duffy_mockup.png.asset.json";
 import brccMockupAsset from "@/assets/brcc_dropout_mockup.png.asset.json";
 import straitjacketMockupAsset from "@/assets/strait_jacket_mockup.png.asset.json";
-import womensCropMockupAsset from "@/assets/womens_crop_top_mockup.png.asset.json";
-import lowlifeMockupAsset from "@/assets/lowlife_mockup.png.asset.json";
-import lowlifePurpleGoldAsset from "@/assets/lowlife_purple_gold.png.asset.json";
-import lowlifeGreyAsset from "@/assets/lowlife_grey_model.png.asset.json";
 import carlottaMockupAsset from "@/assets/carlotta_mockup.png.asset.json";
 import carlottaGreyAsset from "@/assets/carlotta_grey.png.asset.json";
 import carlottaSandAsset from "@/assets/carlotta_sand.png.asset.json";
@@ -92,6 +88,18 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  {
+    name: "LSU Lowlife Tee", price: 30, image: lsuLowlifeFront,
+    description: "Some people clean up for game day. Some of us show up exactly how we are.\n\nThe  Lowlife Tee was made for the ones raised on Louisiana heat, Saturday night chaos, loud tailgates, bad decisions, and stories that somehow get better every year. Purple and gold may run through the city, but this one is for the people who never needed permission to belong.\n\nWear it like a warning. Wear it like a badge. Either way, they already know where you're from.",
+    variants: [
+      { label: "S", id: "53610195058982", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "M", id: "53610195091750", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "L", id: "53610195124518", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "XL", id: "53610195157286", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "2XL", id: "53610195190054", image: lsuLowlifeFront, back: lsuLowlifeBack },
+      { label: "3XL", id: "53610195222822", image: lsuLowlifeFront, back: lsuLowlifeBack },
+    ],
+  },
   {
     name: "The Pier Tee", price: 30, image: pierBlack,
     description: "Before smartphones, before every move got posted, there was The Pier.\n\nFor generations, this abandoned stretch over the Mississippi was Baton Rouge's legendary underground hangout. People went out there to drink, fish, spray paint, explore, and disappear from the rest of the city for a while. It was dangerous, illegal, covered in graffiti, and unforgettable.\n\nBuilt in 1926, The Pier would have turned 100 years old this year.\n\nThis tee is a tribute to the people who climbed out there, crossed the missing panels, left their mark, and turned a forgotten structure into Baton Rouge folklore.\n\nThe Pier is gone.\n\nThe legend isn't.\n\nBR PIER 1926–2020\n\nCollection 001: Baton Rouge\n\nSecond Line Clothing",

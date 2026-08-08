@@ -30,6 +30,16 @@ import cernFrontAsset from "@/assets/cern_front_model.png.asset.json";
 import cernBackAsset from "@/assets/cern_back_model.png.asset.json";
 import lsuLowlifeFrontAsset from "@/assets/lsu_lowlife_front_model.png.asset.json";
 import lsuLowlifeBackAsset from "@/assets/lsu_lowlife_back_model.png.asset.json";
+import lowkeyVillainBlackAsset from "@/assets/lowkey_villain_black.png.asset.json";
+import lowkeyVillainRedAsset from "@/assets/lowkey_villain_red.png.asset.json";
+import lowkeyVillainGreyAsset from "@/assets/lowkey_villain_grey.png.asset.json";
+import ggPottyMaroonAsset from "@/assets/gg_potty_maroon.png.asset.json";
+import ggPottyBlackAsset from "@/assets/gg_potty_black.png.asset.json";
+import ggPottyRedAsset from "@/assets/gg_potty_red.png.asset.json";
+import pagerCharcoalAsset from "@/assets/pager_charcoal.png.asset.json";
+import hearseUberCharcoalAsset from "@/assets/hearse_uber_charcoal.png.asset.json";
+import cernFlatAsset from "@/assets/cern_flat_mockup.png.asset.json";
+import knucklesFlatAsset from "@/assets/knuckles_flat_mockup.png.asset.json";
 
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
@@ -63,6 +73,20 @@ const cernFront = cernFrontAsset.url;
 const cernBack = cernBackAsset.url;
 const lsuLowlifeFront = lsuLowlifeFrontAsset.url;
 const lsuLowlifeBack = lsuLowlifeBackAsset.url;
+const lowkeyVillainBlack = lowkeyVillainBlackAsset.url;
+const lowkeyVillainRed = lowkeyVillainRedAsset.url;
+const lowkeyVillainGrey = lowkeyVillainGreyAsset.url;
+const ggPottyMaroon = ggPottyMaroonAsset.url;
+const ggPottyBlack = ggPottyBlackAsset.url;
+const ggPottyRed = ggPottyRedAsset.url;
+const pagerCharcoal = pagerCharcoalAsset.url;
+const hearseUberCharcoal = hearseUberCharcoalAsset.url;
+const cernFlat = cernFlatAsset.url;
+const knucklesFlat = knucklesFlatAsset.url;
+
+// Retained product gallery media for future multi-image gallery support.
+export const knucklesBackModelImage = knucklesBack;
+export const cernBackModelImage = cernBack;
 
 export type Variant = { label: string; id: string; image: string; back?: string };
 export type Product = {
@@ -76,6 +100,7 @@ export type Product = {
   availableUntil?: number;
   sizeGuideImage?: string;
   collection?: "extras";
+  wideImage?: boolean;
 };
 
 export function slugify(name: string): string {
@@ -367,31 +392,125 @@ export function getProductBySlug(slug: string): Product | undefined {
  * ------------------------------------------------------------------------- */
 const EXTRAS_RAW: Omit<Product, "slug">[] = [
   {
-    name: "Knuckles Tee", price: 30, image: knucklesFront,
+    name: "Lowkey Villian Tee", price: 29, image: lowkeyVillainBlack,
     collection: "extras",
-    description: "They tried to bury you under pressure, doubt, and everything meant to break you. But you grew through it anyway, harder, louder, and impossible to ignore. Every scar became part of the story, every hit gave you something to stand on, and what was supposed to finish you only made you tougher. This one is for anybody who came out of the dirt with more bite than before.",
+    wideImage: true,
+    description: "Say goodnight to the bad guy...",
     variants: [
-      { label: "S", id: "53610090037542", image: knucklesFront, back: knucklesBack },
-      { label: "M", id: "53610090070310", image: knucklesFront, back: knucklesBack },
-      { label: "L", id: "53610090103078", image: knucklesFront, back: knucklesBack },
-      { label: "XL", id: "53610090135846", image: knucklesFront, back: knucklesBack },
-      { label: "2XL", id: "53610090168614", image: knucklesFront, back: knucklesBack },
-      { label: "3XL", id: "53610090201382", image: knucklesFront, back: knucklesBack },
-      { label: "4XL", id: "53610090234150", image: knucklesFront, back: knucklesBack },
-      { label: "5XL", id: "53610090266918", image: knucklesFront, back: knucklesBack },
+      { label: "Black / S", id: "53645675659558", image: lowkeyVillainBlack },
+      { label: "Black / M", id: "53645675692326", image: lowkeyVillainBlack },
+      { label: "Black / L", id: "53645675725094", image: lowkeyVillainBlack },
+      { label: "Black / XL", id: "53645675757862", image: lowkeyVillainBlack },
+      { label: "Black / 2XL", id: "53645675790630", image: lowkeyVillainBlack },
+      { label: "Black / 3XL", id: "53645675823398", image: lowkeyVillainBlack },
+      { label: "Black / 4XL", id: "53645675856166", image: lowkeyVillainBlack },
+      { label: "Black / 5XL", id: "53645675888934", image: lowkeyVillainBlack },
+      { label: "Red / S", id: "53645675921702", image: lowkeyVillainRed },
+      { label: "Red / M", id: "53645675954470", image: lowkeyVillainRed },
+      { label: "Red / L", id: "53645675987238", image: lowkeyVillainRed },
+      { label: "Red / XL", id: "53645676020006", image: lowkeyVillainRed },
+      { label: "Red / 2XL", id: "53645676052774", image: lowkeyVillainRed },
+      { label: "Red / 3XL", id: "53645676085542", image: lowkeyVillainRed },
+      { label: "Red / 4XL", id: "53645676118310", image: lowkeyVillainRed },
+      { label: "Red / 5XL", id: "53645676151078", image: lowkeyVillainRed },
+      { label: "Sport Grey / S", id: "53645676183846", image: lowkeyVillainGrey },
+      { label: "Sport Grey / M", id: "53645676216614", image: lowkeyVillainGrey },
+      { label: "Sport Grey / L", id: "53645676249382", image: lowkeyVillainGrey },
+      { label: "Sport Grey / XL", id: "53645676282150", image: lowkeyVillainGrey },
+      { label: "Sport Grey / 2XL", id: "53645676314918", image: lowkeyVillainGrey },
+      { label: "Sport Grey / 3XL", id: "53645676347686", image: lowkeyVillainGrey },
+      { label: "Sport Grey / 4XL", id: "53645676380454", image: lowkeyVillainGrey },
+      { label: "Sport Grey / 5XL", id: "53645676413222", image: lowkeyVillainGrey },
     ],
   },
   {
-    name: "CERN Tee", price: 30, image: cernFront,
+    name: "GG Potty", price: 29, image: ggPottyMaroon,
     collection: "extras",
+    wideImage: true,
+    description: "Designer taste. Questionable decisions.\n\nGG Potty is what happens when high fashion ends up exactly where it belongs. Covered in designer attitude and glowing like something you probably shouldn't touch, this one doesn't take luxury too seriously.\n\nBecause you can dress it up, slap a label on it, and charge a fortune for it...\n\nbut some shit stays grimy.",
+    variants: [
+      { label: "Maroon / S", id: "53645526237478", image: ggPottyMaroon },
+      { label: "Maroon / M", id: "53645526270246", image: ggPottyMaroon },
+      { label: "Maroon / L", id: "53645526303014", image: ggPottyMaroon },
+      { label: "Maroon / XL", id: "53645526335782", image: ggPottyMaroon },
+      { label: "Maroon / 2XL", id: "53645526368550", image: ggPottyMaroon },
+      { label: "Maroon / 3XL", id: "53645526401318", image: ggPottyMaroon },
+      { label: "Maroon / 4XL", id: "53645526434086", image: ggPottyMaroon },
+      { label: "Maroon / 5XL", id: "53645526466854", image: ggPottyMaroon },
+      { label: "Black / S", id: "53645526499622", image: ggPottyBlack },
+      { label: "Black / M", id: "53645526532390", image: ggPottyBlack },
+      { label: "Black / L", id: "53645526565158", image: ggPottyBlack },
+      { label: "Black / XL", id: "53645526597926", image: ggPottyBlack },
+      { label: "Black / 2XL", id: "53645526630694", image: ggPottyBlack },
+      { label: "Black / 3XL", id: "53645526663462", image: ggPottyBlack },
+      { label: "Black / 4XL", id: "53645526696230", image: ggPottyBlack },
+      { label: "Black / 5XL", id: "53645526728998", image: ggPottyBlack },
+      { label: "Red / S", id: "53645526761766", image: ggPottyRed },
+      { label: "Red / M", id: "53645526794534", image: ggPottyRed },
+      { label: "Red / L", id: "53645526827302", image: ggPottyRed },
+      { label: "Red / XL", id: "53645526860070", image: ggPottyRed },
+      { label: "Red / 2XL", id: "53645526892838", image: ggPottyRed },
+      { label: "Red / 3XL", id: "53645526925606", image: ggPottyRed },
+      { label: "Red / 4XL", id: "53645526958374", image: ggPottyRed },
+      { label: "Red / 5XL", id: "53645526991142", image: ggPottyRed },
+    ],
+  },
+  {
+    name: "Pager Tee", price: 29, image: pagerCharcoal,
+    collection: "extras",
+    wideImage: true,
+    description: "Before texts, DMs, and read receipts, there was the pager. One number on the screen could tell you everything you needed to know.\n\nA throwback to the era of coded messages, late-night pages, and numbers that meant more than numbers.\n\nSome messages were never meant to be read straight.",
+    variants: [
+      { label: "S", id: "53645626671398", image: pagerCharcoal },
+      { label: "M", id: "53645626704166", image: pagerCharcoal },
+      { label: "L", id: "53645626736934", image: pagerCharcoal },
+      { label: "XL", id: "53645626769702", image: pagerCharcoal },
+      { label: "2XL", id: "53645626802470", image: pagerCharcoal },
+      { label: "3XL", id: "53645626835238", image: pagerCharcoal },
+    ],
+  },
+  {
+    name: "Hearse Uber", price: 29, image: hearseUberCharcoal,
+    collection: "extras",
+    wideImage: true,
+    description: "Some rides get you where you're going. This one makes sure you don't need a return trip.\n\nA blacked-out final ride, one last pickup, and a passenger in the back you might not notice until you look twice. It's clean, grim, and just disrespectful enough to make the joke hit harder.\n\nNo surge pricing. No destination changes.\nJust one way.",
+    variants: [
+      { label: "S", id: "53645595935014", image: hearseUberCharcoal },
+      { label: "M", id: "53645595967782", image: hearseUberCharcoal },
+      { label: "L", id: "53645596000550", image: hearseUberCharcoal },
+      { label: "XL", id: "53645596033318", image: hearseUberCharcoal },
+      { label: "2XL", id: "53645596066086", image: hearseUberCharcoal },
+      { label: "3XL", id: "53645596098854", image: hearseUberCharcoal },
+    ],
+  },
+  {
+    name: "Knuckles Tee", price: 30, image: knucklesFlat,
+    collection: "extras",
+    wideImage: true,
+    description: "They tried to bury you under pressure, doubt, and everything meant to break you. But you grew through it anyway, harder, louder, and impossible to ignore. Every scar became part of the story, every hit gave you something to stand on, and what was supposed to finish you only made you tougher. This one is for anybody who came out of the dirt with more bite than before.",
+    variants: [
+      { label: "S", id: "53610090037542", image: knucklesFlat, back: knucklesFront },
+      { label: "M", id: "53610090070310", image: knucklesFlat, back: knucklesFront },
+      { label: "L", id: "53610090103078", image: knucklesFlat, back: knucklesFront },
+      { label: "XL", id: "53610090135846", image: knucklesFlat, back: knucklesFront },
+      { label: "2XL", id: "53610090168614", image: knucklesFlat, back: knucklesFront },
+      { label: "3XL", id: "53610090201382", image: knucklesFlat, back: knucklesFront },
+      { label: "4XL", id: "53610090234150", image: knucklesFlat, back: knucklesFront },
+      { label: "5XL", id: "53610090266918", image: knucklesFlat, back: knucklesFront },
+    ],
+  },
+  {
+    name: "CERN Tee", price: 29, image: cernFlat,
+    collection: "extras",
+    wideImage: true,
     description: "They fired up the Large Hadron Collider, found the Higgs boson, and somehow we ended up in the timeline where people swear the Monopoly Man had a monocle and Sinbad starred in a genie movie. Coincidence? Probably. But this shirt is for anybody keeping one eye on CERN, one eye on reality, and both hands ready in case the timeline shifts again. Wear it before the next particle collision changes your childhood memories, your favorite logo, or the lines to one of your favorite movies.",
     variants: [
-      { label: "S", id: "53610137551142", image: cernFront, back: cernBack },
-      { label: "M", id: "53610137583910", image: cernFront, back: cernBack },
-      { label: "L", id: "53610137616678", image: cernFront, back: cernBack },
-      { label: "XL", id: "53610137649446", image: cernFront, back: cernBack },
-      { label: "2XL", id: "53610137682214", image: cernFront, back: cernBack },
-      { label: "3XL", id: "53610137714982", image: cernFront, back: cernBack },
+      { label: "S", id: "53610137551142", image: cernFlat, back: cernFront },
+      { label: "M", id: "53610137583910", image: cernFlat, back: cernFront },
+      { label: "L", id: "53610137616678", image: cernFlat, back: cernFront },
+      { label: "XL", id: "53610137649446", image: cernFlat, back: cernFront },
+      { label: "2XL", id: "53610137682214", image: cernFlat, back: cernFront },
+      { label: "3XL", id: "53610137714982", image: cernFlat, back: cernFront },
     ],
   },
   {

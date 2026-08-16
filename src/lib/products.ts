@@ -40,6 +40,15 @@ import pagerCharcoalAsset from "@/assets/pager_charcoal.png.asset.json";
 import hearseUberCharcoalAsset from "@/assets/hearse_uber_charcoal.png.asset.json";
 import cernFlatAsset from "@/assets/cern_flat_mockup.png.asset.json";
 import knucklesFlatAsset from "@/assets/knuckles_flat_mockup.png.asset.json";
+import toeTagRedAsset from "@/assets/toe_tag_red.png.asset.json";
+import toeTagCharcoalAsset from "@/assets/toe_tag_charcoal.png.asset.json";
+import shuttingDownRoyalAsset from "@/assets/shutting_down_royal.png.asset.json";
+import razorBlackAsset from "@/assets/razor_black.png.asset.json";
+import razorDarkHeatherAsset from "@/assets/razor_dark_heather.png.asset.json";
+import razorCarolinaBlueAsset from "@/assets/razor_carolina_blue.png.asset.json";
+import durdenBlackAsset from "@/assets/durden_black.png.asset.json";
+import durdenCharcoalAsset from "@/assets/durden_charcoal.png.asset.json";
+import durdenWhiteAsset from "@/assets/durden_white.png.asset.json";
 
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
@@ -83,6 +92,15 @@ const pagerCharcoal = pagerCharcoalAsset.url;
 const hearseUberCharcoal = hearseUberCharcoalAsset.url;
 const cernFlat = cernFlatAsset.url;
 const knucklesFlat = knucklesFlatAsset.url;
+const toeTagRed = toeTagRedAsset.url;
+const toeTagCharcoal = toeTagCharcoalAsset.url;
+const shuttingDownRoyal = shuttingDownRoyalAsset.url;
+const razorBlack = razorBlackAsset.url;
+const razorDarkHeather = razorDarkHeatherAsset.url;
+const razorCarolinaBlue = razorCarolinaBlueAsset.url;
+const durdenBlack = durdenBlackAsset.url;
+const durdenCharcoal = durdenCharcoalAsset.url;
+const durdenWhite = durdenWhiteAsset.url;
 
 // Retained product gallery media for future multi-image gallery support.
 export const knucklesBackModelImage = knucklesBack;
@@ -391,6 +409,100 @@ export function getProductBySlug(slug: string): Product | undefined {
  * That's it — the /extras grid, product detail page, and checkout all work.
  * ------------------------------------------------------------------------- */
 const EXTRAS_RAW: Omit<Product, "slug">[] = [
+  {
+    name: "Toe Tag Tee", price: 29, image: toeTagRed,
+    collection: "extras",
+    wideImage: true,
+    description: "Dressed to kill. Tag included.",
+    variants: [
+      { label: "Red / S", id: "53697832943910", image: toeTagRed },
+      { label: "Red / M", id: "53697832976678", image: toeTagRed },
+      { label: "Red / L", id: "53697833009446", image: toeTagRed },
+      { label: "Red / XL", id: "53697833042214", image: toeTagRed },
+      { label: "Red / 2XL", id: "53697833074982", image: toeTagRed },
+      { label: "Red / 3XL", id: "53697833107750", image: toeTagRed },
+      { label: "Red / 4XL", id: "53697833140518", image: toeTagRed },
+      { label: "Red / 5XL", id: "53697833173286", image: toeTagRed },
+      { label: "Charcoal / S", id: "53697833206054", image: toeTagCharcoal },
+      { label: "Charcoal / M", id: "53697833238822", image: toeTagCharcoal },
+      { label: "Charcoal / L", id: "53697833271590", image: toeTagCharcoal },
+      { label: "Charcoal / XL", id: "53697833304358", image: toeTagCharcoal },
+      { label: "Charcoal / 2XL", id: "53697833337126", image: toeTagCharcoal },
+      { label: "Charcoal / 3XL", id: "53697833369894", image: toeTagCharcoal },
+    ],
+  },
+  {
+    name: "Shut Down Tee", price: 29, image: shuttingDownRoyal,
+    collection: "extras",
+    wideImage: true,
+    description: "Mentally unavailable. Physically still buffering.",
+    variants: [
+      { label: "S", id: "53697751712038", image: shuttingDownRoyal },
+      { label: "M", id: "53697751744806", image: shuttingDownRoyal },
+      { label: "L", id: "53697751777574", image: shuttingDownRoyal },
+      { label: "XL", id: "53697751810342", image: shuttingDownRoyal },
+      { label: "2XL", id: "53697751843110", image: shuttingDownRoyal },
+      { label: "3XL", id: "53697751875878", image: shuttingDownRoyal },
+    ],
+  },
+  {
+    name: "Razor Tee", price: 30, image: razorBlack,
+    collection: "extras",
+    wideImage: true,
+    description: "The Razor Tee is Second Line with a little blood on its hands.",
+    variants: [
+      { label: "Black / S", id: "53696830767398", image: razorBlack },
+      { label: "Black / M", id: "53696830800166", image: razorBlack },
+      { label: "Black / L", id: "53696830832934", image: razorBlack },
+      { label: "Black / XL", id: "53696830865702", image: razorBlack },
+      { label: "Black / 2XL", id: "53696830898470", image: razorBlack },
+      { label: "Black / 3XL", id: "53696830931238", image: razorBlack },
+      { label: "Black / 4XL", id: "53696830964006", image: razorBlack },
+      { label: "Black / 5XL", id: "53696830996774", image: razorBlack },
+      { label: "Dark Heather / S", id: "53696831029542", image: razorDarkHeather },
+      { label: "Dark Heather / M", id: "53696831062310", image: razorDarkHeather },
+      { label: "Dark Heather / L", id: "53696831095078", image: razorDarkHeather },
+      { label: "Dark Heather / XL", id: "53696831127846", image: razorDarkHeather },
+      { label: "Dark Heather / 2XL", id: "53696831160614", image: razorDarkHeather },
+      { label: "Dark Heather / 3XL", id: "53696831193382", image: razorDarkHeather },
+      { label: "Carolina Blue / S", id: "53696831226150", image: razorCarolinaBlue },
+      { label: "Carolina Blue / M", id: "53696831258918", image: razorCarolinaBlue },
+      { label: "Carolina Blue / L", id: "53696831291686", image: razorCarolinaBlue },
+      { label: "Carolina Blue / XL", id: "53696831324454", image: razorCarolinaBlue },
+      { label: "Carolina Blue / 2XL", id: "53696831357222", image: razorCarolinaBlue },
+      { label: "Carolina Blue / 3XL", id: "53696831389990", image: razorCarolinaBlue },
+    ],
+  },
+  {
+    name: "You're Mr Durden Tee", price: 29, image: durdenBlack,
+    collection: "extras",
+    wideImage: true,
+    description: "\"You're the one who gave me this...\"",
+    variants: [
+      { label: "Black / S", id: "53689513115942", image: durdenBlack },
+      { label: "Black / M", id: "53689513148710", image: durdenBlack },
+      { label: "Black / L", id: "53689513181478", image: durdenBlack },
+      { label: "Black / XL", id: "53689513214246", image: durdenBlack },
+      { label: "Black / 2XL", id: "53689513247014", image: durdenBlack },
+      { label: "Black / 3XL", id: "53689513279782", image: durdenBlack },
+      { label: "Black / 4XL", id: "53689513312550", image: durdenBlack },
+      { label: "Black / 5XL", id: "53689513345318", image: durdenBlack },
+      { label: "Charcoal / S", id: "53689513378086", image: durdenCharcoal },
+      { label: "Charcoal / M", id: "53689513410854", image: durdenCharcoal },
+      { label: "Charcoal / L", id: "53689513443622", image: durdenCharcoal },
+      { label: "Charcoal / XL", id: "53689513476390", image: durdenCharcoal },
+      { label: "Charcoal / 2XL", id: "53689513509158", image: durdenCharcoal },
+      { label: "Charcoal / 3XL", id: "53689513541926", image: durdenCharcoal },
+      { label: "White / S", id: "53689513574694", image: durdenWhite },
+      { label: "White / M", id: "53689513607462", image: durdenWhite },
+      { label: "White / L", id: "53689513640230", image: durdenWhite },
+      { label: "White / XL", id: "53689513672998", image: durdenWhite },
+      { label: "White / 2XL", id: "53689513705766", image: durdenWhite },
+      { label: "White / 3XL", id: "53689513738534", image: durdenWhite },
+      { label: "White / 4XL", id: "53689513771302", image: durdenWhite },
+      { label: "White / 5XL", id: "53689513804070", image: durdenWhite },
+    ],
+  },
   {
     name: "Lowkey Villian Tee", price: 29, image: lowkeyVillainBlack,
     collection: "extras",

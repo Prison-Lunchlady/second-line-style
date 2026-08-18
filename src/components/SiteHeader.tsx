@@ -13,6 +13,7 @@ export function SiteHeader() {
         </Link>
         <ul className="flex items-center gap-6 sm:gap-8 text-sm font-semibold tracking-widest uppercase">
           <li><Link to="/" hash="shop" className="hover:text-primary transition-colors">Shop</Link></li>
+          <li><Link to="/extras" className="hover:text-primary transition-colors">Extras</Link></li>
           <li><Link to="/" hash="about" className="hover:text-primary transition-colors">About</Link></li>
           <li><Link to="/" hash="contact" className="hover:text-primary transition-colors">Contact</Link></li>
           <li>

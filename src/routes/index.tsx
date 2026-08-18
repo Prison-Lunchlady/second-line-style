@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, EXTRAS_PRODUCTS } from "@/lib/products";
 import { SITE_FAQS } from "@/lib/faq";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -85,17 +85,35 @@ function Index() {
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>THE <span className="text-primary">DROP</span></h2>
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} />)}
+
+        <div className="mb-20">
+          <div className="mb-10 text-center">
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Original Second Line Collection <span className="text-primary">(Baton Rouge)</span>
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} />)}
+          </div>
         </div>
-        <div className="mt-12 text-center">
-          <Link
-            to="/extras"
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-sm border border-border bg-transparent text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary hover:border-primary transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            Extras
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+
+        <div>
+          <div className="mb-10 text-center">
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>EXTRAS</h3>
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Original graphics and limited designs outside our Louisiana collections.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {EXTRAS_PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} />)}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              to="/extras"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-sm border border-border bg-transparent text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary hover:border-primary transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              View All Extras
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
 

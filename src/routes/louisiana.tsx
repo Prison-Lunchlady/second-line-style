@@ -5,7 +5,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { CITY_HUBS } from "@/lib/cities";
 import { PRODUCTS } from "@/lib/products";
 
-const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
+const ORIGIN = "https://second-line-clothing.com";
 
 export const Route = createFileRoute("/louisiana")({
   head: () => ({

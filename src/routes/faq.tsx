@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
 import { SITE_FAQS } from "@/lib/faq";
 
-const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
+const ORIGIN = "https://second-line-clothing.com";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({

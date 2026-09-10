@@ -4,7 +4,7 @@ import { PRODUCTS, EXTRAS_PRODUCTS } from "@/lib/products";
 import { BLOG_POSTS } from "@/lib/blog";
 import { CITY_HUBS } from "@/lib/cities";
 
-const BASE_URL = "https://secondlineclothing.haiglerdigital.com";
+const BASE_URL = "https://second-line-clothing.com";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

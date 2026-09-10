@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { PRODUCTS, EXTRAS_PRODUCTS } from "@/lib/products";
 
-const BASE_URL = "https://secondlineclothing.haiglerdigital.com";
+const BASE_URL = "https://second-line-clothing.com";
 
 function escapeXml(str: string): string {
   return str

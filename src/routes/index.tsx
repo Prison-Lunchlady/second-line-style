@@ -16,10 +16,10 @@ export const Route = createFileRoute("/")({
       { name: "keywords", content: "Louisiana graphic tee, Louisiana apparel, Louisiana clothing, Louisiana streetwear, Southern graphic tee, Louisiana culture, Louisiana lifestyle brand" },
       { property: "og:title", content: "Louisiana Graphic Tees & Apparel | Second Line Clothing" },
       { property: "og:description", content: "Louisiana-inspired graphic tees and apparel celebrating the culture, humor, history, people, and places that make Louisiana unique." },
-      { property: "og:url", content: "https://secondlineclothing.haiglerdigital.com/" },
+      { property: "og:url", content: "https://second-line-clothing.com/" },
     ],
     links: [
-      { rel: "canonical", href: "https://secondlineclothing.haiglerdigital.com/" },
+      { rel: "canonical", href: "https://second-line-clothing.com/" },
     ],
     scripts: [
       {
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
               "@type": "Product",
               name: p.name,
               brand: { "@type": "Brand", name: "Second Line Clothing" },
-              url: `https://secondlineclothing.haiglerdigital.com/product/${p.slug}`,
+              url: `https://second-line-clothing.com/product/${p.slug}`,
               offers: {
                 "@type": "Offer",
                 price: p.price,

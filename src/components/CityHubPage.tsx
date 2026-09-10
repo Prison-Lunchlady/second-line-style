@@ -82,7 +82,7 @@ export function CityHubPage({ city }: { city: CityHub }) {
   );
 }
 
-const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
+const ORIGIN = "https://second-line-clothing.com";
 
 export function buildCityHead(city: CityHub) {
   const url = `${ORIGIN}/${city.slug}`;

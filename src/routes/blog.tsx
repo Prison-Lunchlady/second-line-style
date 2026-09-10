@@ -5,7 +5,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { BLOG_POSTS } from "@/lib/blog";
 import { PRODUCTS } from "@/lib/products";
 
-const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
+const ORIGIN = "https://second-line-clothing.com";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({

@@ -16,10 +16,10 @@ export const Route = createFileRoute("/extras")({
       { property: "og:title", content: "Extras | Second Line Clothing" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://secondlineclothing.haiglerdigital.com/extras" },
+      { property: "og:url", content: "https://second-line-clothing.com/extras" },
     ],
     links: [
-      { rel: "canonical", href: "https://secondlineclothing.haiglerdigital.com/extras" },
+      { rel: "canonical", href: "https://second-line-clothing.com/extras" },
     ],
     scripts:
       EXTRAS_PRODUCTS.length > 0
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/extras")({
                     "@type": "Product",
                     name: p.name,
                     brand: { "@type": "Brand", name: "Second Line Clothing" },
-                    url: `https://secondlineclothing.haiglerdigital.com/product/${p.slug}`,
+                    url: `https://second-line-clothing.com/product/${p.slug}`,
                     offers: {
                       "@type": "Offer",
                       price: p.price,

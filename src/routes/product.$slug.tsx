@@ -9,7 +9,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { altForProduct } from "@/lib/image-alt";
 
-const ORIGIN = "https://secondlineclothing.haiglerdigital.com";
+const ORIGIN = "https://second-line-clothing.com";
 
 export const Route = createFileRoute("/product/$slug")({
   loader: ({ params }): { product: Product } => {

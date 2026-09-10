@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://secondlineclothing.haiglerdigital.com/sitemap.xml
-Sitemap: https://secondlineclothing.haiglerdigital.com/image-sitemap.xml
-Sitemap: https://secondlineclothing.haiglerdigital.com/sitemap-index.xml
+Sitemap: https://second-line-clothing.com/sitemap.xml
+Sitemap: https://second-line-clothing.com/image-sitemap.xml
+Sitemap: https://second-line-clothing.com/sitemap-index.xml

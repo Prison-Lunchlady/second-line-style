@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
-import { PRODUCTS, EXTRAS_PRODUCTS } from "@/lib/products";
+import { PRODUCTS } from "@/lib/products";
 import { SITE_FAQS } from "@/lib/faq";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -101,9 +101,6 @@ function Index() {
           <div className="mb-10 text-center">
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>EXTRAS</h3>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Original graphics and limited designs outside our Louisiana collections.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {EXTRAS_PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} />)}
           </div>
           <div className="mt-12 text-center">
             <Link

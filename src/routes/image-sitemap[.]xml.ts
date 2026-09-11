@@ -35,7 +35,7 @@ export const Route = createFileRoute("/image-sitemap.xml")({
       GET: async () => {
         const urls = [...PRODUCTS, ...EXTRAS_PRODUCTS].map((p) => {
           const images = Array.from(
-            new Set([p.image, p.coverImage, ...p.variants.map((v) => v.image)].filter(Boolean) as string[]),
+            new Set([p.image, p.coverImage, ...p.variants.flatMap((v) => [v.image, v.back])].filter(Boolean) as string[]),
           )
             .map(toCrawlableImageUrl)
             .filter(Boolean) as string[];
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/image-sitemap.xml")({
             .map((img) => {
               const loc = escapeXml(img);
               const title = escapeXml(p.name);
-              const caption = escapeXml(p.description ?? `${p.name} — Louisiana graphic tee by Second Line Clothing`);
+              const caption = escapeXml(p.description ?? `${p.name} by Second Line Clothing`);
               return [
                 `    <image:image>`,
                 `      <image:loc>${loc}</image:loc>`,

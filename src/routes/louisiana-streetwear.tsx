@@ -11,9 +11,11 @@ export const Route = createFileRoute("/louisiana-streetwear")({
     meta: [
       { title: "Louisiana Streetwear — Baton Rouge & New Orleans Influence | Second Line Clothing" },
       { name: "description", content: "What Louisiana streetwear actually is: Baton Rouge and New Orleans influence, local fashion roots, and how Second Line Clothing fits into the scene." },
-      { name: "keywords", content: "Louisiana streetwear, Louisiana fashion, Baton Rouge streetwear, New Orleans streetwear, Southern streetwear, Louisiana graphic tees" },
+
       { property: "og:title", content: "Louisiana Streetwear | Second Line Clothing" },
+      { name: "twitter:title", content: "Louisiana Streetwear | Second Line Clothing" },
       { property: "og:description", content: "Louisiana fashion, Baton Rouge and New Orleans influence, and the local roots of Louisiana streetwear." },
+      { name: "twitter:description", content: "Louisiana fashion, Baton Rouge and New Orleans influence, and the local roots of Louisiana streetwear." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${ORIGIN}/louisiana-streetwear` },
     ],

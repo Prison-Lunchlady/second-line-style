@@ -12,9 +12,11 @@ export const Route = createFileRoute("/louisiana")({
     meta: [
       { title: "Louisiana Culture Hub — Food, Music, Cities & Lifestyle | Second Line Clothing" },
       { name: "description", content: "A Louisiana culture hub from a Louisiana apparel brand: culture, humor, food, music, traditions, cities, and lifestyle — and how it all shapes Second Line Clothing." },
-      { name: "keywords", content: "Louisiana culture, Louisiana lifestyle, Louisiana food, Louisiana music, Louisiana traditions, Louisiana cities, Louisiana humor, Louisiana apparel" },
+
       { property: "og:title", content: "Louisiana Culture Hub | Second Line Clothing" },
+      { name: "twitter:title", content: "Louisiana Culture Hub | Second Line Clothing" },
       { property: "og:description", content: "Louisiana culture, humor, food, music, traditions, cities, and lifestyle — from a Louisiana apparel brand." },
+      { name: "twitter:description", content: "Louisiana culture, humor, food, music, traditions, cities, and lifestyle — from a Louisiana apparel brand." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${ORIGIN}/louisiana` },
     ],

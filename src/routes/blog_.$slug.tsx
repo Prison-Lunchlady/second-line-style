@@ -8,7 +8,7 @@ import { PRODUCTS } from "@/lib/products";
 
 const ORIGIN = "https://second-line-clothing.com";
 
-export const Route = createFileRoute("/blog/$slug")({
+export const Route = createFileRoute("/blog_/$slug")({
   loader: ({ params }): { post: BlogPost } => {
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
@@ -24,7 +24,9 @@ export const Route = createFileRoute("/blog/$slug")({
         { title },
         { name: "description", content: post.description },
         { property: "og:title", content: title },
+      { name: "twitter:title", content: title },
         { property: "og:description", content: post.description },
+      { name: "twitter:description", content: post.description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         { property: "article:published_time", content: post.date },

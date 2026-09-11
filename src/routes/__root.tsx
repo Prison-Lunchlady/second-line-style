@@ -33,7 +33,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
 
@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Louisiana-inspired graphic tees and apparel celebrating the culture, humor, history, people, and places that make Louisiana unique." },
       { name: "google-site-verification", content: "EhaiocrmfowjkbzZTbw-rRg788JrKQWle_lJbg_3P-M" },
       { name: "author", content: "Second Line Clothing" },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: "Second Line Clothing" },
       { property: "og:description", content: "Limited Louisiana streetwear drops inspired by local culture." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fkxVQFBXkMMhWxhFGgwVSGQKnIw2/social-images/social-1779918298062-logo.webp" },
@@ -114,6 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": "https://second-line-clothing.com/#organization",
           name: "Second Line Clothing",
           url: "https://second-line-clothing.com",
           description: "Louisiana lifestyle and culture apparel brand. Graphic tees and streetwear celebrating Louisiana's culture, humor, history, people, and places.",
@@ -143,11 +144,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "WebSite",
           name: "Second Line Clothing",
           url: "https://second-line-clothing.com",
-          potentialAction: {
-            "@type": "SearchAction",
-            target: "https://second-line-clothing.com/?q={search_term_string}",
-            "query-input": "required name=search_term_string",
-          },
         }),
       },
     ],

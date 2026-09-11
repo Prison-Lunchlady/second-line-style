@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
-import { getProductBySlug, type Product } from "@/lib/products";
+import { productDescription, productImages } from "@/lib/seo";
+import { getProductBySlug, PRODUCTS, EXTRAS_PRODUCTS, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -20,27 +21,26 @@ export const Route = createFileRoute("/product/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.product;
     if (!p) {
-      return { meta: [{ title: "Item not found — Second Line Clothing" }] };
+      return { meta: [{ title: "Item not found — Second Line Clothing" }, { name: "robots", content: "noindex, follow" }] };
     }
     const url = `${ORIGIN}/product/${p.slug}`;
-    const title = `${p.name} | Louisiana Graphic Tee — Second Line Clothing`;
-    const description = p.description
-      ? `${p.description} Louisiana graphic tee from Second Line Clothing.`
-      : `${p.name} — a Louisiana graphic tee from Second Line Clothing. Louisiana-inspired apparel celebrating the culture, humor, and lifestyle of the bayou state.`;
+    const title = `${p.name} | Second Line Clothing`;
+    const description = productDescription(p);
+    const snippet = description.length > 160 ? `${description.slice(0, 157).replace(/\s+\S*$/, "")}…` : description;
     const image = p.image.startsWith("http") ? p.image : `${ORIGIN}${p.image}`;
     return {
       meta: [
         { title },
-        { name: "description", content: description },
-        { name: "keywords", content: `${p.name}, Louisiana graphic tee, Louisiana apparel, Louisiana clothing, Louisiana streetwear, Southern graphic tee` },
+        { name: "description", content: snippet },
+
         { property: "og:title", content: title },
-        { property: "og:description", content: description },
+        { property: "og:description", content: snippet },
         { property: "og:type", content: "product" },
         { property: "og:url", content: url },
         { property: "og:image", content: image },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
+        { name: "twitter:description", content: snippet },
         { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: url }],
@@ -51,10 +51,10 @@ export const Route = createFileRoute("/product/$slug")({
             "@context": "https://schema.org",
             "@type": "Product",
             name: p.name,
-            image: [image],
+            image: productImages(p),
             description,
             sku: p.slug,
-            category: "Louisiana Apparel",
+            category: p.collection === "extras" ? "Graphic Apparel" : "Louisiana Apparel",
             brand: {
               "@type": "Brand",
               name: "Second Line Clothing",
@@ -78,7 +78,7 @@ export const Route = createFileRoute("/product/$slug")({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: ORIGIN },
-              { "@type": "ListItem", position: 2, name: "Shop", item: `${ORIGIN}/#shop` },
+              { "@type": "ListItem", position: 2, name: p.collection === "extras" ? "Extras" : "Louisiana Graphic Tees", item: p.collection === "extras" ? `${ORIGIN}/extras` : `${ORIGIN}/#shop` },
               { "@type": "ListItem", position: 3, name: p.name, item: url },
             ],
           }),
@@ -145,6 +145,7 @@ function Countdown({ endsAt }: { endsAt: number }) {
 function ProductPage() {
   const { product: p } = Route.useLoaderData() as { product: Product };
   const { addToCart } = useCart();
+  const related = (p.collection === "extras" ? EXTRAS_PRODUCTS : PRODUCTS).filter(item => item.slug !== p.slug).slice(0, 3);
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -183,8 +184,8 @@ function ProductPage() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 w-full">
-        <Link to="/" hash="shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-          <ArrowLeft className="h-4 w-4" /> Back to Shop
+        <Link to={p.collection === "extras" ? "/extras" : "/"} hash={p.collection === "extras" ? undefined : "shop"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+          <ArrowLeft className="h-4 w-4" /> {p.collection === "extras" ? "Back to Extras" : "Back to Louisiana Graphic Tees"}
         </Link>
       </div>
 
@@ -209,9 +210,7 @@ function ProductPage() {
 
             {p.availableUntil && <Countdown endsAt={p.availableUntil} />}
 
-            {p.description && (
-              <p className="mt-6 text-muted-foreground leading-relaxed">{p.description}</p>
-            )}
+            <p className="mt-6 text-muted-foreground leading-relaxed">{productDescription(p)}</p>
 
             <div className="mt-8 space-y-3">
               <label htmlFor="variant" className="block text-xs font-bold tracking-widest uppercase text-white">
@@ -256,6 +255,12 @@ function ProductPage() {
             </div>
           </div>
         </div>
+        <section className="mt-16 border-t border-border pt-8" aria-label="More from this collection">
+          <h2 className="text-xl font-bold uppercase">{p.collection === "extras" ? "More from Extras" : "More Louisiana Graphic Tees"}</h2>
+          <ul className="mt-4 flex flex-wrap gap-6">
+            {related.map(item => <li key={item.slug}><Link to="/product/$slug" params={{ slug: item.slug }} className="text-primary underline underline-offset-4">{item.name}</Link></li>)}
+          </ul>
+        </section>
       </section>
 
       <SiteFooter />

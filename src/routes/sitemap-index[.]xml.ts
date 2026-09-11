@@ -7,12 +7,11 @@ export const Route = createFileRoute("/sitemap-index.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const now = new Date().toISOString();
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
           `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
-          `  <sitemap><loc>${BASE_URL}/sitemap.xml</loc><lastmod>${now}</lastmod></sitemap>`,
-          `  <sitemap><loc>${BASE_URL}/image-sitemap.xml</loc><lastmod>${now}</lastmod></sitemap>`,
+          `  <sitemap><loc>${BASE_URL}/sitemap.xml</loc></sitemap>`,
+          `  <sitemap><loc>${BASE_URL}/image-sitemap.xml</loc></sitemap>`,
           `</sitemapindex>`,
         ].join("\n");
         return new Response(xml, {

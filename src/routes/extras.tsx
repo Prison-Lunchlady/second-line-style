@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { collectionSchema } from "@/lib/seo";
 import { EXTRAS_PRODUCTS } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -6,50 +7,27 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
 
 const DESCRIPTION =
-  "Original graphics and limited designs outside our Louisiana collections.";
+  "Shop the Extras collection: original graphic tees and statement designs from Second Line Clothing, beyond our Louisiana-inspired collection.";
 
 export const Route = createFileRoute("/extras")({
   head: () => ({
     meta: [
-      { title: "Extras | Second Line Clothing" },
+      { title: "Extras: Original Graphic Tees | Second Line Clothing" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Extras | Second Line Clothing" },
+      { property: "og:title", content: "Extras: Original Graphic Tees | Second Line Clothing" },
+      { name: "twitter:title", content: "Extras: Original Graphic Tees | Second Line Clothing" },
       { property: "og:description", content: DESCRIPTION },
+      { name: "twitter:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://second-line-clothing.com/extras" },
     ],
     links: [
       { rel: "canonical", href: "https://second-line-clothing.com/extras" },
     ],
-    scripts:
-      EXTRAS_PRODUCTS.length > 0
-        ? [
-            {
-              type: "application/ld+json",
-              children: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "ItemList",
-                name: "Extras",
-                itemListElement: EXTRAS_PRODUCTS.map((p, i) => ({
-                  "@type": "ListItem",
-                  position: i + 1,
-                  item: {
-                    "@type": "Product",
-                    name: p.name,
-                    brand: { "@type": "Brand", name: "Second Line Clothing" },
-                    url: `https://second-line-clothing.com/product/${p.slug}`,
-                    offers: {
-                      "@type": "Offer",
-                      price: p.price,
-                      priceCurrency: "USD",
-                      availability: "https://schema.org/InStock",
-                    },
-                  },
-                })),
-              }),
-            },
-          ]
-        : [],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify(collectionSchema("Extras: Original Graphic Tees", "/extras", EXTRAS_PRODUCTS)),
+    }],
   }),
   component: ExtrasPage,
 });

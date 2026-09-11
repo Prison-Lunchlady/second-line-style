@@ -90,9 +90,11 @@ export function buildCityHead(city: CityHub) {
     meta: [
       { title: city.metaTitle },
       { name: "description", content: city.metaDescription },
-      { name: "keywords", content: `${city.name} culture, ${city.name} Louisiana, Louisiana culture, ${city.region}, Louisiana lifestyle, Louisiana apparel` },
+
       { property: "og:title", content: city.metaTitle },
+      { name: "twitter:title", content: city.metaTitle },
       { property: "og:description", content: city.metaDescription },
+      { name: "twitter:description", content: city.metaDescription },
       { property: "og:type", content: "article" },
       { property: "og:url", content: url },
     ],

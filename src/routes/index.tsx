@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import slMonogramWhite from "@/assets/SL_logo_white.png";
 import { PRODUCTS } from "@/lib/products";
-import { SITE_FAQS } from "@/lib/faq";
+import { collectionSchema } from "@/lib/seo";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -12,53 +12,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Louisiana Graphic Tees & Apparel | Second Line Clothing" },
-      { name: "description", content: "Louisiana-inspired graphic tees and apparel celebrating the culture, humor, history, people, and places that make Louisiana unique." },
-      { name: "keywords", content: "Louisiana graphic tee, Louisiana apparel, Louisiana clothing, Louisiana streetwear, Southern graphic tee, Louisiana culture, Louisiana lifestyle brand" },
+      { name: "description", content: "Shop Louisiana graphic tees inspired by Baton Rouge culture, local humor, and iconic places. Explore original designs from Second Line Clothing." },
+
       { property: "og:title", content: "Louisiana Graphic Tees & Apparel | Second Line Clothing" },
-      { property: "og:description", content: "Louisiana-inspired graphic tees and apparel celebrating the culture, humor, history, people, and places that make Louisiana unique." },
+      { name: "twitter:title", content: "Louisiana Graphic Tees & Apparel | Second Line Clothing" },
+      { property: "og:description", content: "Shop Louisiana graphic tees inspired by Baton Rouge culture, local humor, and iconic places. Explore original designs from Second Line Clothing." },
+      { name: "twitter:description", content: "Shop Louisiana graphic tees inspired by Baton Rouge culture, local humor, and iconic places. Explore original designs from Second Line Clothing." },
       { property: "og:url", content: "https://second-line-clothing.com/" },
     ],
     links: [
       { rel: "canonical", href: "https://second-line-clothing.com/" },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          name: "Louisiana Graphic Tees & Apparel",
-          itemListElement: PRODUCTS.map((p, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            item: {
-              "@type": "Product",
-              name: p.name,
-              brand: { "@type": "Brand", name: "Second Line Clothing" },
-              url: `https://second-line-clothing.com/product/${p.slug}`,
-              offers: {
-                "@type": "Offer",
-                price: p.price,
-                priceCurrency: "USD",
-                availability: "https://schema.org/InStock",
-              },
-            },
-          })),
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: SITE_FAQS.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }),
-      },
-    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify(collectionSchema("Louisiana Graphic Tees & Apparel", "/", PRODUCTS)),
+    }],
   }),
   component: Index,
 });
@@ -72,8 +40,8 @@ function Index() {
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at 20% 30%, oklch(0.5 0.2 300 / 0.5), transparent 50%), radial-gradient(circle at 80% 70%, oklch(0.82 0.14 85 / 0.35), transparent 55%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
-          <h1 className="sr-only">Second Line Clothing — Born from the streets of Louisiana</h1>
-          <img src={slMonogramWhite} alt="Second Line Clothing" className="mx-auto w-[85%] sm:w-[600px] h-auto" />
+          <h1 className="mb-6 text-xl sm:text-2xl font-bold uppercase tracking-wide">Louisiana Graphic Tees &amp; Apparel</h1>
+          <img src={slMonogramWhite} alt="Second Line Clothing" className="mx-auto w-[85%] sm:w-[600px] h-auto" fetchPriority="high" decoding="async" />
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">Louisiana culture, lifestyle, and humor — on every shirt. Limited collection releases, born from the streets of Louisiana.</p>
           <a href="#shop" className="inline-block mt-10 px-10 py-4 bg-primary text-primary-foreground font-bold tracking-widest uppercase rounded-sm hover:brightness-110 transition-all shadow-lg shadow-primary/20">Shop Now</a>
         </div>

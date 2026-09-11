@@ -11,9 +11,11 @@ export const Route = createFileRoute("/louisiana-humor")({
     meta: [
       { title: "Louisiana Humor — Sayings, Stereotypes & Stories | Second Line Clothing" },
       { name: "description", content: "Louisiana humor explained: classic sayings, regional stereotypes, Cajun humor, and the inside jokes that show up on Louisiana graphic tees." },
-      { name: "keywords", content: "Louisiana humor, Louisiana sayings, Cajun humor, Louisiana stereotypes, Louisiana stories, funny Louisiana tees" },
+
       { property: "og:title", content: "Louisiana Humor | Second Line Clothing" },
+      { name: "twitter:title", content: "Louisiana Humor | Second Line Clothing" },
       { property: "og:description", content: "Louisiana sayings, Cajun humor, regional stereotypes, and the local stories that inspire Louisiana graphic tees." },
+      { name: "twitter:description", content: "Louisiana sayings, Cajun humor, regional stereotypes, and the local stories that inspire Louisiana graphic tees." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${ORIGIN}/louisiana-humor` },
     ],

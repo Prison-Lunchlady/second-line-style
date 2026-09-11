@@ -9,105 +9,30 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
-import { Route as ShreveportRouteImport } from './routes/shreveport'
-import { Route as NewOrleansRouteImport } from './routes/new-orleans'
-import { Route as NatchitochesRouteImport } from './routes/natchitoches'
-import { Route as MonroeRouteImport } from './routes/monroe'
-import { Route as LouisianaStreetwearRouteImport } from './routes/louisiana-streetwear'
-import { Route as LouisianaHumorRouteImport } from './routes/louisiana-humor'
-import { Route as LouisianaRouteImport } from './routes/louisiana'
-import { Route as LafayetteRouteImport } from './routes/lafayette'
-import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
-import { Route as HoumaRouteImport } from './routes/houma'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ExtrasRouteImport } from './routes/extras'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as BatonRougeRouteImport } from './routes/baton-rouge'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BatonRougeRouteImport } from './routes/baton-rouge'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ExtrasRouteImport } from './routes/extras'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HoumaRouteImport } from './routes/houma'
+import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
+import { Route as LafayetteRouteImport } from './routes/lafayette'
+import { Route as LouisianaRouteImport } from './routes/louisiana'
+import { Route as LouisianaHumorRouteImport } from './routes/louisiana-humor'
+import { Route as LouisianaStreetwearRouteImport } from './routes/louisiana-streetwear'
+import { Route as MonroeRouteImport } from './routes/monroe'
+import { Route as NatchitochesRouteImport } from './routes/natchitoches'
+import { Route as NewOrleansRouteImport } from './routes/new-orleans'
+import { Route as ShreveportRouteImport } from './routes/shreveport'
+import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
-  id: '/sitemap-index.xml',
-  path: '/sitemap-index.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ShreveportRoute = ShreveportRouteImport.update({
-  id: '/shreveport',
-  path: '/shreveport',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewOrleansRoute = NewOrleansRouteImport.update({
-  id: '/new-orleans',
-  path: '/new-orleans',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NatchitochesRoute = NatchitochesRouteImport.update({
-  id: '/natchitoches',
-  path: '/natchitoches',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MonroeRoute = MonroeRouteImport.update({
-  id: '/monroe',
-  path: '/monroe',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LouisianaStreetwearRoute = LouisianaStreetwearRouteImport.update({
-  id: '/louisiana-streetwear',
-  path: '/louisiana-streetwear',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LouisianaHumorRoute = LouisianaHumorRouteImport.update({
-  id: '/louisiana-humor',
-  path: '/louisiana-humor',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LouisianaRoute = LouisianaRouteImport.update({
-  id: '/louisiana',
-  path: '/louisiana',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LafayetteRoute = LafayetteRouteImport.update({
-  id: '/lafayette',
-  path: '/lafayette',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ImageSitemapDotxmlRoute = ImageSitemapDotxmlRouteImport.update({
-  id: '/image-sitemap.xml',
-  path: '/image-sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HoumaRoute = HoumaRouteImport.update({
-  id: '/houma',
-  path: '/houma',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExtrasRoute = ExtrasRouteImport.update({
-  id: '/extras',
-  path: '/extras',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BatonRougeRoute = BatonRougeRouteImport.update({
-  id: '/baton-rouge',
-  path: '/baton-rouge',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -115,9 +40,89 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const BatonRougeRoute = BatonRougeRouteImport.update({
+  id: '/baton-rouge',
+  path: '/baton-rouge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExtrasRoute = ExtrasRouteImport.update({
+  id: '/extras',
+  path: '/extras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoumaRoute = HoumaRouteImport.update({
+  id: '/houma',
+  path: '/houma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageSitemapDotxmlRoute = ImageSitemapDotxmlRouteImport.update({
+  id: '/image-sitemap.xml',
+  path: '/image-sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LafayetteRoute = LafayetteRouteImport.update({
+  id: '/lafayette',
+  path: '/lafayette',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LouisianaRoute = LouisianaRouteImport.update({
+  id: '/louisiana',
+  path: '/louisiana',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LouisianaHumorRoute = LouisianaHumorRouteImport.update({
+  id: '/louisiana-humor',
+  path: '/louisiana-humor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LouisianaStreetwearRoute = LouisianaStreetwearRouteImport.update({
+  id: '/louisiana-streetwear',
+  path: '/louisiana-streetwear',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonroeRoute = MonroeRouteImport.update({
+  id: '/monroe',
+  path: '/monroe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NatchitochesRoute = NatchitochesRouteImport.update({
+  id: '/natchitoches',
+  path: '/natchitoches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewOrleansRoute = NewOrleansRouteImport.update({
+  id: '/new-orleans',
+  path: '/new-orleans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShreveportRoute = ShreveportRouteImport.update({
+  id: '/shreveport',
+  path: '/shreveport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
+  id: '/sitemap-index.xml',
+  path: '/sitemap-index.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog_/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductSlugRoute = ProductSlugRouteImport.update({
@@ -125,17 +130,12 @@ const ProductSlugRoute = ProductSlugRouteImport.update({
   path: '/product/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/blog': typeof BlogRoute
   '/extras': typeof ExtrasRoute
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
@@ -157,7 +157,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/blog': typeof BlogRoute
   '/extras': typeof ExtrasRoute
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
@@ -180,7 +180,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/baton-rouge': typeof BatonRougeRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/blog': typeof BlogRoute
   '/extras': typeof ExtrasRoute
   '/faq': typeof FaqRoute
   '/houma': typeof HoumaRoute
@@ -195,7 +195,7 @@ export interface FileRoutesById {
   '/shreveport': typeof ShreveportRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/$slug': typeof BlogSlugRoute
+  '/blog_/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRouteTypes {
@@ -263,7 +263,7 @@ export interface FileRouteTypes {
     | '/shreveport'
     | '/sitemap-index.xml'
     | '/sitemap.xml'
-    | '/blog/$slug'
+    | '/blog_/$slug'
     | '/product/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -271,7 +271,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BatonRougeRoute: typeof BatonRougeRoute
-  BlogRoute: typeof BlogRouteWithChildren
+  BlogRoute: typeof BlogRoute
   ExtrasRoute: typeof ExtrasRoute
   FaqRoute: typeof FaqRoute
   HoumaRoute: typeof HoumaRoute
@@ -286,121 +286,17 @@ export interface RootRouteChildren {
   ShreveportRoute: typeof ShreveportRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-index.xml': {
-      id: '/sitemap-index.xml'
-      path: '/sitemap-index.xml'
-      fullPath: '/sitemap-index.xml'
-      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/shreveport': {
-      id: '/shreveport'
-      path: '/shreveport'
-      fullPath: '/shreveport'
-      preLoaderRoute: typeof ShreveportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/new-orleans': {
-      id: '/new-orleans'
-      path: '/new-orleans'
-      fullPath: '/new-orleans'
-      preLoaderRoute: typeof NewOrleansRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/natchitoches': {
-      id: '/natchitoches'
-      path: '/natchitoches'
-      fullPath: '/natchitoches'
-      preLoaderRoute: typeof NatchitochesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/monroe': {
-      id: '/monroe'
-      path: '/monroe'
-      fullPath: '/monroe'
-      preLoaderRoute: typeof MonroeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/louisiana-streetwear': {
-      id: '/louisiana-streetwear'
-      path: '/louisiana-streetwear'
-      fullPath: '/louisiana-streetwear'
-      preLoaderRoute: typeof LouisianaStreetwearRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/louisiana-humor': {
-      id: '/louisiana-humor'
-      path: '/louisiana-humor'
-      fullPath: '/louisiana-humor'
-      preLoaderRoute: typeof LouisianaHumorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/louisiana': {
-      id: '/louisiana'
-      path: '/louisiana'
-      fullPath: '/louisiana'
-      preLoaderRoute: typeof LouisianaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lafayette': {
-      id: '/lafayette'
-      path: '/lafayette'
-      fullPath: '/lafayette'
-      preLoaderRoute: typeof LafayetteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/image-sitemap.xml': {
-      id: '/image-sitemap.xml'
-      path: '/image-sitemap.xml'
-      fullPath: '/image-sitemap.xml'
-      preLoaderRoute: typeof ImageSitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/houma': {
-      id: '/houma'
-      path: '/houma'
-      fullPath: '/houma'
-      preLoaderRoute: typeof HoumaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/extras': {
-      id: '/extras'
-      path: '/extras'
-      fullPath: '/extras'
-      preLoaderRoute: typeof ExtrasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/baton-rouge': {
-      id: '/baton-rouge'
-      path: '/baton-rouge'
-      fullPath: '/baton-rouge'
-      preLoaderRoute: typeof BatonRougeRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -410,11 +306,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/baton-rouge': {
+      id: '/baton-rouge'
+      path: '/baton-rouge'
+      fullPath: '/baton-rouge'
+      preLoaderRoute: typeof BatonRougeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/extras': {
+      id: '/extras'
+      path: '/extras'
+      fullPath: '/extras'
+      preLoaderRoute: typeof ExtrasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/houma': {
+      id: '/houma'
+      path: '/houma'
+      fullPath: '/houma'
+      preLoaderRoute: typeof HoumaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-sitemap.xml': {
+      id: '/image-sitemap.xml'
+      path: '/image-sitemap.xml'
+      fullPath: '/image-sitemap.xml'
+      preLoaderRoute: typeof ImageSitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lafayette': {
+      id: '/lafayette'
+      path: '/lafayette'
+      fullPath: '/lafayette'
+      preLoaderRoute: typeof LafayetteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/louisiana': {
+      id: '/louisiana'
+      path: '/louisiana'
+      fullPath: '/louisiana'
+      preLoaderRoute: typeof LouisianaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/louisiana-humor': {
+      id: '/louisiana-humor'
+      path: '/louisiana-humor'
+      fullPath: '/louisiana-humor'
+      preLoaderRoute: typeof LouisianaHumorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/louisiana-streetwear': {
+      id: '/louisiana-streetwear'
+      path: '/louisiana-streetwear'
+      fullPath: '/louisiana-streetwear'
+      preLoaderRoute: typeof LouisianaStreetwearRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monroe': {
+      id: '/monroe'
+      path: '/monroe'
+      fullPath: '/monroe'
+      preLoaderRoute: typeof MonroeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/natchitoches': {
+      id: '/natchitoches'
+      path: '/natchitoches'
+      fullPath: '/natchitoches'
+      preLoaderRoute: typeof NatchitochesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-orleans': {
+      id: '/new-orleans'
+      path: '/new-orleans'
+      fullPath: '/new-orleans'
+      preLoaderRoute: typeof NewOrleansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shreveport': {
+      id: '/shreveport'
+      path: '/shreveport'
+      fullPath: '/shreveport'
+      preLoaderRoute: typeof ShreveportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-index.xml': {
+      id: '/sitemap-index.xml'
+      path: '/sitemap-index.xml'
+      fullPath: '/sitemap-index.xml'
+      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog_/$slug': {
+      id: '/blog_/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/product/$slug': {
@@ -424,31 +432,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
-    }
   }
 }
-
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BatonRougeRoute: BatonRougeRoute,
-  BlogRoute: BlogRouteWithChildren,
+  BlogRoute: BlogRoute,
   ExtrasRoute: ExtrasRoute,
   FaqRoute: FaqRoute,
   HoumaRoute: HoumaRoute,
@@ -463,6 +454,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShreveportRoute: ShreveportRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogSlugRoute: BlogSlugRoute,
   ProductSlugRoute: ProductSlugRoute,
 }
 export const routeTree = rootRouteImport

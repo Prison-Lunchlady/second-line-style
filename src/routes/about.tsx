@@ -8,8 +8,8 @@ const ORIGIN = "https://second-line-clothing.com";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — A Louisiana Apparel Brand | Second Line Clothing" },
-      { name: "description", content: "Second Line Clothing is a Louisiana apparel brand. Started in Baton Rouge, built to represent Louisiana culture across cities, towns, and traditions." },
+      { title: "Our Louisiana Clothing Line | Second Line Clothing" },
+      { name: "description", content: "Meet Second Line Clothing, a Louisiana clothing line started in Baton Rouge. Discover the local stories behind our streetwear and original graphic tees." },
 
       { property: "og:title", content: "About Second Line Clothing" },
       { name: "twitter:title", content: "About Second Line Clothing" },

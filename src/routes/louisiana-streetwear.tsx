@@ -9,8 +9,8 @@ const ORIGIN = "https://second-line-clothing.com";
 export const Route = createFileRoute("/louisiana-streetwear")({
   head: () => ({
     meta: [
-      { title: "Louisiana Streetwear — Baton Rouge & New Orleans Influence | Second Line Clothing" },
-      { name: "description", content: "What Louisiana streetwear actually is: Baton Rouge and New Orleans influence, local fashion roots, and how Second Line Clothing fits into the scene." },
+      { title: "Louisiana Streetwear: Local Roots | Second Line Clothing" },
+      { name: "description", content: "Explore Louisiana streetwear through Baton Rouge references, New Orleans influences, and original graphic tees from Second Line Clothing. Shop the current drop." },
 
       { property: "og:title", content: "Louisiana Streetwear | Second Line Clothing" },
       { name: "twitter:title", content: "Louisiana Streetwear | Second Line Clothing" },
@@ -63,7 +63,7 @@ function LouisianaStreetwear() {
         <h1 className="mt-2 text-4xl sm:text-5xl font-black tracking-tight leading-tight text-white" style={{ fontFamily: "var(--font-display)" }}>
           Louisiana Streetwear
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground italic">Built from local references, worn outside the city limits.</p>
+        <p className="mt-4 text-lg text-muted-foreground italic">Louisiana streetwear from a clothing line rooted in Baton Rouge: original graphic tees, neighborhood references, and local stories you can wear.</p>
 
         <div className="mt-10 space-y-8 leading-relaxed">
           <section>
@@ -95,7 +95,8 @@ function LouisianaStreetwear() {
         </div>
 
         <section className="mt-12 border-t border-border pt-8">
-          <h2 className="text-lg font-bold uppercase tracking-wide text-white">Shop the drop</h2>
+          <h2 className="text-lg font-bold uppercase tracking-wide text-white">Shop Louisiana streetwear</h2>
+          <p className="mt-3 text-muted-foreground">Start with the LSU Lowlife Tee, The Pier Tee, BR Woods Tee, and Raising Hell from our Baton Rouge-inspired collection. Each design has its own product page with available sizes, colors, and pricing.</p>
           <ul className="mt-3 grid sm:grid-cols-2 gap-3">
             {featured.map((p) => (
               <li key={p.slug}>
@@ -105,6 +106,7 @@ function LouisianaStreetwear() {
               </li>
             ))}
           </ul>
+          <Link to="/" hash="shop" className="mt-6 inline-block text-primary underline underline-offset-4">Browse the full Louisiana graphic tee collection</Link>
         </section>
       </article>
       <SiteFooter />

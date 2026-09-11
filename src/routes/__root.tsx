@@ -73,8 +73,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Louisiana Graphic Tees & Apparel | Second Line Clothing" },
-      { name: "description", content: "Louisiana-inspired graphic tees and apparel celebrating the culture, humor, history, people, and places that make Louisiana unique." },
+      { title: "Louisiana Streetwear & Clothing Brand | Second Line Clothing" },
+      { name: "description", content: "Discover Second Line Clothing, a Louisiana clothing line rooted in Baton Rouge. Shop original streetwear, graphic tees, and designs inspired by local culture." },
       { name: "google-site-verification", content: "EhaiocrmfowjkbzZTbw-rRg788JrKQWle_lJbg_3P-M" },
       { name: "author", content: "Second Line Clothing" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
@@ -85,8 +85,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:url", content: "https://second-line-clothing.com" },
       { property: "og:site_name", content: "Second Line Clothing" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Louisiana Graphic Tees & Apparel | Second Line Clothing" },
-      { name: "twitter:description", content: "Louisiana-inspired graphic tees and apparel celebrating the culture, humor, history, people, and places that make Louisiana unique." },
+      { name: "twitter:title", content: "Louisiana Streetwear & Clothing Brand | Second Line Clothing" },
+      { name: "twitter:description", content: "Discover Second Line Clothing, a Louisiana clothing line rooted in Baton Rouge. Shop original streetwear, graphic tees, and designs inspired by local culture." },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fkxVQFBXkMMhWxhFGgwVSGQKnIw2/social-images/social-1779918298062-logo.webp" },
     ],
     links: [

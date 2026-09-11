@@ -133,7 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Brand",
           name: "Second Line Clothing",
           url: "https://second-line-clothing.com",
-          description: "Louisiana apparel brand — graphic tees and streetwear rooted in Louisiana culture, humor, and lifestyle.",
+          description: "Louisiana apparel brand, graphic tees and streetwear rooted in Louisiana culture, humor, and lifestyle.",
           logo: "https://storage.googleapis.com/gpt-engineer-file-uploads/fkxVQFBXkMMhWxhFGgwVSGQKnIw2/social-images/social-1779918298062-logo.webp",
         }),
       },

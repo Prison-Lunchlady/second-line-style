@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import slMonogramWhite from "@/assets/SL_logo_white.png";
+import { CommunityGallery } from "@/components/CommunityGallery";
 import { PRODUCTS } from "@/lib/products";
 import { collectionSchema } from "@/lib/seo";
 import { ProductCard } from "@/components/ProductCard";
@@ -39,16 +39,25 @@ function Index() {
 
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at 20% 30%, oklch(0.5 0.2 300 / 0.5), transparent 50%), radial-gradient(circle at 80% 70%, oklch(0.82 0.14 85 / 0.35), transparent 55%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-center">
-          <h1 className="mb-6 text-xl sm:text-2xl font-bold uppercase tracking-wide">Louisiana Streetwear &amp; Clothing Brand</h1>
-          <img src={slMonogramWhite} alt="Second Line Clothing" className="mx-auto w-[85%] sm:w-[600px] h-auto" fetchPriority="high" decoding="async" />
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground italic max-w-xl mx-auto">A Louisiana clothing line rooted in Baton Rouge. Original graphic tees inspired by the neighborhoods, local humor, and stories we grew up with.</p>
-          <a href="#shop" className="inline-block mt-10 px-10 py-4 bg-primary text-primary-foreground font-bold tracking-widest uppercase rounded-sm hover:brightness-110 transition-all shadow-lg shadow-primary/20">Shop Now</a>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div>
+            <p className="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-4">Baton Rouge roots. Louisiana stories.</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase leading-[1.05]">Louisiana Streetwear &amp; Clothing Brand</h1>
+            <p className="mt-6 text-lg text-muted-foreground max-w-xl">A Louisiana clothing line rooted in Baton Rouge. Original graphic tees inspired by the neighborhoods, local humor, and stories we grew up with.</p>
+            <div className="flex flex-wrap gap-4 mt-7 items-center">
+              <a href="#shop" className="px-6 py-3 bg-primary text-primary-foreground font-bold uppercase rounded-sm hover:brightness-110">Shop the collection</a>
+              <Link to="/our-story" className="text-primary font-semibold underline underline-offset-4">Watch our story</Link>
+            </div>
+          </div>
+          <figure className="relative">
+            <img src="/media/barry-seal-shirt-outdoors.webp" srcSet="/media/barry-seal-shirt-outdoors-480.webp 480w, /media/barry-seal-shirt-outdoors.webp 960w" sizes="(min-width: 768px) 45vw, 100vw" alt="White Barry Seal Flight School tee worn outdoors, showing the Baton Rouge back graphic" width="960" height="1694" className="w-full h-[400px] sm:h-[500px] object-cover object-[50%_65%] rounded-sm" fetchPriority="high" decoding="async" />
+            <figcaption className="mt-3 text-sm text-muted-foreground">Worn in the wild. <Link to="/product/$slug" params={{slug: "barry-seal-flight-school-tee"}} className="text-primary underline underline-offset-4">Shop the Flight School design</Link></figcaption>
+          </figure>
         </div>
         <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
       </section>
 
-      <section id="shop" className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+      <section id="shop" className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
         <div className="mb-12 text-center">
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>THE <span className="text-primary">DROP</span></h2>
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
@@ -82,12 +91,18 @@ function Index() {
         </div>
       </section>
 
+      <CommunityGallery />
+
       <section id="about" className="relative border-y border-border bg-card">
         <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(circle at 70% 50%, oklch(0.5 0.2 300 / 0.6), transparent 60%)" }} />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center">
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>OUR LOUISIANA <span className="text-primary">CLOTHING LINE</span></h2>
           <div className="mt-3 mb-8 h-0.5 w-24 mx-auto bg-secondary" />
-          <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground">Second Line Clothing is a Louisiana lifestyle and culture brand. We design graphic tees and apparel that celebrate the culture, humor, history, people, and places that make Louisiana unique — from the bayou to the block. Collection 001 is Baton Rouge inspired; future limited collections will represent cities, towns, and traditions from across the state.</p>
+          <Link to="/our-story" className="group block max-w-sm mx-auto mb-8 rounded-sm overflow-hidden border border-border">
+            <img src="/media/founder-introduction.jpg" alt="The founder of Second Line Clothing introduces the brand" width="720" height="1280" loading="lazy" decoding="async" className="w-full h-72 object-cover object-top" />
+            <span className="block p-4 bg-primary text-primary-foreground font-bold">▶ Watch the founder’s story · 1:27</span>
+          </Link>
+          <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground">Second Line Clothing is a Louisiana lifestyle and culture brand. We design graphic tees and apparel that celebrate the culture, humor, history, people, and places that make Louisiana unique, from the bayou to the block. Collection 001 is Baton Rouge inspired; future limited collections will represent cities, towns, and traditions from across the state.</p>
           <p className="mt-6 text-xl sm:text-2xl font-bold text-primary tracking-wide" style={{ fontFamily: "var(--font-display)" }}>Louisiana pride. Limited drops. Made for the streets.</p>
           <p className="mt-6 text-sm"><Link to="/louisiana-streetwear" className="text-primary underline underline-offset-4">Explore our Louisiana streetwear influences</Link> or <Link to="/about" className="text-primary underline underline-offset-4">meet the Louisiana clothing brand behind the designs</Link>.</p>
         </div>

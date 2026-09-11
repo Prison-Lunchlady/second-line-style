@@ -10,14 +10,14 @@ const ORIGIN = "https://second-line-clothing.com";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Journal — Louisiana Culture, Style & Stories | Second Line Clothing" },
+      { title: "Journal, Louisiana Culture, Style & Stories | Second Line Clothing" },
       {
         name: "description",
         content:
-          "Stories, culture, and inspiration behind Second Line Clothing — a Louisiana lifestyle apparel brand. Read about Louisiana graphic tees, Louisiana style, and the people behind the drops.",
+          "Stories, culture, and inspiration behind Second Line Clothing, a Louisiana lifestyle apparel brand. Read about Louisiana graphic tees, Louisiana style, and the people behind the drops.",
       },
-      { property: "og:title", content: "Journal — Louisiana Culture & Style | Second Line Clothing" },
-      { name: "twitter:title", content: "Journal — Louisiana Culture & Style | Second Line Clothing" },
+      { property: "og:title", content: "Journal, Louisiana Culture & Style | Second Line Clothing" },
+      { name: "twitter:title", content: "Journal, Louisiana Culture & Style | Second Line Clothing" },
       { property: "og:description", content: "Stories and inspiration behind Louisiana graphic tees and apparel from Second Line Clothing." },
       { name: "twitter:description", content: "Stories and inspiration behind Louisiana graphic tees and apparel from Second Line Clothing." },
       { property: "og:url", content: `${ORIGIN}/blog` },
@@ -60,7 +60,7 @@ function BlogIndex() {
           </h1>
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-            Stories, culture, and inspiration behind Louisiana graphic tees and apparel — straight from a Louisiana lifestyle brand.
+            Stories, culture, and inspiration behind Louisiana graphic tees and apparel, straight from a Louisiana lifestyle brand.
           </p>
         </header>
         <div className="grid gap-6 sm:grid-cols-2">

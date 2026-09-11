@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { PRODUCTS, EXTRAS_PRODUCTS } from "@/lib/products";
+import { COMMUNITY_PHOTOS } from "@/lib/community";
 
 const BASE_URL = "https://second-line-clothing.com";
 
@@ -66,6 +67,8 @@ export const Route = createFileRoute("/image-sitemap.xml")({
           `<?xml version="1.0" encoding="UTF-8"?>`,
           `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
           ...urls,
+          `<url><loc>${BASE_URL}/</loc>${COMMUNITY_PHOTOS.map(photo => `<image:image><image:loc>${BASE_URL}/media/${photo.file}</image:loc></image:image>`).join("")}</url>`,
+          `<url><loc>${BASE_URL}/our-story</loc><image:image><image:loc>${BASE_URL}/media/founder-introduction.jpg</image:loc></image:image></url>`,
           `</urlset>`,
         ].join("\n");
 

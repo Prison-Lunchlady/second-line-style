@@ -60,7 +60,7 @@ export function CityHubPage({ city }: { city: CityHub }) {
             {otherCities.map((c) => (
               <li key={c.slug}>
                 <a href={`/${c.slug}`} className="text-sm text-primary hover:brightness-110 underline underline-offset-4">
-                  {c.name} — {c.region}
+                  {c.name}, {c.region}
                 </a>
               </li>
             ))}

@@ -9,9 +9,9 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={slMonogramWhite} alt="Second Line Clothing" style={{ height: "72px", width: "auto" }} />
+          <img src={slMonogramWhite} alt="Second Line Clothing" className="h-12 sm:h-[72px] w-auto" />
         </Link>
-        <ul className="flex items-center gap-6 sm:gap-8 text-sm font-semibold tracking-widest uppercase">
+        <ul className="flex items-center gap-3 sm:gap-8 text-[10px] sm:text-sm font-semibold tracking-wide sm:tracking-widest uppercase">
           <li><Link to="/" hash="shop" className="hover:text-primary transition-colors">Shop</Link></li>
           <li><Link to="/extras" className="hover:text-primary transition-colors">Extras</Link></li>
           <li><Link to="/" hash="about" className="hover:text-primary transition-colors">About</Link></li>

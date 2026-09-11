@@ -68,7 +68,7 @@ function LouisianaStreetwear() {
         <div className="mt-10 space-y-8 leading-relaxed">
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">What "Louisiana fashion" actually means</h2>
-            <p className="mt-3">There's no single Louisiana look. The state covers everything from French Quarter formal to deer camp casual to LSU game-day uniform to Sunday-best in a brass band parade. Louisiana fashion is whatever a Louisianian wears, and the through-line isn't a silhouette — it's an attitude. Bold colors are normal. Letting a graphic do the talking is normal. Showing where you're from is normal.</p>
+            <p className="mt-3">There's no single Louisiana look. The state covers everything from French Quarter formal to deer camp casual to LSU game-day uniform to Sunday-best in a brass band parade. Louisiana fashion is whatever a Louisianian wears, and the through-line isn't a silhouette, it's an attitude. Bold colors are normal. Letting a graphic do the talking is normal. Showing where you're from is normal.</p>
           </section>
 
           <section>
@@ -78,19 +78,19 @@ function LouisianaStreetwear() {
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Baton Rouge influence</h2>
-            <p className="mt-3">Baton Rouge brings the college-town graphic tee tradition, the LSU purple-and-gold visual identity, and a local streetwear scene that has been quietly producing original ideas for years. Collection 001 leans into Baton Rouge for a reason — the city's design sensibility is sharper than it gets credit for, and a lot of what reads as "Louisiana streetwear" nationally has Baton Rouge fingerprints on it.</p>
+            <p className="mt-3">Baton Rouge brings the college-town graphic tee tradition, the LSU purple-and-gold visual identity, and a local streetwear scene that has been quietly producing original ideas for years. Collection 001 leans into Baton Rouge for a reason, the city's design sensibility is sharper than it gets credit for, and a lot of what reads as "Louisiana streetwear" nationally has Baton Rouge fingerprints on it.</p>
             <p>Read more: <Link to="/baton-rouge" className="text-primary underline underline-offset-4">Baton Rouge Culture</Link>.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">New Orleans influence</h2>
-            <p className="mt-3">New Orleans brings the brass band aesthetic, second line culture, neighborhood pride graphics, krewe merch traditions, and a long history of T-shirts that double as cultural documents. The city's design language — bold type, saint imagery, parade-route iconography, fleur-de-lis everything — has shaped how Louisiana streetwear looks to the outside world.</p>
+            <p className="mt-3">New Orleans brings the brass band aesthetic, second line culture, neighborhood pride graphics, krewe merch traditions, and a long history of T-shirts that double as cultural documents. The city's design language, bold type, saint imagery, parade-route iconography, fleur-de-lis everything, has shaped how Louisiana streetwear looks to the outside world.</p>
             <p>Read more: <Link to="/new-orleans" className="text-primary underline underline-offset-4">New Orleans Culture</Link>.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Where Second Line Clothing fits</h2>
-            <p className="mt-3">Second Line Clothing is part of the next layer of Louisiana streetwear: a Louisiana lifestyle brand that treats the whole state — not one city — as the source material. Collection 001 is Baton Rouge inspired. Future drops will move through New Orleans, Acadiana, North Louisiana, bayou country, and the small towns. The brand is street-level Louisiana, on a tee.</p>
+            <p className="mt-3">Second Line Clothing is part of the next layer of Louisiana streetwear: a Louisiana lifestyle brand that treats the whole state, not one city, as the source material. Collection 001 is Baton Rouge inspired. Future drops will move through New Orleans, Acadiana, North Louisiana, bayou country, and the small towns. The brand is street-level Louisiana, on a tee.</p>
           </section>
         </div>
 

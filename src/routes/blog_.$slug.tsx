@@ -16,7 +16,7 @@ export const Route = createFileRoute("/blog_/$slug")({
   },
   head: ({ loaderData }) => {
     const post = loaderData?.post;
-    if (!post) return { meta: [{ title: "Article not found — Second Line Clothing" }] };
+    if (!post) return { meta: [{ title: "Article not found, Second Line Clothing" }] };
     const url = `${ORIGIN}/blog/${post.slug}`;
     const title = `${post.title} | Second Line Clothing Journal`;
     return {

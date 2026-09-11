@@ -406,7 +406,7 @@ export function getProductBySlug(slug: string): Product | undefined {
  *
  * 1. Add the image asset import at the top of this file (same as the others).
  * 2. Paste the object into EXTRAS_RAW below.
- * That's it — the /extras grid, product detail page, and checkout all work.
+ * That's it, the /extras grid, product detail page, and checkout all work.
  * ------------------------------------------------------------------------- */
 const EXTRAS_RAW: Omit<Product, "slug">[] = [
   {

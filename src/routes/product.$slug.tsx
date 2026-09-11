@@ -9,6 +9,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { altForProduct } from "@/lib/image-alt";
+import { COMMUNITY_PHOTOS } from "@/lib/community";
 
 const ORIGIN = "https://second-line-clothing.com";
 
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/product/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.product;
     if (!p) {
-      return { meta: [{ title: "Item not found — Second Line Clothing" }, { name: "robots", content: "noindex, follow" }] };
+      return { meta: [{ title: "Item not found, Second Line Clothing" }, { name: "robots", content: "noindex, follow" }] };
     }
     const url = `${ORIGIN}/product/${p.slug}`;
     const title = `${p.name} | Second Line Clothing`;
@@ -51,7 +52,7 @@ export const Route = createFileRoute("/product/$slug")({
             "@context": "https://schema.org",
             "@type": "Product",
             name: p.name,
-            image: productImages(p),
+            image: [...productImages(p), ...COMMUNITY_PHOTOS.filter(photo => photo.slug === p.slug).map(photo => `${ORIGIN}/media/${photo.file}`)],
             description,
             sku: p.slug,
             category: p.collection === "extras" ? "Graphic Apparel" : "Louisiana Apparel",
@@ -130,7 +131,7 @@ function Countdown({ endsAt }: { endsAt: number }) {
   );
   return (
     <div className="mt-6 p-4 bg-card border border-primary/40 rounded-sm">
-      <p className="text-xs font-bold tracking-widest uppercase text-primary">Limited Release — Available Until 6/30</p>
+      <p className="text-xs font-bold tracking-widest uppercase text-primary">Limited Release, Available Until 6/30</p>
       <div className="mt-3 flex gap-2 sm:gap-3">
         {cell(days, "Days")}
         {cell(hours, "Hours")}
@@ -255,6 +256,15 @@ function ProductPage() {
             </div>
           </div>
         </div>
+        {COMMUNITY_PHOTOS.some(photo => photo.slug === p.slug) && <section className="mt-12 border-t border-border pt-8">
+          <h2 className="text-xl font-bold uppercase">From the community</h2>
+          <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-3xl">
+            {COMMUNITY_PHOTOS.filter(photo => photo.slug === p.slug).map(photo => <figure key={photo.file}>
+              <a href={`/media/${photo.file}`} aria-label={`View full photo: ${photo.alt}`}><img src={`/media/${photo.file}`} alt={photo.alt} width="960" height="1700" loading="lazy" className="w-full aspect-[9/16] object-contain bg-card rounded-sm" /></a>
+              <figcaption className="mt-2 text-sm text-muted-foreground">{photo.caption}</figcaption>
+            </figure>)}
+          </div>
+        </section>}
         <section className="mt-16 border-t border-border pt-8" aria-label="More from this collection">
           <h2 className="text-xl font-bold uppercase">{p.collection === "extras" ? "More from Extras" : "More Louisiana Graphic Tees"}</h2>
           <ul className="mt-4 flex flex-wrap gap-6">

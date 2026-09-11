@@ -64,32 +64,37 @@ function AboutPage() {
           A Louisiana Apparel Brand.
         </h1>
         <p className="mt-4 text-lg text-muted-foreground italic">Started in Baton Rouge. Built for all of Louisiana.</p>
+        <Link to="/our-story" className="mt-8 flex flex-col sm:flex-row items-center gap-5 p-5 border border-border bg-card rounded-sm">
+          <img src="/media/founder-introduction.jpg" alt="Second Line Clothing founder introducing the brand" width="720" height="1280" className="w-28 h-40 object-cover rounded-sm" loading="lazy" />
+          <span><strong className="block text-xl text-primary">Watch our founder’s introduction</strong><span className="block mt-2 text-muted-foreground">The Louisiana culture behind Second Line, in his own words. 1 min 27 sec.</span></span>
+        </Link>
 
         <div className="mt-10 space-y-6 leading-relaxed">
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Louisiana roots</h2>
-            <p className="mt-3">Second Line Clothing is a Louisiana lifestyle and culture apparel brand. We design graphic tees and streetwear that celebrate the culture, humor, history, people, and places that make Louisiana unique. The brand isn't a tourist version of the state — it's built by and for people who actually live here.</p>
+            <p className="mt-3">Second Line Clothing is a Louisiana lifestyle and culture apparel brand. We design graphic tees and streetwear that celebrate the culture, humor, history, people, and places that make Louisiana unique. The brand isn't a tourist version of the state, it's built by and for people who actually live here.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">The Baton Rouge origin story</h2>
-            <p className="mt-3">The brand started in Baton Rouge, which is why Collection 001 leans heavily on Baton Rouge references. Baton Rouge is a college town, a state capital, a river city, and a Friday-night football city all at once — a city with more identity than it usually gets credit for. Building the first collection here meant building on real inside knowledge instead of imported stereotypes.</p>
+            <p className="mt-3">Founder and owner Brad grew up in Baton Rouge. Second Line brings his passion for streetwear together with the local people, places, businesses, and memories that shaped him. <Link to="/our-story" className="text-primary underline">Hear the story from Brad</Link>.</p>
+            <p className="mt-3">The brand started in Baton Rouge, which is why Collection 001 leans heavily on Baton Rouge references. Baton Rouge is a college town, a state capital, a river city, and a Friday-night football city all at once, a city with more identity than it usually gets credit for. Building the first collection here meant building on real inside knowledge instead of imported stereotypes.</p>
             <p>Read more: <Link to="/baton-rouge" className="text-primary underline underline-offset-4">Baton Rouge Culture</Link>.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">A Louisiana-wide vision</h2>
-            <p className="mt-3">Baton Rouge is the starting point, not the ceiling. Louisiana culture is regional, layered, and deep — New Orleans is its own world, Acadiana speaks its own language, North Louisiana has its own music history, bayou country has its own working-coast identity, and small towns like Natchitoches carry centuries of Louisiana history on their own terms. Second Line Clothing is built to represent all of that over time.</p>
+            <p className="mt-3">Baton Rouge is the starting point, not the ceiling. Louisiana culture is regional, layered, and deep, New Orleans is its own world, Acadiana speaks its own language, North Louisiana has its own music history, bayou country has its own working-coast identity, and small towns like Natchitoches carry centuries of Louisiana history on their own terms. Second Line Clothing is built to represent all of that over time.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Future city collections</h2>
-            <p className="mt-3">Future limited drops will cover cities and regions across the state: <Link to="/new-orleans" className="text-primary underline">New Orleans</Link>, <Link to="/lafayette" className="text-primary underline">Lafayette</Link> and Acadiana, <Link to="/shreveport" className="text-primary underline">Shreveport</Link>, <Link to="/monroe" className="text-primary underline">Monroe</Link>, <Link to="/houma" className="text-primary underline">Houma</Link> and bayou country, <Link to="/natchitoches" className="text-primary underline">Natchitoches</Link>, and the smaller towns and traditions in between. Each collection will get the same treatment — real references, real respect, real specifics.</p>
+            <p className="mt-3">Future limited drops will cover cities and regions across the state: <Link to="/new-orleans" className="text-primary underline">New Orleans</Link>, <Link to="/lafayette" className="text-primary underline">Lafayette</Link> and Acadiana, <Link to="/shreveport" className="text-primary underline">Shreveport</Link>, <Link to="/monroe" className="text-primary underline">Monroe</Link>, <Link to="/houma" className="text-primary underline">Houma</Link> and bayou country, <Link to="/natchitoches" className="text-primary underline">Natchitoches</Link>, and the smaller towns and traditions in between. Each collection will get the same treatment, real references, real respect, real specifics.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Why "Second Line"</h2>
-            <p className="mt-3">A second line is the group of people who follow a New Orleans brass band parade — participants, not spectators. That's the posture we wanted Louisiana apparel to take: follow the culture, carry it forward, make it wearable.</p>
+            <p className="mt-3">A second line is the group of people who follow a New Orleans brass band parade, participants, not spectators. That's the posture we wanted Louisiana apparel to take: follow the culture, carry it forward, make it wearable.</p>
           </section>
         </div>
 

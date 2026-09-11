@@ -9,7 +9,7 @@ const ORIGIN = "https://second-line-clothing.com";
 export const Route = createFileRoute("/louisiana-humor")({
   head: () => ({
     meta: [
-      { title: "Louisiana Humor — Sayings, Stereotypes & Stories | Second Line Clothing" },
+      { title: "Louisiana Humor, Sayings, Stereotypes & Stories | Second Line Clothing" },
       { name: "description", content: "Louisiana humor explained: classic sayings, regional stereotypes, Cajun humor, and the inside jokes that show up on Louisiana graphic tees." },
 
       { property: "og:title", content: "Louisiana Humor | Second Line Clothing" },
@@ -73,12 +73,12 @@ function LouisianaHumor() {
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Louisiana stereotypes (and the truth underneath)</h2>
-            <p className="mt-3">Every state lives with stereotypes; Louisiana lives with louder ones. Alligators in the backyard, hurricanes by name, a politician scandal a month, and a population that treats Mardi Gras as a religious calendar. Locals lean into all of it. The trick is that most stereotypes about Louisiana are exaggerated versions of something that's actually true — which is exactly why they're funny.</p>
+            <p className="mt-3">Every state lives with stereotypes; Louisiana lives with louder ones. Alligators in the backyard, hurricanes by name, a politician scandal a month, and a population that treats Mardi Gras as a religious calendar. Locals lean into all of it. The trick is that most stereotypes about Louisiana are exaggerated versions of something that's actually true, which is exactly why they're funny.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold uppercase tracking-wide text-white">Cajun humor</h2>
-            <p className="mt-3">Cajun humor is its own dialect. Boudreaux and Thibodeaux jokes, hunting-camp stories that got bigger every year they were told, and a comfort with self-deprecation that translates badly outside South Louisiana. Cajun humor doesn't punch down — it punches sideways, usually at the storyteller themselves.</p>
+            <p className="mt-3">Cajun humor is its own dialect. Boudreaux and Thibodeaux jokes, hunting-camp stories that got bigger every year they were told, and a comfort with self-deprecation that translates badly outside South Louisiana. Cajun humor doesn't punch down, it punches sideways, usually at the storyteller themselves.</p>
           </section>
 
           <section>

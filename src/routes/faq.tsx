@@ -9,7 +9,7 @@ const ORIGIN = "https://second-line-clothing.com";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Second Line Clothing | Louisiana Apparel" },
+      { title: "FAQ, Second Line Clothing | Louisiana Apparel" },
       { name: "description", content: "Answers about Second Line Clothing, a Louisiana lifestyle apparel brand: what we are, where we're based, why Louisiana apparel is unique, and what's coming next." },
       { property: "og:title", content: "Second Line Clothing FAQ" },
       { name: "twitter:title", content: "Second Line Clothing FAQ" },

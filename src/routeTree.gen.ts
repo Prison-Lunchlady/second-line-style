@@ -24,9 +24,11 @@ import { Route as LouisianaStreetwearRouteImport } from './routes/louisiana-stre
 import { Route as MonroeRouteImport } from './routes/monroe'
 import { Route as NatchitochesRouteImport } from './routes/natchitoches'
 import { Route as NewOrleansRouteImport } from './routes/new-orleans'
+import { Route as OurStoryRouteImport } from './routes/our-story'
 import { Route as ShreveportRouteImport } from './routes/shreveport'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as VideoSitemapDotxmlRouteImport } from './routes/video-sitemap[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 
@@ -105,6 +107,11 @@ const NewOrleansRoute = NewOrleansRouteImport.update({
   path: '/new-orleans',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OurStoryRoute = OurStoryRouteImport.update({
+  id: '/our-story',
+  path: '/our-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShreveportRoute = ShreveportRouteImport.update({
   id: '/shreveport',
   path: '/shreveport',
@@ -118,6 +125,11 @@ const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoSitemapDotxmlRoute = VideoSitemapDotxmlRouteImport.update({
+  id: '/video-sitemap.xml',
+  path: '/video-sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -147,9 +159,11 @@ export interface FileRoutesByFullPath {
   '/monroe': typeof MonroeRoute
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
+  '/our-story': typeof OurStoryRoute
   '/shreveport': typeof ShreveportRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-sitemap.xml': typeof VideoSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
 }
@@ -169,9 +183,11 @@ export interface FileRoutesByTo {
   '/monroe': typeof MonroeRoute
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
+  '/our-story': typeof OurStoryRoute
   '/shreveport': typeof ShreveportRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-sitemap.xml': typeof VideoSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
 }
@@ -192,9 +208,11 @@ export interface FileRoutesById {
   '/monroe': typeof MonroeRoute
   '/natchitoches': typeof NatchitochesRoute
   '/new-orleans': typeof NewOrleansRoute
+  '/our-story': typeof OurStoryRoute
   '/shreveport': typeof ShreveportRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-sitemap.xml': typeof VideoSitemapDotxmlRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
 }
@@ -216,9 +234,11 @@ export interface FileRouteTypes {
     | '/monroe'
     | '/natchitoches'
     | '/new-orleans'
+    | '/our-story'
     | '/shreveport'
     | '/sitemap-index.xml'
     | '/sitemap.xml'
+    | '/video-sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -238,9 +258,11 @@ export interface FileRouteTypes {
     | '/monroe'
     | '/natchitoches'
     | '/new-orleans'
+    | '/our-story'
     | '/shreveport'
     | '/sitemap-index.xml'
     | '/sitemap.xml'
+    | '/video-sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
   id:
@@ -260,9 +282,11 @@ export interface FileRouteTypes {
     | '/monroe'
     | '/natchitoches'
     | '/new-orleans'
+    | '/our-story'
     | '/shreveport'
     | '/sitemap-index.xml'
     | '/sitemap.xml'
+    | '/video-sitemap.xml'
     | '/blog_/$slug'
     | '/product/$slug'
   fileRoutesById: FileRoutesById
@@ -283,9 +307,11 @@ export interface RootRouteChildren {
   MonroeRoute: typeof MonroeRoute
   NatchitochesRoute: typeof NatchitochesRoute
   NewOrleansRoute: typeof NewOrleansRoute
+  OurStoryRoute: typeof OurStoryRoute
   ShreveportRoute: typeof ShreveportRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VideoSitemapDotxmlRoute: typeof VideoSitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
@@ -397,6 +423,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewOrleansRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/our-story': {
+      id: '/our-story'
+      path: '/our-story'
+      fullPath: '/our-story'
+      preLoaderRoute: typeof OurStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shreveport': {
       id: '/shreveport'
       path: '/shreveport'
@@ -416,6 +449,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-sitemap.xml': {
+      id: '/video-sitemap.xml'
+      path: '/video-sitemap.xml'
+      fullPath: '/video-sitemap.xml'
+      preLoaderRoute: typeof VideoSitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog_/$slug': {
@@ -451,9 +491,11 @@ const rootRouteChildren: RootRouteChildren = {
   MonroeRoute: MonroeRoute,
   NatchitochesRoute: NatchitochesRoute,
   NewOrleansRoute: NewOrleansRoute,
+  OurStoryRoute: OurStoryRoute,
   ShreveportRoute: ShreveportRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VideoSitemapDotxmlRoute: VideoSitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductSlugRoute: ProductSlugRoute,
 }

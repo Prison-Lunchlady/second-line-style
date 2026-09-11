@@ -10,13 +10,13 @@ const ORIGIN = "https://second-line-clothing.com";
 export const Route = createFileRoute("/louisiana")({
   head: () => ({
     meta: [
-      { title: "Louisiana Culture Hub — Food, Music, Cities & Lifestyle | Second Line Clothing" },
-      { name: "description", content: "A Louisiana culture hub from a Louisiana apparel brand: culture, humor, food, music, traditions, cities, and lifestyle — and how it all shapes Second Line Clothing." },
+      { title: "Louisiana Culture Hub, Food, Music, Cities & Lifestyle | Second Line Clothing" },
+      { name: "description", content: "A Louisiana culture hub from a Louisiana apparel brand: culture, humor, food, music, traditions, cities, and lifestyle, and how it all shapes Second Line Clothing." },
 
       { property: "og:title", content: "Louisiana Culture Hub | Second Line Clothing" },
       { name: "twitter:title", content: "Louisiana Culture Hub | Second Line Clothing" },
-      { property: "og:description", content: "Louisiana culture, humor, food, music, traditions, cities, and lifestyle — from a Louisiana apparel brand." },
-      { name: "twitter:description", content: "Louisiana culture, humor, food, music, traditions, cities, and lifestyle — from a Louisiana apparel brand." },
+      { property: "og:description", content: "Louisiana culture, humor, food, music, traditions, cities, and lifestyle, from a Louisiana apparel brand." },
+      { name: "twitter:description", content: "Louisiana culture, humor, food, music, traditions, cities, and lifestyle, from a Louisiana apparel brand." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${ORIGIN}/louisiana` },
     ],
@@ -94,8 +94,8 @@ function LouisianaHub() {
 
         <div className="mt-12 space-y-12">
           <Section id="culture" title="Louisiana Culture">
-            <p>Louisiana culture is the result of centuries of French, Spanish, African, Caribbean, Native American, and Southern American influence colliding in one state. You can hear it in the music, taste it in the food, see it in the architecture, and read it on the menus. It's not a single tradition — it's a layered, regional, lived-in culture that doesn't translate cleanly to the rest of the country.</p>
-            <p>That's why a Louisiana apparel brand can't be generic. Louisiana graphic tees only work when they're specific — when they reference a parish, a phrase, a dish, a moment that locals know on sight. Vague Southern pride isn't enough.</p>
+            <p>Louisiana culture is the result of centuries of French, Spanish, African, Caribbean, Native American, and Southern American influence colliding in one state. You can hear it in the music, taste it in the food, see it in the architecture, and read it on the menus. It's not a single tradition, it's a layered, regional, lived-in culture that doesn't translate cleanly to the rest of the country.</p>
+            <p>That's why a Louisiana apparel brand can't be generic. Louisiana graphic tees only work when they're specific, when they reference a parish, a phrase, a dish, a moment that locals know on sight. Vague Southern pride isn't enough.</p>
           </Section>
 
           <Section id="humor" title="Louisiana Humor">
@@ -103,15 +103,15 @@ function LouisianaHub() {
           </Section>
 
           <Section id="food" title="Louisiana Food">
-            <p>Gumbo, jambalaya, étouffée, red beans and rice, boudin, cracklins, po-boys, sno-balls, fried catfish, crawfish boils, Natchitoches meat pies, plate lunches you eat standing up at a gas station. Louisiana food is regional within the state itself — a Cajun gumbo from Lafayette doesn't look like a Creole gumbo from New Orleans doesn't look like a North Louisiana version. It's a cuisine built by working people who took whatever the land gave them and learned to cook it three different ways.</p>
+            <p>Gumbo, jambalaya, étouffée, red beans and rice, boudin, cracklins, po-boys, sno-balls, fried catfish, crawfish boils, Natchitoches meat pies, plate lunches you eat standing up at a gas station. Louisiana food is regional within the state itself, a Cajun gumbo from Lafayette doesn't look like a Creole gumbo from New Orleans doesn't look like a North Louisiana version. It's a cuisine built by working people who took whatever the land gave them and learned to cook it three different ways.</p>
           </Section>
 
           <Section id="music" title="Louisiana Music">
-            <p>New Orleans gave the world jazz, brass bands, and bounce. Acadiana gave the world Cajun and zydeco. Baton Rouge helped invent swamp blues — and more recently birthed jigga, the city's own homegrown hip-hop sound built on hard 808s, bounce-inflected drums, and unmistakable Baton Rouge slang. Shreveport launched country careers on the Louisiana Hayride. Monroe carries Delta gospel and blues. No state of Louisiana's size has contributed more to American music — and that musical DNA is still being made in dance halls, clubs, churches, and second lines every weekend.</p>
+            <p>New Orleans gave the world jazz, brass bands, and bounce. Acadiana gave the world Cajun and zydeco. Baton Rouge helped invent swamp blues, and more recently birthed jigga, the city's own homegrown hip-hop sound built on hard 808s, bounce-inflected drums, and unmistakable Baton Rouge slang. Shreveport launched country careers on the Louisiana Hayride. Monroe carries Delta gospel and blues. No state of Louisiana's size has contributed more to American music, and that musical DNA is still being made in dance halls, clubs, churches, and second lines every weekend.</p>
           </Section>
 
           <Section id="traditions" title="Louisiana Traditions">
-            <p>Mardi Gras, second lines, crawfish boils, fais do-dos, jazz funerals, Friday night football, Sunday gumbo, Christmas Eve bonfires on the levee, the Natchitoches Christmas Festival, Jazz Fest, Festival International, the Shrimp and Petroleum Festival, krewes you inherit from your parents. Louisiana traditions don't get archived in museums — they get repeated, every year, by the people who live them.</p>
+            <p>Mardi Gras, second lines, crawfish boils, fais do-dos, jazz funerals, Friday night football, Sunday gumbo, Christmas Eve bonfires on the levee, the Natchitoches Christmas Festival, Jazz Fest, Festival International, the Shrimp and Petroleum Festival, krewes you inherit from your parents. Louisiana traditions don't get archived in museums, they get repeated, every year, by the people who live them.</p>
           </Section>
 
           <Section id="cities" title="Louisiana Cities">
@@ -119,7 +119,7 @@ function LouisianaHub() {
             <ul className="grid sm:grid-cols-2 gap-2">
               {CITY_HUBS.map((c) => (
                 <li key={c.slug}>
-                  <a href={`/${c.slug}`} className="text-primary underline underline-offset-4 hover:brightness-110">{c.name} — {c.region}</a>
+                  <a href={`/${c.slug}`} className="text-primary underline underline-offset-4 hover:brightness-110">{c.name}, {c.region}</a>
                 </li>
               ))}
             </ul>

@@ -154,6 +154,7 @@ function ProductPage() {
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
 
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
+  const gallery = selectedVariant.gallery || p.gallery;
   const currentImage = !userPicked && p.coverImage ? p.coverImage : selectedVariant.image;
 
   const handleAdd = () => {
@@ -175,7 +176,7 @@ function ProductPage() {
       <CartDrawer />
       {lightboxOpen && (
         <ImageLightbox
-          images={p.gallery?.length ? [currentImage, ...p.gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
+          images={gallery?.length ? [currentImage, ...gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
           alt={altForProduct(p, selectedVariant.label)}
           onClose={() => setLightboxOpen(false)}
         />
@@ -256,7 +257,7 @@ function ProductPage() {
             </div>
           </div>
         </div>
-        {p.gallery?.length && <section className="mt-10 grid sm:grid-cols-2 gap-5" aria-label="Product mockups">{p.gallery.map((src, i) => <button key={src} onClick={() => setLightboxOpen(true)} className="bg-card border border-border rounded-sm overflow-hidden cursor-zoom-in"><img src={src} alt={`${p.name}, product mockup ${i + 2}`} loading="lazy" className="w-full aspect-square object-contain" /></button>)}</section>}
+        {gallery?.length && <section className="mt-10 grid sm:grid-cols-2 gap-5" aria-label="Product mockups">{gallery.map((src, i) => <button key={src} onClick={() => setLightboxOpen(true)} className="bg-card border border-border rounded-sm overflow-hidden cursor-zoom-in"><img src={src} alt={`${p.name}, product mockup ${i + 2}`} loading="lazy" className="w-full aspect-square object-contain" /></button>)}</section>}
         {COMMUNITY_PHOTOS.some(photo => photo.slug === p.slug) && <section className="mt-12 border-t border-border pt-8">
           <h2 className="text-xl font-bold uppercase">From the community</h2>
           <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-3xl">

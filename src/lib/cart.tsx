@@ -31,7 +31,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const raw = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
-      if (raw) setCart(JSON.parse(raw));
+      if (raw) setCart((JSON.parse(raw) as CartItem[]).filter(item => item.id !== "53857270563110"));
     } catch {}
     setHydrated(true);
   }, []);

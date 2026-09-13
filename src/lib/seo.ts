@@ -7,7 +7,7 @@ export function productDescription(p: Product): string {
 }
 
 export function productImages(p: Product): string[] {
-  return [...new Set([p.image, p.coverImage, ...(p.gallery || []), ...p.variants.flatMap(v => [v.image, v.back])]
+  return [...new Set([p.image, p.coverImage, ...(p.gallery || []), ...p.variants.flatMap(v => [v.image, v.back, ...(v.gallery || [])])]
     .filter((image): image is string => Boolean(image))
     .map(image => new URL(image, SITE_ORIGIN).href))];
 }

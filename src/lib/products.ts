@@ -106,7 +106,7 @@ const durdenWhite = durdenWhiteAsset.url;
 export const knucklesBackModelImage = knucklesBack;
 export const cernBackModelImage = cernBack;
 
-export type Variant = { label: string; id: string; image: string; back?: string };
+export type Variant = { label: string; id: string; image: string; back?: string; gallery?: string[] };
 export type Product = {
   slug: string;
   name: string;
@@ -385,14 +385,16 @@ export function getProductBySlug(slug: string): Product | undefined {
 
 export const HAT_PRODUCTS: Product[] = [{
   slug: "squealer-season-rope-cap",
-  name: "Squealer Season Rope Cap",
+  name: "Squealer Season Snapback Rope Cap",
   price: 35,
   collection: "hats",
-  gallery: ["/media/squealerseasonhats.png"],
-  image: "/media/squealerseasonhat.png",
+  image: "/media/squealerblack.png",
   wideImage: true,
-  description: "For a bird that whistles, it sure has everybody talking.\n\nSquealer Season, the Second Line way. A little duck-camp humor, a lot of Louisiana attitude, and a rope cap that still looks right when the only thing you bring home is a story.\n\nOur Louisiana-shaped L and whistling-duck accent sit up front in flat embroidery. Wear it to camp. Wear it back to town. Let somebody else explain the nickname.\n\nRichardson 258 Classic Rope Cap. Black with white rope. 100% polyester with a Stay-Dri sweatband. Structured, five-panel, mid-profile construction. Curved bill and adjustable snapback closure. One size fits most. Made to order with front embroidery.",
-  variants: [{ label: "Black / White rope / One size", id: "53857270563110", image: "/media/squealerseasonhat.png" }],
+  description: "Country-club shape. Duck-camp manners.\n\nThe Squealer Season Snapback Rope Cap brings Louisiana attitude to a classic golf rope silhouette. Cream-and-green embroidery up front, a whistling duck with plenty to say, and absolutely no improvement to your handicap.\n\nPick black with white rope or light grey with navy rope. Wear it to camp, back to town, or somewhere that probably expects you to behave.\n\n70% cotton, 30% nylon. Unstructured, five-panel construction with a lined front panel. Semi-curved bill with contrasting rope. Contrasting adjustable snapback closure. One size fits most. Front embroidery.",
+  variants: [
+    { label: "Black / White rope / One size", id: "53859090235686", image: "/media/squealerblack.png", gallery: ["/media/squealerblackstack.png"] },
+    { label: "Light grey / Navy rope / One size", id: "53859090268454", image: "/media/squealergrey.png", gallery: ["/media/squealergraystack.png"] },
+  ],
 }];
 
 /* ---------------------------------------------------------------------------

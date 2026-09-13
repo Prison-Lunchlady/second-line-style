@@ -55,7 +55,7 @@ export const Route = createFileRoute("/product/$slug")({
             image: [...productImages(p), ...COMMUNITY_PHOTOS.filter(photo => photo.slug === p.slug).map(photo => `${ORIGIN}/media/${photo.file}`)],
             description,
             sku: p.slug,
-            category: p.collection === "extras" ? "Graphic Apparel" : "Louisiana Apparel",
+            category: p.collection === "hats" ? "Hats" : p.collection === "extras" ? "Graphic Apparel" : "Louisiana Apparel",
             brand: {
               "@type": "Brand",
               name: "Second Line Clothing",
@@ -79,7 +79,7 @@ export const Route = createFileRoute("/product/$slug")({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: ORIGIN },
-              { "@type": "ListItem", position: 2, name: p.collection === "extras" ? "Extras" : "Louisiana Graphic Tees", item: p.collection === "extras" ? `${ORIGIN}/extras` : `${ORIGIN}/#shop` },
+              { "@type": "ListItem", position: 2, name: p.collection === "hats" ? "Hats" : p.collection === "extras" ? "Extras" : "Louisiana Graphic Tees", item: p.collection === "hats" ? `${ORIGIN}/hats` : p.collection === "extras" ? `${ORIGIN}/extras` : `${ORIGIN}/#shop` },
               { "@type": "ListItem", position: 3, name: p.name, item: url },
             ],
           }),
@@ -146,7 +146,7 @@ function Countdown({ endsAt }: { endsAt: number }) {
 function ProductPage() {
   const { product: p } = Route.useLoaderData() as { product: Product };
   const { addToCart } = useCart();
-  const related = (p.collection === "extras" ? EXTRAS_PRODUCTS : PRODUCTS).filter(item => item.slug !== p.slug).slice(0, 3);
+  const related = (p.collection === "hats" ? PRODUCTS : p.collection === "extras" ? EXTRAS_PRODUCTS : PRODUCTS).filter(item => item.slug !== p.slug).slice(0, 3);
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -175,7 +175,7 @@ function ProductPage() {
       <CartDrawer />
       {lightboxOpen && (
         <ImageLightbox
-          images={selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
+          images={p.gallery?.length ? [currentImage, ...p.gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
           alt={altForProduct(p, selectedVariant.label)}
           onClose={() => setLightboxOpen(false)}
         />
@@ -185,8 +185,8 @@ function ProductPage() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 w-full">
-        <Link to={p.collection === "extras" ? "/extras" : "/"} hash={p.collection === "extras" ? undefined : "shop"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-          <ArrowLeft className="h-4 w-4" /> {p.collection === "extras" ? "Back to Extras" : "Back to Louisiana Graphic Tees"}
+        <Link to={p.collection === "hats" ? "/hats" : p.collection === "extras" ? "/extras" : "/"} hash={p.collection ? undefined : "shop"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+          <ArrowLeft className="h-4 w-4" /> {p.collection === "hats" ? "Back to Hats" : p.collection === "extras" ? "Back to Extras" : "Back to Louisiana Graphic Tees"}
         </Link>
       </div>
 
@@ -211,7 +211,7 @@ function ProductPage() {
 
             {p.availableUntil && <Countdown endsAt={p.availableUntil} />}
 
-            <p className="mt-6 text-muted-foreground leading-relaxed">{productDescription(p)}</p>
+            <p className="mt-6 text-muted-foreground leading-relaxed whitespace-pre-line">{productDescription(p)}</p>
 
             <div className="mt-8 space-y-3">
               <label htmlFor="variant" className="block text-xs font-bold tracking-widest uppercase text-white">
@@ -256,6 +256,7 @@ function ProductPage() {
             </div>
           </div>
         </div>
+        {p.gallery?.length && <section className="mt-10 grid sm:grid-cols-2 gap-5" aria-label="Product mockups">{p.gallery.map((src, i) => <button key={src} onClick={() => setLightboxOpen(true)} className="bg-card border border-border rounded-sm overflow-hidden cursor-zoom-in"><img src={src} alt={`${p.name}, product mockup ${i + 2}`} loading="lazy" className="w-full aspect-square object-contain" /></button>)}</section>}
         {COMMUNITY_PHOTOS.some(photo => photo.slug === p.slug) && <section className="mt-12 border-t border-border pt-8">
           <h2 className="text-xl font-bold uppercase">From the community</h2>
           <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-3xl">
@@ -277,3 +278,4 @@ function ProductPage() {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { CommunityGallery } from "@/components/CommunityGallery";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, HAT_PRODUCTS } from "@/lib/products";
 import { collectionSchema } from "@/lib/seo";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -63,6 +63,10 @@ function Index() {
           <div className="mt-3 h-0.5 w-24 mx-auto bg-secondary" />
         </div>
 
+        <div className="mb-20 grid md:grid-cols-2 gap-8 items-center border-b border-border pb-12">
+          <div className="max-w-sm mx-auto w-full"><ProductCard p={HAT_PRODUCTS[0]} /></div>
+          <div><p className="text-primary text-xs font-bold uppercase tracking-widest">New drop · Squealer Season</p><h3 className="mt-3 text-3xl sm:text-4xl font-black uppercase">Big whistle.<br />Questionable alibi.</h3><p className="mt-4 text-muted-foreground max-w-md">For the duck camp's loudest member. And the bird. Meet our embroidered Squealer Season Rope Cap.</p><Link to="/hats" className="mt-6 inline-block text-primary font-bold underline underline-offset-4">Shop Hats</Link></div>
+        </div>
         <div className="mb-20">
           <div className="mb-10 text-center">
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ fontFamily: "var(--font-display)" }}>

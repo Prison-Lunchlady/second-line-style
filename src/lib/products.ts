@@ -117,7 +117,8 @@ export type Product = {
   coverImage?: string;
   availableUntil?: number;
   sizeGuideImage?: string;
-  collection?: "extras";
+  collection?: "extras" | "hats";
+  gallery?: string[];
   wideImage?: boolean;
 };
 
@@ -379,8 +380,20 @@ export function isProductAvailable(p: Product, now: number = Date.now()): boolea
 export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable(p));
 
 export function getProductBySlug(slug: string): Product | undefined {
-  return [...PRODUCTS, ...EXTRAS_PRODUCTS].find((p) => p.slug === slug);
+  return [...PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS].find((p) => p.slug === slug);
 }
+
+export const HAT_PRODUCTS: Product[] = [{
+  slug: "squealer-season-rope-cap",
+  name: "Squealer Season Rope Cap",
+  price: 35,
+  collection: "hats",
+  gallery: ["/media/squealerseasonhats.png"],
+  image: "/media/squealerseasonhat.png",
+  wideImage: true,
+  description: "For a bird that whistles, it sure has everybody talking.\n\nSquealer Season, the Second Line way. A little duck-camp humor, a lot of Louisiana attitude, and a rope cap that still looks right when the only thing you bring home is a story.\n\nOur Louisiana-shaped L and whistling-duck accent sit up front in flat embroidery. Wear it to camp. Wear it back to town. Let somebody else explain the nickname.\n\nRichardson 258 Classic Rope Cap. Black with white rope. 100% polyester with a Stay-Dri sweatband. Structured, five-panel, mid-profile construction. Curved bill and adjustable snapback closure. One size fits most. Made to order with front embroidery.",
+  variants: [{ label: "Black / White rope / One size", id: "53857270563110", image: "/media/squealerseasonhat.png" }],
+}];
 
 /* ---------------------------------------------------------------------------
  * EXTRAS COLLECTION
@@ -643,3 +656,5 @@ export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
   ...p,
   slug: slugify(p.name),
 })).filter((p) => isProductAvailable(p));
+
+

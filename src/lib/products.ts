@@ -49,6 +49,10 @@ import razorCarolinaBlueAsset from "@/assets/razor_carolina_blue.png.asset.json"
 import durdenBlackAsset from "@/assets/durden_black.png.asset.json";
 import durdenCharcoalAsset from "@/assets/durden_charcoal.png.asset.json";
 import durdenWhiteAsset from "@/assets/durden_white.png.asset.json";
+import nosLowlifeBlackFront from "@/assets/nos-lowlife-black-front.webp";
+import nosLowlifeBlackBack from "@/assets/nos-lowlife-black-back.webp";
+import nosLowlifeWhiteFront from "@/assets/nos-lowlife-white-front.webp";
+import nosLowlifeWhiteBack from "@/assets/nos-lowlife-white-back.webp";
 
 const swampPatrolUnit = swampPatrolAsset.url;
 const swampPatrolUnitWhite = swampPatrolWhiteAsset.url;
@@ -132,6 +136,112 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  {
+    name: "NOS Lowlife",
+    price: 29,
+    image: nosLowlifeBlackFront,
+    wideImage: true,
+    description:
+      "Black and gold doesn't need a mascot to make noise.\n\nNOS Lowlife strips the city down to its colors, its symbol, and the kind of attitude that survives long after Sunday. A clean front hit, a Second Line mark at the back, and no borrowed slogans trying to explain it.\n\nBuilt for New Orleans. Worn wherever the culture travels.",
+    variants: [
+      {
+        label: "Black / S",
+        id: "53904279208230",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / M",
+        id: "53904279240998",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / L",
+        id: "53904279273766",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / XL",
+        id: "53904279306534",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / 2XL",
+        id: "53904279339302",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / 3XL",
+        id: "53904279372070",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / 4XL",
+        id: "53904279404838",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "Black / 5XL",
+        id: "53904279437606",
+        image: nosLowlifeBlackFront,
+        gallery: [nosLowlifeBlackBack],
+      },
+      {
+        label: "White / S",
+        id: "53904279470374",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / M",
+        id: "53904279503142",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / L",
+        id: "53904279535910",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / XL",
+        id: "53904279568678",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / 2XL",
+        id: "53904279601446",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / 3XL",
+        id: "53904279634214",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / 4XL",
+        id: "53904279666982",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+      {
+        label: "White / 5XL",
+        id: "53904279699750",
+        image: nosLowlifeWhiteFront,
+        gallery: [nosLowlifeWhiteBack],
+      },
+    ],
+  },
   {
     name: "LSU Lowlife Tee", price: 30, image: lsuLowlifeFront,
     description: "Some people clean up for game day. Some of us show up exactly how we are.\n\nThe  Lowlife Tee was made for the ones raised on Louisiana heat, Saturday night chaos, loud tailgates, bad decisions, and stories that somehow get better every year. Purple and gold may run through the city, but this one is for the people who never needed permission to belong.\n\nWear it like a warning. Wear it like a badge. Either way, they already know where you're from.",
@@ -663,5 +773,3 @@ export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
   ...p,
   slug: slugify(p.name),
 })).filter((p) => isProductAvailable(p));
-
-

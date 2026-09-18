@@ -142,7 +142,7 @@ const RAW: Omit<Product, "slug">[] = [
     image: nosLowlifeBlackFront,
     wideImage: true,
     description:
-      "Black and gold doesn't need a mascot to make noise.\n\nNOS Lowlife strips the city down to its colors, its symbol, and the kind of attitude that survives long after Sunday. A clean front hit, a Second Line mark at the back, and no borrowed slogans trying to explain it.\n\nBuilt for New Orleans. Worn wherever the culture travels.",
+      "Sixty seasons deep, black and gold still owns the fall in New Orleans. NOS Lowlife pulls from the city’s football culture with bold lettering, fleur-de-lis details, and that unmistakable Second Line attitude. Made for Sundays in the Dome, tailgates in the heat, and the streets that keep the energy going long after the clock hits zero.",
     variants: [
       {
         label: "Black / S",

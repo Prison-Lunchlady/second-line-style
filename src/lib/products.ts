@@ -243,7 +243,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "LSU Lowlife Tee", price: 30, image: lsuLowlifeFront,
+    name: "LSU Lowlife Tee", price: 29, image: lsuLowlifeFront,
     description: "Some people clean up for game day. Some of us show up exactly how we are.\n\nThe  Lowlife Tee was made for the ones raised on Louisiana heat, Saturday night chaos, loud tailgates, bad decisions, and stories that somehow get better every year. Purple and gold may run through the city, but this one is for the people who never needed permission to belong.\n\nWear it like a warning. Wear it like a badge. Either way, they already know where you're from.",
     variants: [
       { label: "S", id: "53610195058982", image: lsuLowlifeFront, back: lsuLowlifeBack },
@@ -255,7 +255,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "The Pier Tee", price: 30, image: pierBlack,
+    name: "The Pier Tee", price: 29, image: pierBlack,
     description: "Before smartphones, before every move got posted, there was The Pier.\n\nFor generations, this abandoned stretch over the Mississippi was Baton Rouge's legendary underground hangout. People went out there to drink, fish, spray paint, explore, and disappear from the rest of the city for a while. It was dangerous, illegal, covered in graffiti, and unforgettable.\n\nBuilt in 1926, The Pier would have turned 100 years old this year.\n\nThis tee is a tribute to the people who climbed out there, crossed the missing panels, left their mark, and turned a forgotten structure into Baton Rouge folklore.\n\nThe Pier is gone.\n\nThe legend isn't.\n\nBR PIER 1926–2020\n\nCollection 001: Baton Rouge\n\nSecond Line Clothing",
     variants: [
       { label: "Black / S", id: "53516081103142", image: pierBlack },
@@ -277,7 +277,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "BR Woods Tee", price: 30, image: brWoods,
+    name: "BR Woods Tee", price: 29, image: brWoods,
     description: "Baton Rouge in a wrapper everybody recognizes.\n\nA local remix of a corner-store classic, made for the city that stays loud, moves different, and never needs an introduction.",
     variants: [
       { label: "S", id: "53488951984422", image: brWoods },
@@ -291,7 +291,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Raising Hell", price: 28, image: raisingHellBlackBack,
+    name: "Raising Hell", price: 29, image: raisingHellBlackBack,
     coverImage: raisingHellBlackBack,
     description: "Raising Hell | Baton Rouge Collection\n\nSome things just make sense if you're from Baton Rouge.\n\nInspired by the city that built icons, started trends, and created a culture all its own, the Raising Hell tee is packed with hometown references without saying a word. From the classic color palette to the unmistakable phrase \"All The Way Dummy,\" this design is a tribute to the people who know exactly where it came from.\n\nPrinted on premium cotton with a bold front graphic and a clean Second Line chest logo, this shirt was made for those who carry Baton Rouge pride wherever they go.\n\nIf you're from the 225, you don't need it explained. You already get it.",
     variants: [
@@ -314,7 +314,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 30, image: swampPatrolUnit,
+    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 29, image: swampPatrolUnit,
     coverImage: swampPatrolLimited,
     availableUntil: new Date(2026, 6, 1, 0, 0, 0).getTime(),
     description: "Some lessons are learned the hard way. A Louisiana-inspired graphic tee featuring a bayou chase gone wrong.",
@@ -334,7 +334,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "BRCC Dropout Tee", price: 30, image: brccMockup,
+    name: "BRCC Dropout Tee", price: 29, image: brccMockup,
     variants: [
       { label: "S", id: "53251669262630", image: brccMockup },
       { label: "M", id: "53251669295398", image: brccMockup },
@@ -347,7 +347,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Duffy Circa 2008 Tee", price: 30, image: duffyMockup,
+    name: "Duffy Circa 2008 Tee", price: 29, image: duffyMockup,
     variants: [
       { label: "S", id: "53251712680230", image: duffyMockup },
       { label: "M", id: "53251712712998", image: duffyMockup },
@@ -360,7 +360,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "NOLA Nuke Tee", price: 30, image: nukeBlack,
+    name: "NOLA Nuke Tee", price: 29, image: nukeBlack,
     variants: [
       { label: "Black / S", id: "53251726901542", image: nukeBlack },
       { label: "Black / M", id: "53251726934310", image: nukeBlack },
@@ -383,7 +383,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Cortana Mall Tee", price: 30, image: cortanaBlack,
+    name: "Cortana Mall Tee", price: 29, image: cortanaBlack,
     variants: [
       { label: "Black / S", id: "53251740860710", image: cortanaBlack },
       { label: "Black / M", id: "53251740893478", image: cortanaBlack },
@@ -404,7 +404,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Carlotta St. Block Party Tee", price: 30, image: carlottaMockup,
+    name: "Carlotta St. Block Party Tee", price: 29, image: carlottaMockup,
     variants: [
       { label: "Sport Grey / S", id: "53252407230758", image: carlottaGrey },
       { label: "Sport Grey / M", id: "53252407263526", image: carlottaGrey },
@@ -431,7 +431,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Barry Seal Flight School Tee", price: 30, image: barrySealGrey,
+    name: "Barry Seal Flight School Tee", price: 29, image: barrySealGrey,
     variants: [
       { label: "Sport Grey / S", id: "53264102129958", image: barrySealGrey },
       { label: "Sport Grey / M", id: "53264102162726", image: barrySealGrey },
@@ -452,7 +452,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Barry Seal Flight School Black Tee", price: 30, image: barrySealBlack,
+    name: "Barry Seal Flight School Black Tee", price: 29, image: barrySealBlack,
     variants: [
       { label: "S", id: "53264108749094", image: barrySealBlack },
       { label: "M", id: "53264108781862", image: barrySealBlack },

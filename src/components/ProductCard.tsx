@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import type { Product } from "@/lib/products";
+import { type Product, variantPrice, priceRange } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { altForProduct } from "@/lib/image-alt";
 
@@ -18,7 +18,7 @@ export function ProductCard({ p }: { p: Product }) {
       id: selectedVariantId,
       name: p.name,
       variant: selectedVariant.label,
-      price: p.price,
+      price: variantPrice(p, selectedVariant),
       image: currentImage,
       qty: 1,
     });
@@ -35,7 +35,7 @@ export function ProductCard({ p }: { p: Product }) {
         <Link to="/product/$slug" params={{ slug: p.slug }} className="block hover:text-primary transition-colors">
           <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white hover:text-primary">{p.name}</h3>
         </Link>
-        <p className="mt-2 text-primary font-bold text-lg">${p.price}</p>
+        <p className="mt-2 text-primary font-bold text-lg">{(() => { const r = priceRange(p); return r.min === r.max ? `$${r.min}` : `From $${r.min}`; })()}</p>
         <select
           value={selectedVariantId}
           onChange={(e) => { setSelectedVariantId(e.target.value); setUserPicked(true); }}

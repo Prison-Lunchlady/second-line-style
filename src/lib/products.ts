@@ -110,7 +110,24 @@ const durdenWhite = durdenWhiteAsset.url;
 export const knucklesBackModelImage = knucklesBack;
 export const cernBackModelImage = cernBack;
 
-export type Variant = { label: string; id: string; image: string; back?: string; gallery?: string[] };
+/** `price` overrides the product base price for this variant (e.g. 2XL+ surcharge). Must match Shopify. */
+export type Variant = { label: string; id: string; image: string; back?: string; gallery?: string[]; price?: number };
+
+export function variantPrice(p: { price: number }, v: { price?: number }): number {
+  return v.price ?? p.price;
+}
+
+export function priceRange(p: { price: number; variants: { price?: number }[] }): { min: number; max: number } {
+  const prices = p.variants.map((v) => variantPrice(p, v));
+  return { min: Math.min(...prices), max: Math.max(...prices) };
+}
+
+/** Exact per-variant prices supplied by the owner, keyed by Shopify variant ID. Applied to every collection. */
+const VARIANT_PRICE_OVERRIDES: Record<string, number> = {};
+
+function applyVariantPrices<T extends { variants: Variant[] }>(p: T): T {
+  return { ...p, variants: p.variants.map((v) => (VARIANT_PRICE_OVERRIDES[v.id] != null ? { ...v, price: VARIANT_PRICE_OVERRIDES[v.id] } : v)) };
+}
 export type Product = {
   slug: string;
   name: string;
@@ -486,7 +503,7 @@ const HIDDEN_PRODUCTS: Omit<Product, "slug">[] = [
   },
 ];
 
-const ALL_PRODUCTS: Product[] = RAW.map((p) => ({ ...p, slug: slugify(p.name) }));
+const ALL_PRODUCTS: Product[] = RAW.map((p) => applyVariantPrices({ ...p, slug: slugify(p.name) }));
 
 export function isProductAvailable(p: Product, now: number = Date.now()): boolean {
   return p.availableUntil == null || now < p.availableUntil;

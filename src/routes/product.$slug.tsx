@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
 import { productDescription, productImages } from "@/lib/seo";
-import { getProductBySlug, PRODUCTS, EXTRAS_PRODUCTS, type Product } from "@/lib/products";
+import { getProductBySlug, PRODUCTS, EXTRAS_PRODUCTS, variantPrice, priceRange, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -61,10 +61,20 @@ export const Route = createFileRoute("/product/$slug")({
               name: "Second Line Clothing",
               url: ORIGIN,
             },
-            offers: {
+            offers: priceRange(p).min === priceRange(p).max ? {
               "@type": "Offer",
               url,
               price: p.price,
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@type": "Organization", name: "Second Line Clothing" },
+            } : {
+              "@type": "AggregateOffer",
+              url,
+              lowPrice: priceRange(p).min,
+              highPrice: priceRange(p).max,
+              offerCount: p.variants.length,
               priceCurrency: "USD",
               availability: "https://schema.org/InStock",
               itemCondition: "https://schema.org/NewCondition",
@@ -162,7 +172,7 @@ function ProductPage() {
       id: selectedVariantId,
       name: p.name,
       variant: selectedVariant.label,
-      price: p.price,
+      price: variantPrice(p, selectedVariant),
       image: currentImage,
       qty: 1,
     });
@@ -208,7 +218,7 @@ function ProductPage() {
             <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight leading-tight text-white" style={{ fontFamily: "var(--font-display)" }}>
               {p.name}
             </h1>
-            <p className="mt-4 text-3xl font-bold text-primary">${p.price}</p>
+            <p className="mt-4 text-3xl font-bold text-primary">${variantPrice(p, selectedVariant)}</p>
 
             {p.availableUntil && <Countdown endsAt={p.availableUntil} />}
 

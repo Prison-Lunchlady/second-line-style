@@ -790,3 +790,10 @@ export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
   ...p,
   slug: slugify(p.name),
 })).filter((p) => isProductAvailable(p));
+
+/** Current price for every Shopify variant ID across all collections (including retired). Used to reconcile cached cart prices. */
+export const VARIANT_PRICE_BY_ID: Record<string, number> = Object.fromEntries(
+  [...ALL_PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS].flatMap((p) =>
+    p.variants.map((v) => [v.id, variantPrice(p, v)] as const),
+  ),
+);

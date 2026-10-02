@@ -331,7 +331,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 29, image: swampPatrolUnit,
+    name: "Play Stupid Games, Win Stupid Prizes | Swamp Patrol Unit Tee", price: 30, image: swampPatrolUnit,
     coverImage: swampPatrolLimited,
     availableUntil: new Date(2026, 6, 1, 0, 0, 0).getTime(),
     description: "Some lessons are learned the hard way. A Louisiana-inspired graphic tee featuring a bayou chase gone wrong.",

@@ -529,13 +529,6 @@ export const HAT_PRODUCTS: Product[] = [{
   ],
 }];
 
-/** Current price for every Shopify variant ID across all collections (including retired). Used to reconcile cached cart prices. */
-export const VARIANT_PRICE_BY_ID: Record<string, number> = Object.fromEntries(
-  [...ALL_PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS].flatMap((p) =>
-    p.variants.map((v) => [v.id, variantPrice(p, v)] as const),
-  ),
-);
-
 /* ---------------------------------------------------------------------------
  * EXTRAS COLLECTION
  * ---------------------------------------------------------------------------

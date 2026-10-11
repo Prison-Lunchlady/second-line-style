@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { VARIANT_PRICE_BY_ID } from "@/lib/products";
+import { VARIANT_PRICE_BY_ID, getProductBySlug } from "@/lib/products";
 
 export type CartItem = {
   id: string;
@@ -34,9 +34,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const raw = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
       if (raw) setCart(
         (JSON.parse(raw) as CartItem[])
-          .filter(item => item.id !== "53857270563110")
+          .filter(item => !["53857270563110", "53859090235686", "53859090268454"].includes(item.id))
           // Reconcile cached prices against the current catalog by Shopify variant ID
-          .map(item => (VARIANT_PRICE_BY_ID[item.id] != null ? { ...item, price: VARIANT_PRICE_BY_ID[item.id] } : item)),
+          .map(item => {
+            const variant = getProductBySlug("carlotta-st-block-party-tee")?.variants.find(v => v.id === item.id);
+            return {
+              ...item,
+              price: VARIANT_PRICE_BY_ID[item.id] ?? item.price,
+              image: variant?.image ?? item.image,
+            };
+          }),
       );
     } catch {}
     setHydrated(true);

@@ -5,11 +5,11 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
 import type { CityHub } from "@/lib/cities";
 import { CITY_HUBS } from "@/lib/cities";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, BATON_ROUGE_PRODUCTS, NEW_ORLEANS_PRODUCTS } from "@/lib/products";
 
 export function CityHubPage({ city }: { city: CityHub }) {
   const otherCities = CITY_HUBS.filter((c) => c.slug !== city.slug);
-  const featured = PRODUCTS.slice(0, 3);
+  const featured = (city.slug === "new-orleans" ? NEW_ORLEANS_PRODUCTS : city.slug === "baton-rouge" ? BATON_ROUGE_PRODUCTS : PRODUCTS).slice(0, 3);
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <CartDrawer />

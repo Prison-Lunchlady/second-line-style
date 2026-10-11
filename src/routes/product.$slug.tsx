@@ -196,8 +196,8 @@ function ProductPage() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 w-full">
-        <Link to={p.collection === "hats" ? "/hats" : p.collection === "extras" ? "/extras" : "/"} hash={p.collection ? undefined : "shop"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-          <ArrowLeft className="h-4 w-4" /> {p.collection === "hats" ? "Back to Hats" : p.collection === "extras" ? "Back to Extras" : "Back to Louisiana Graphic Tees"}
+        <Link to={p.collection === "hats" ? "/hats" : p.collection === "extras" ? "/extras" : "/"} hash={p.collection === "new-orleans" ? "new-orleans" : p.collection ? undefined : "shop"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+          <ArrowLeft className="h-4 w-4" /> {p.collection === "hats" ? "Back to Hats" : p.collection === "extras" ? "Back to Extras" : p.collection === "new-orleans" ? "Back to New Orleans Inspired" : "Back to Louisiana Graphic Tees"}
         </Link>
       </div>
 

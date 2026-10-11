@@ -6,9 +6,6 @@ import cortanaNavyAsset from "@/assets/cortana_navy.png.asset.json";
 import duffyMockupAsset from "@/assets/duffy_mockup.png.asset.json";
 import brccMockupAsset from "@/assets/brcc_dropout_mockup.png.asset.json";
 import straitjacketMockupAsset from "@/assets/strait_jacket_mockup.png.asset.json";
-import carlottaMockupAsset from "@/assets/carlotta_mockup.png.asset.json";
-import carlottaGreyAsset from "@/assets/carlotta_grey.png.asset.json";
-import carlottaSandAsset from "@/assets/carlotta_sand.png.asset.json";
 import barrySealMockupAsset from "@/assets/barry_seal_mockup.png.asset.json";
 import barrySealGreyAsset from "@/assets/barry_seal_grey.png.asset.json";
 import barrySealBlackAsset from "@/assets/barry_seal_black.png.asset.json";
@@ -65,9 +62,9 @@ const cortanaNavy = cortanaNavyAsset.url;
 const duffyMockup = duffyMockupAsset.url;
 const brccMockup = brccMockupAsset.url;
 const straitjacketMockup = straitjacketMockupAsset.url;
-const carlottaMockup = carlottaMockupAsset.url;
-const carlottaGrey = carlottaGreyAsset.url;
-const carlottaSand = carlottaSandAsset.url;
+const carlottaMockup = "/media/carlotta-white-correct-print.jpeg";
+const carlottaGrey = "/media/carlotta-grey-correct-print.jpeg";
+const carlottaSand = "/media/carlotta-sand-correct-print.jpeg";
 const barrySealMockup = barrySealMockupAsset.url;
 const barrySealGrey = barrySealGreyAsset.url;
 const barrySealBlack = barrySealBlackAsset.url;
@@ -163,7 +160,7 @@ export type Product = {
   coverImage?: string;
   availableUntil?: number;
   sizeGuideImage?: string;
-  collection?: "extras" | "hats";
+  collection?: "extras" | "hats" | "new-orleans";
   gallery?: string[];
   wideImage?: boolean;
 };
@@ -180,6 +177,7 @@ export function slugify(name: string): string {
 const RAW: Omit<Product, "slug">[] = [
   {
     name: "NOS Lowlife",
+    collection: "new-orleans",
     price: 29,
     image: nosLowlifeBlackFront,
     wideImage: true,
@@ -447,6 +445,7 @@ const RAW: Omit<Product, "slug">[] = [
   },
   {
     name: "Carlotta St. Block Party Tee", price: 29, image: carlottaMockup,
+    wideImage: true,
     variants: [
       { label: "Sport Grey / S", id: "53252407230758", image: carlottaGrey },
       { label: "Sport Grey / M", id: "53252407263526", image: carlottaGrey },
@@ -536,11 +535,17 @@ export function isProductAvailable(p: Product, now: number = Date.now()): boolea
 
 export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable(p));
 
+export const BATON_ROUGE_PRODUCTS = PRODUCTS.filter(p => p.collection !== "new-orleans");
+export const NEW_ORLEANS_PRODUCTS = PRODUCTS.filter(p => p.collection === "new-orleans");
+
 export function getProductBySlug(slug: string): Product | undefined {
   return [...PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS].find((p) => p.slug === slug);
 }
 
-export const HAT_PRODUCTS: Product[] = [{
+export const HAT_PRODUCTS: Product[] = [];
+
+// Retained for reference only; not listed or purchasable on the storefront.
+const RETIRED_HAT_PRODUCTS: Product[] = [{
   slug: "squealer-season-rope-cap",
   name: "Squealer Season Snapback Rope Cap",
   price: 35,
@@ -818,7 +823,7 @@ export const EXTRAS_PRODUCTS: Product[] = EXTRAS_RAW.map((p) => ({
 
 /** Current price for every Shopify variant ID across all collections (including retired). Used to reconcile cached cart prices. */
 export const VARIANT_PRICE_BY_ID: Record<string, number> = Object.fromEntries(
-  [...ALL_PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS, ...HIDDEN_PRODUCTS].flatMap((p) =>
+  [...ALL_PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS, ...RETIRED_HAT_PRODUCTS, ...HIDDEN_PRODUCTS].flatMap((p) =>
     p.variants.map((v) => [v.id, variantPrice(p, v)] as const),
   ),
 );

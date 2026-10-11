@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
 
 const DESCRIPTION =
-  "Louisiana attitude, above the shoulders. Shop embroidered rope caps from Second Line Clothing, starting with Squealer Season.";
+  "Louisiana attitude, above the shoulders. New Second Line Clothing hat designs are coming soon.";
 
 export const Route = createFileRoute("/hats")({
   head: () => ({

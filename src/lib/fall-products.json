@@ -1,0 +1,792 @@
+[
+  {
+    "name": "NOS Lowlife Hoodie",
+    "price": 54,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
+    "wideImage": false,
+    "garment": "hoodie",
+    "collection": "new-orleans",
+    "description": "New Orleans lowlife, built for cooler days. Gold LOWLIFE artwork across the front with the matching Second Line logo on the upper back.\n\nSoft 50/50 cotton-poly fleece. Double-lined hood and front pouch pocket.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266463846694",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-black-hoodie-front-back.png?v=1793550936"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266463879462",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-black-hoodie-front-back.png?v=1793550936"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266463912230",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-black-hoodie-front-back.png?v=1793550936"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266463944998",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-black-hoodie-front-back.png?v=1793550936"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266463977766",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-black-hoodie-front-back.png?v=1793550936"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        27,
+        20
+      ],
+      [
+        "M",
+        28,
+        22
+      ],
+      [
+        "L",
+        29,
+        24
+      ],
+      [
+        "XL",
+        30,
+        26
+      ],
+      [
+        "2XL",
+        31,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "NOS Lowlife Long Sleeve",
+    "price": 40,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-2.png",
+    "wideImage": false,
+    "garment": "long-sleeve",
+    "collection": "new-orleans",
+    "description": "New Orleans lowlife, built for cooler days. Gold LOWLIFE artwork across the front with the matching Second Line logo on the upper back.\n\n100% cotton. Classic fit with rib cuffs.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266483933478",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-2.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-long-sleeve-black.png?v=1793551367"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266483966246",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-2.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-long-sleeve-black.png?v=1793551367"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266483999014",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-2.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-long-sleeve-black.png?v=1793551367"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266484031782",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-2.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-long-sleeve-black.png?v=1793551367"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266484064550",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-2.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/nos-lowlife-long-sleeve-black.png?v=1793551367"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        28,
+        18
+      ],
+      [
+        "M",
+        29,
+        20
+      ],
+      [
+        "L",
+        30,
+        22
+      ],
+      [
+        "XL",
+        31,
+        24
+      ],
+      [
+        "2XL",
+        32,
+        26
+      ]
+    ]
+  },
+  {
+    "name": "Lowkey Villain Hoodie",
+    "price": 54,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-3.png",
+    "wideImage": false,
+    "garment": "hoodie",
+    "description": "Quiet entrance. Loud intentions. The blue Second Line chest logo and Lowkey Villain back graphic bring the same attitude to cooler weather.\n\nSoft 50/50 cotton-poly fleece. Double-lined hood and front pouch pocket.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266483081510",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-3.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-black.png?v=1793551378"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266483114278",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-3.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-black.png?v=1793551378"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266483147046",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-3.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-black.png?v=1793551378"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266483179814",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-3.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-black.png?v=1793551378"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266483212582",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-3.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-black.png?v=1793551378"
+      },
+      {
+        "label": "White / S",
+        "id": "54266483245350",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-4.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-white.png?v=1793551387"
+      },
+      {
+        "label": "White / M",
+        "id": "54266483278118",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-4.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-white.png?v=1793551387"
+      },
+      {
+        "label": "White / L",
+        "id": "54266483310886",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-4.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-white.png?v=1793551387"
+      },
+      {
+        "label": "White / XL",
+        "id": "54266483343654",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-4.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-white.png?v=1793551387"
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54266483376422",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-4.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-hoodie-white.png?v=1793551387"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        27,
+        20
+      ],
+      [
+        "M",
+        28,
+        22
+      ],
+      [
+        "L",
+        29,
+        24
+      ],
+      [
+        "XL",
+        30,
+        26
+      ],
+      [
+        "2XL",
+        31,
+        28
+      ]
+    ],
+    "collection": "extras"
+  },
+  {
+    "name": "Lowkey Villain Long Sleeve",
+    "price": 40,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-5.png",
+    "wideImage": false,
+    "garment": "long-sleeve",
+    "description": "Quiet entrance. Loud intentions. The blue Second Line chest logo and Lowkey Villain back graphic bring the same attitude to cooler weather.\n\n100% cotton. Classic fit with rib cuffs.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266485932326",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-5.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-black.png?v=1793551397"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266485965094",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-5.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-black.png?v=1793551397"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266485997862",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-5.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-black.png?v=1793551397"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266486030630",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-5.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-black.png?v=1793551397"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266486063398",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-5.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-black.png?v=1793551397"
+      },
+      {
+        "label": "White / S",
+        "id": "54266486096166",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-6.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-white.png?v=1793551406"
+      },
+      {
+        "label": "White / M",
+        "id": "54266486128934",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-6.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-white.png?v=1793551406"
+      },
+      {
+        "label": "White / L",
+        "id": "54266486161702",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-6.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-white.png?v=1793551406"
+      },
+      {
+        "label": "White / XL",
+        "id": "54266486194470",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-6.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-white.png?v=1793551406"
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54266486227238",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-6.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/lowkey-villain-long-sleeve-white.png?v=1793551406"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        28,
+        18
+      ],
+      [
+        "M",
+        29,
+        20
+      ],
+      [
+        "L",
+        30,
+        22
+      ],
+      [
+        "XL",
+        31,
+        24
+      ],
+      [
+        "2XL",
+        32,
+        26
+      ]
+    ],
+    "collection": "extras"
+  },
+  {
+    "name": "Raising Hell Hoodie",
+    "price": 54,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-7.png",
+    "wideImage": false,
+    "garment": "hoodie",
+    "description": "All the way, dummy. The sauce-cup Second Line chest logo and Raising Hell back graphic, ready for cooler Louisiana nights.\n\nSoft 50/50 cotton-poly fleece. Double-lined hood and front pouch pocket.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266491568422",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-7.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-black.png?v=1793551416"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266491601190",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-7.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-black.png?v=1793551416"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266491633958",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-7.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-black.png?v=1793551416"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266491666726",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-7.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-black.png?v=1793551416"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266491699494",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-7.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-black.png?v=1793551416"
+      },
+      {
+        "label": "White / S",
+        "id": "54266491732262",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-8.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-white.png?v=1793551428"
+      },
+      {
+        "label": "White / M",
+        "id": "54266491765030",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-8.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-white.png?v=1793551428"
+      },
+      {
+        "label": "White / L",
+        "id": "54266491797798",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-8.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-white.png?v=1793551428"
+      },
+      {
+        "label": "White / XL",
+        "id": "54266491830566",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-8.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-white.png?v=1793551428"
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54266491863334",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-8.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-hoodie-white.png?v=1793551428"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        27,
+        20
+      ],
+      [
+        "M",
+        28,
+        22
+      ],
+      [
+        "L",
+        29,
+        24
+      ],
+      [
+        "XL",
+        30,
+        26
+      ],
+      [
+        "2XL",
+        31,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "Raising Hell Long Sleeve",
+    "price": 40,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-9.png",
+    "wideImage": false,
+    "garment": "long-sleeve",
+    "description": "All the way, dummy. The sauce-cup Second Line chest logo and Raising Hell back graphic, ready for cooler Louisiana nights.\n\n100% cotton. Classic fit with rib cuffs.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266494386470",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-9.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-black.png?v=1793551440"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266494419238",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-9.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-black.png?v=1793551440"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266494452006",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-9.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-black.png?v=1793551440"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266494484774",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-9.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-black.png?v=1793551440"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266494517542",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-9.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-black.png?v=1793551440"
+      },
+      {
+        "label": "White / S",
+        "id": "54266494550310",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-10.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-white.png?v=1793551451"
+      },
+      {
+        "label": "White / M",
+        "id": "54266494583078",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-10.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-white.png?v=1793551451"
+      },
+      {
+        "label": "White / L",
+        "id": "54266494615846",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-10.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-white.png?v=1793551451"
+      },
+      {
+        "label": "White / XL",
+        "id": "54266494648614",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-10.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-white.png?v=1793551451"
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54266494681382",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-10.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/raising-hell-long-sleeve-white.png?v=1793551451"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        28,
+        18
+      ],
+      [
+        "M",
+        29,
+        20
+      ],
+      [
+        "L",
+        30,
+        22
+      ],
+      [
+        "XL",
+        31,
+        24
+      ],
+      [
+        "2XL",
+        32,
+        26
+      ]
+    ]
+  },
+  {
+    "name": "Barry Seal Flight School Hoodie",
+    "price": 54,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-11.png",
+    "wideImage": false,
+    "garment": "hoodie",
+    "description": "Baton Rouge flight school. Questionable curriculum. The Second Line chest logo and classic Barry Seal airplane graphic keep the original tee's front-and-back layout.\n\nSoft 50/50 cotton-poly fleece. Double-lined hood and front pouch pocket.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266492453158",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-11.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-black.png?v=1793551600"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266492485926",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-11.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-black.png?v=1793551600"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266492518694",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-11.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-black.png?v=1793551600"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266492551462",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-11.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-black.png?v=1793551600"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266492584230",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-11.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-black.png?v=1793551600"
+      },
+      {
+        "label": "White / S",
+        "id": "54266508312870",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-12.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-white.png?v=1793551609"
+      },
+      {
+        "label": "White / M",
+        "id": "54266508345638",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-12.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-white.png?v=1793551609"
+      },
+      {
+        "label": "White / L",
+        "id": "54266508378406",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-12.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-white.png?v=1793551609"
+      },
+      {
+        "label": "White / XL",
+        "id": "54266508411174",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-12.png",
+        "price": 54,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-white.png?v=1793551609"
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54266508443942",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-12.png",
+        "price": 58,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-hoodie-white.png?v=1793551609"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        27,
+        20
+      ],
+      [
+        "M",
+        28,
+        22
+      ],
+      [
+        "L",
+        29,
+        24
+      ],
+      [
+        "XL",
+        30,
+        26
+      ],
+      [
+        "2XL",
+        31,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "Barry Seal Flight School Long Sleeve",
+    "price": 40,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-13.png",
+    "wideImage": false,
+    "garment": "long-sleeve",
+    "description": "Baton Rouge flight school. Questionable curriculum. The Second Line chest logo and classic Barry Seal airplane graphic keep the original tee's front-and-back layout.\n\n100% cotton. Classic fit with rib cuffs.\n\nUnisex sizing S\u2013XXL (2XL). Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54266494779686",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-13.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-black.png?v=1793551619"
+      },
+      {
+        "label": "Black / M",
+        "id": "54266494812454",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-13.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-black.png?v=1793551619"
+      },
+      {
+        "label": "Black / L",
+        "id": "54266494845222",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-13.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-black.png?v=1793551619"
+      },
+      {
+        "label": "Black / XL",
+        "id": "54266494877990",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-13.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-black.png?v=1793551619"
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54266494910758",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-13.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-black.png?v=1793551619"
+      },
+      {
+        "label": "White / S",
+        "id": "54266565525798",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-14.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-white.png?v=1793551629"
+      },
+      {
+        "label": "White / M",
+        "id": "54266565558566",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-14.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-white.png?v=1793551629"
+      },
+      {
+        "label": "White / L",
+        "id": "54266565591334",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-14.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-white.png?v=1793551629"
+      },
+      {
+        "label": "White / XL",
+        "id": "54266565624102",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-14.png",
+        "price": 40,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-white.png?v=1793551629"
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54266565656870",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-14.png",
+        "price": 44,
+        "back": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/barry-seal-flight-school-long-sleeve-white.png?v=1793551629"
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        28,
+        18
+      ],
+      [
+        "M",
+        29,
+        20
+      ],
+      [
+        "L",
+        30,
+        22
+      ],
+      [
+        "XL",
+        31,
+        24
+      ],
+      [
+        "2XL",
+        32,
+        26
+      ]
+    ]
+  }
+]

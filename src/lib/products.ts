@@ -1,3 +1,4 @@
+import fallProducts from "./fall-products.json";
 import nukeMockupAsset from "@/assets/nuke_mockup.png.asset.json";
 import nukeBlackAsset from "@/assets/nuke_black.png.asset.json";
 import nukeGreenAsset from "@/assets/nuke_green.png.asset.json";
@@ -163,6 +164,8 @@ export type Product = {
   collection?: "extras" | "hats" | "new-orleans";
   gallery?: string[];
   wideImage?: boolean;
+  garment?: "hoodie" | "long-sleeve";
+  sizeChart?: (string | number)[][];
 };
 
 export function slugify(name: string): string {
@@ -175,6 +178,7 @@ export function slugify(name: string): string {
 }
 
 const RAW: Omit<Product, "slug">[] = [
+  ...(fallProducts as Omit<Product, "slug">[]).filter(p => p.collection !== "extras"),
   {
     name: "NOS Lowlife",
     collection: "new-orleans",
@@ -534,6 +538,7 @@ export function isProductAvailable(p: Product, now: number = Date.now()): boolea
 }
 
 export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable(p));
+export const FALL_PRODUCTS = PRODUCTS.filter((p) => p.garment);
 
 export const BATON_ROUGE_PRODUCTS = PRODUCTS.filter(p => p.collection !== "new-orleans");
 export const NEW_ORLEANS_PRODUCTS = PRODUCTS.filter(p => p.collection === "new-orleans");
@@ -586,6 +591,7 @@ const RETIRED_HAT_PRODUCTS: Product[] = [{
  * That's it, the /extras grid, product detail page, and checkout all work.
  * ------------------------------------------------------------------------- */
 const EXTRAS_RAW: Omit<Product, "slug">[] = [
+  ...(fallProducts as Omit<Product, "slug">[]).filter(p => p.collection === "extras"),
   {
     name: "Toe Tag Tee", price: 29, image: toeTagRed,
     collection: "extras",

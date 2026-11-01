@@ -242,6 +242,16 @@ function ProductPage() {
                   <option key={v.id} value={v.id}>{v.label}</option>
                 ))}
               </select>
+              {p.sizeChart && (
+                <details className="text-sm text-muted-foreground">
+                  <summary className="cursor-pointer text-primary underline underline-offset-4">Size guide (inches)</summary>
+                  <table className="mt-3 w-full text-left">
+                    <thead><tr><th>Size</th><th>Length</th><th>Width</th></tr></thead>
+                    <tbody>{p.sizeChart.map(([size, length, width]) => <tr key={size}><td>{size === "2XL" ? "XXL (2XL)" : size}</td><td>{length}</td><td>{width}</td></tr>)}</tbody>
+                  </table>
+                  <p className="mt-2">Measure a garment laid flat. Width is measured across the chest.</p>
+                </details>
+              )}
               {p.sizeGuideImage && (
                 <button
                   type="button"
@@ -278,7 +288,7 @@ function ProductPage() {
           </div>
         </section>}
         <section className="mt-16 border-t border-border pt-8" aria-label="More from this collection">
-          <h2 className="text-xl font-bold uppercase">{p.collection === "extras" ? "More from Extras" : "More Louisiana Graphic Tees"}</h2>
+          <h2 className="text-xl font-bold uppercase">{p.collection === "extras" ? "More from Extras" : "More Louisiana Apparel"}</h2>
           <ul className="mt-4 flex flex-wrap gap-6">
             {related.map(item => <li key={item.slug}><Link to="/product/$slug" params={{ slug: item.slug }} className="text-primary underline underline-offset-4">{item.name}</Link></li>)}
           </ul>

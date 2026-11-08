@@ -541,7 +541,8 @@ export const PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => isProductAvailable
 export const FALL_PRODUCTS = PRODUCTS.filter((p) => p.garment);
 
 export const BATON_ROUGE_PRODUCTS = PRODUCTS.filter(p => p.collection !== "new-orleans");
-export const NEW_ORLEANS_PRODUCTS = PRODUCTS.filter(p => p.collection === "new-orleans");
+export const NEW_ORLEANS_PRODUCTS = PRODUCTS.filter(p => p.collection === "new-orleans")
+  .sort((a, b) => (a.name === "NOLA Nuke Tee" ? -1 : b.name === "NOLA Nuke Tee" ? 1 : 0));
 
 export function getProductBySlug(slug: string): Product | undefined {
   return [...PRODUCTS, ...EXTRAS_PRODUCTS, ...HAT_PRODUCTS].find((p) => p.slug === slug);

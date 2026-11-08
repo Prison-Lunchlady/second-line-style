@@ -1,5 +1,153 @@
 [
   {
+    "name": "Home Alone in Baton Rouge Tee",
+    "price": 29,
+    "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+    "wideImage": true,
+    "garment": "tee",
+    "description": "Home Alone, Baton Rouge edition. Christmas in the 225 hits different.\n\nHome Alone in Baton Rouge graphic across the front and Second Line house logo on the back. Classic cotton tee, printed to order in black and white.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54354186043686",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 29
+      },
+      {
+        "label": "Black / M",
+        "id": "54354186076454",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 29
+      },
+      {
+        "label": "Black / L",
+        "id": "54354186109222",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 29
+      },
+      {
+        "label": "Black / XL",
+        "id": "54354186141990",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 29
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54354186174758",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 30
+      },
+      {
+        "label": "Black / 3XL",
+        "id": "54354186207526",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 32
+      },
+      {
+        "label": "Black / 4XL",
+        "id": "54354186240294",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 36
+      },
+      {
+        "label": "Black / 5XL",
+        "id": "54354186273062",
+        "image": "/__l5e/assets-v1/7839f26f-9e90-47c7-9273-83eae71aa8ab/home-alone-black-tee.jpeg",
+        "price": 36
+      },
+      {
+        "label": "White / S",
+        "id": "54354186305830",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 29
+      },
+      {
+        "label": "White / M",
+        "id": "54354186338598",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 29
+      },
+      {
+        "label": "White / L",
+        "id": "54354186371366",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 29
+      },
+      {
+        "label": "White / XL",
+        "id": "54354186404134",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 29
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54354186436902",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 30
+      },
+      {
+        "label": "White / 3XL",
+        "id": "54354186469670",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 32
+      },
+      {
+        "label": "White / 4XL",
+        "id": "54354186502438",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 36
+      },
+      {
+        "label": "White / 5XL",
+        "id": "54354186535206",
+        "image": "/__l5e/assets-v1/dc6714dc-bdad-4797-8049-1c61c32b66d3/home-alone-white-tee.png",
+        "price": 36
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        28,
+        18
+      ],
+      [
+        "M",
+        29,
+        20
+      ],
+      [
+        "L",
+        30,
+        22
+      ],
+      [
+        "XL",
+        31,
+        24
+      ],
+      [
+        "2XL",
+        32,
+        26
+      ],
+      [
+        "3XL",
+        33,
+        28
+      ],
+      [
+        "4XL",
+        34,
+        30
+      ],
+      [
+        "5XL",
+        35,
+        32
+      ]
+    ]
+  },
+  {
     "name": "Home Alone in Baton Rouge Hoodie",
     "price": 54,
     "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",

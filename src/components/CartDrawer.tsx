@@ -1,11 +1,15 @@
 import { ShoppingCart, X, Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart";
+import { Button } from "@/components/ui/button";
+import { shippingDollars, shippingProgress } from "@/lib/shipping";
 
 export function CartDrawer() {
   const { cart, cartOpen, closeCart, removeFromCart, updateQty } = useCart();
   if (!cartOpen) return null;
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const shipping = shippingProgress(cart);
+  const total = shipping.subtotalCents / 100;
+  const remaining = shippingDollars(shipping.remainingCents);
   const checkoutUrl = cart.length > 0
     ? `https://second-line-clothing.myshopify.com/cart/${cart.map((i) => `${i.id}:${i.qty}`).join(",")}`
     : "#";
@@ -19,6 +23,12 @@ export function CartDrawer() {
           <button onClick={closeCart} aria-label="Close cart" className="text-muted-foreground hover:text-white transition-colors">
             <X className="h-6 w-6" />
           </button>
+        </div>
+        <div className="px-6 py-4 border-b border-border">
+          <p aria-live="polite" className="text-sm font-semibold text-primary">
+            {shipping.unlocked ? "You’ve unlocked FREE SHIPPING!" : `You’re only $${remaining} away from FREE SHIPPING!`}
+          </p>
+          <progress aria-label="Progress toward $150 free shipping" max={15000} value={Math.min(15000, shipping.subtotalCents)} className="shipping-progress mt-3 block h-1.5 w-full overflow-hidden rounded-sm" />
         </div>
         {cart.length === 0 ? (
           <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground gap-4">
@@ -53,12 +63,16 @@ export function CartDrawer() {
               <span>Subtotal</span>
               <span>${total.toFixed(2)}</span>
             </div>
+            <p className="text-xs leading-relaxed text-muted-foreground">Eligible US standard shipping on a subtotal of $150+ after discounts, before tax. This cart shows merchandise total only; discounts entered in Shopify checkout may change eligibility.</p>
+            <p aria-live="polite" className="text-center text-sm font-bold text-primary">
+              {shipping.unlocked ? "FREE SHIPPING UNLOCKED!" : `Spend $${remaining} more to unlock FREE SHIPPING!`}
+            </p>
             <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-primary text-primary-foreground font-bold text-sm tracking-widest uppercase rounded-sm hover:brightness-110 transition-all text-center">
               Checkout
             </a>
-            <button onClick={closeCart} className="block w-full py-3 border border-border text-white font-bold text-sm tracking-widest uppercase rounded-sm hover:border-primary transition-all text-center">
+            <Button variant="outline" onClick={closeCart} className="w-full h-11 font-bold text-sm tracking-widest uppercase rounded-sm hover:border-primary">
               Continue Shopping
-            </button>
+            </Button>
           </div>
         )}
       </div>

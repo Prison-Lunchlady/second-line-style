@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
+import { ShippingOffer } from "@/components/ShippingOffer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,6 +20,8 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Discover Second Line Clothing, a Louisiana clothing line rooted in Baton Rouge. Shop original streetwear, graphic tees, and designs inspired by local culture." },
       { name: "twitter:description", content: "Discover Second Line Clothing, a Louisiana clothing line rooted in Baton Rouge. Shop original streetwear, graphic tees, and designs inspired by local culture." },
       { property: "og:url", content: "https://second-line-clothing.com/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "canonical", href: "https://second-line-clothing.com/" },
@@ -35,6 +38,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <CartDrawer />
+      <ShippingOffer />
       <SiteHeader />
 
       <section id="top" className="relative overflow-hidden">

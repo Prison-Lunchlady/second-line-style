@@ -159,3 +159,13 @@
     letter-spacing: 0.01em;
   }
 }
+
+.shipping-progress {
+  appearance: none;
+  border: none;
+  background: var(--muted);
+  color: var(--primary);
+}
+.shipping-progress::-webkit-progress-bar { background: var(--muted); }
+.shipping-progress::-webkit-progress-value { background: var(--primary); }
+.shipping-progress::-moz-progress-bar { background: var(--primary); }

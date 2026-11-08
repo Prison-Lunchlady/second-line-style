@@ -404,7 +404,7 @@ const RAW: Omit<Product, "slug">[] = [
     ],
   },
   {
-    name: "NOLA Nuke Tee", price: 29, image: nukeBlack,
+    name: "NOLA Nuke Tee", price: 29, image: nukeBlack, collection: "new-orleans",
     variants: [
       { label: "Black / S", id: "53251726901542", image: nukeBlack },
       { label: "Black / M", id: "53251726934310", image: nukeBlack },

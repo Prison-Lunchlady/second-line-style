@@ -1,5 +1,102 @@
 [
   {
+    "name": "Home Alone in Baton Rouge Hoodie",
+    "price": 54,
+    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+    "wideImage": true,
+    "garment": "hoodie",
+    "description": "Home Alone, Baton Rouge edition. Christmas in the 225 hits different.\n\nFeaturing the Home Alone in Baton Rouge graphic across the front and the Second Line house logo on the back. Soft fleece, a double-lined hood, and a front pouch pocket for cooler Louisiana nights.\n\nAvailable in black and white. Printed to order.",
+    "variants": [
+      {
+        "label": "Black / S",
+        "id": "54354186862886",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "Black / M",
+        "id": "54354186895654",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "Black / L",
+        "id": "54354186928422",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "Black / XL",
+        "id": "54354186961190",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "Black / 2XL",
+        "id": "54354186993958",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 58
+      },
+      {
+        "label": "White / S",
+        "id": "54354187026726",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "White / M",
+        "id": "54354187059494",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "White / L",
+        "id": "54354187092262",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "White / XL",
+        "id": "54354187125030",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 54
+      },
+      {
+        "label": "White / 2XL",
+        "id": "54354187157798",
+        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
+        "price": 58
+      }
+    ],
+    "sizeChart": [
+      [
+        "S",
+        27,
+        20
+      ],
+      [
+        "M",
+        28,
+        22
+      ],
+      [
+        "L",
+        29,
+        24
+      ],
+      [
+        "XL",
+        30,
+        26
+      ],
+      [
+        "2XL",
+        31,
+        28
+      ]
+    ]
+  },
+  {
     "name": "NOS Lowlife Hoodie",
     "price": 54,
     "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/fall-model-closeup-1.png",
@@ -786,103 +883,6 @@
         "2XL",
         32,
         26
-      ]
-    ]
-  },
-  {
-    "name": "Home Alone in Baton Rouge Hoodie",
-    "price": 54,
-    "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-    "wideImage": true,
-    "garment": "hoodie",
-    "description": "Home Alone, Baton Rouge edition. Christmas in the 225 hits different.\n\nFeaturing the Home Alone in Baton Rouge graphic across the front and the Second Line house logo on the back. Soft fleece, a double-lined hood, and a front pouch pocket for cooler Louisiana nights.\n\nAvailable in black and white. Printed to order.",
-    "variants": [
-      {
-        "label": "Black / S",
-        "id": "54354186862886",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "Black / M",
-        "id": "54354186895654",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "Black / L",
-        "id": "54354186928422",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "Black / XL",
-        "id": "54354186961190",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "Black / 2XL",
-        "id": "54354186993958",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 58
-      },
-      {
-        "label": "White / S",
-        "id": "54354187026726",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "White / M",
-        "id": "54354187059494",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "White / L",
-        "id": "54354187092262",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "White / XL",
-        "id": "54354187125030",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 54
-      },
-      {
-        "label": "White / 2XL",
-        "id": "54354187157798",
-        "image": "https://cdn.shopify.com/s/files/1/1019/7594/9606/files/home-alone-baton-rouge-hoodie-christmas.png?v=1794134563",
-        "price": 58
-      }
-    ],
-    "sizeChart": [
-      [
-        "S",
-        27,
-        20
-      ],
-      [
-        "M",
-        28,
-        22
-      ],
-      [
-        "L",
-        29,
-        24
-      ],
-      [
-        "XL",
-        30,
-        26
-      ],
-      [
-        "2XL",
-        31,
-        28
       ]
     ]
   }

@@ -1,3 +1,4 @@
+import { SaleStrip } from "@/components/SaleStrip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -175,6 +176,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <CartProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <SaleStrip />
         <Outlet />
       </CartProvider>
     </QueryClientProvider>

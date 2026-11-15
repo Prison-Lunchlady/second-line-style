@@ -25,3 +25,10 @@ describe("US standard free shipping threshold", () => {
     assert.equal(shippingProgress([{ price: 29.99, qty: 5 }, { price: 0.05, qty: 1 }]).subtotalCents, 15000);
   });
 });
+import { isSaleLive } from "./sale";
+describe("Early Black Friday sale window (America/Chicago)", () => {
+  test("live at Nov 15 2026 00:00 CST", () => assert.equal(isSaleLive(Date.UTC(2026, 10, 15, 6)), true));
+  test("not live just before start", () => assert.equal(isSaleLive(Date.UTC(2026, 10, 15, 5, 59)), false));
+  test("live Nov 30 11:59 PM CST", () => assert.equal(isSaleLive(Date.UTC(2026, 11, 1, 5, 59)), true));
+  test("over Dec 1 00:00 CST", () => assert.equal(isSaleLive(Date.UTC(2026, 11, 1, 6)), false));
+});

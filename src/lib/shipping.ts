@@ -15,3 +15,5 @@ export function shippingProgress(items: readonly { price: number; qty: number }[
 export function shippingDollars(cents: number) {
   return (cents / 100).toFixed(2).replace(/\.00$/, "");
 }
+// During the automatic Shopify sale, per-line checkout rounding is not visible to the local cart, so no remaining amount is shown.
+export const SALE_SHIPPING_MESSAGE = "Free US shipping when discounted subtotal reaches $150";

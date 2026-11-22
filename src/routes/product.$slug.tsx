@@ -10,7 +10,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { altForProduct } from "@/lib/image-alt";
 import { COMMUNITY_PHOTOS } from "@/lib/community";
-import { HOME_ALONE_EDITIONS, getHomeAlonePreview, isHomeAloneAreaCode, type HomeAloneAreaCode, type HomeAloneGarment } from "@/lib/home-alone-area-codes";
+import { editionVariants, fulfilledEditions, HOME_ALONE_EDITIONS, getHomeAlonePreview, isHomeAloneAreaCode, type HomeAloneAreaCode, type HomeAloneGarment } from "@/lib/home-alone-area-codes";
 
 const ORIGIN = "https://second-line-clothing.com";
 
@@ -174,13 +174,17 @@ function ProductPage() {
 
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
   const selectedColor = selectedVariant.label.startsWith("White") ? "White" : "Black";
-  const previewOnly = homeAloneGarment !== null && areaCode !== "225";
+  const alternateEdition = homeAloneGarment !== null && areaCode !== "225";
+  const editionKey = `${areaCode}-${homeAloneGarment}`;
+  const shopVariant = alternateEdition ? editionVariants[editionKey]?.[selectedVariant.label] : undefined;
+  const previewOnly = alternateEdition && (!fulfilledEditions.has(editionKey) || !shopVariant);
+  const currentPrice = shopVariant?.price ?? variantPrice(p, selectedVariant);
   const alternatePreview = homeAloneGarment ? getHomeAlonePreview(areaCode, homeAloneGarment, selectedColor) : null;
   const gallery = alternatePreview ? undefined : (selectedVariant.gallery || p.gallery);
   const currentImage = alternatePreview || (!userPicked && p.coverImage ? p.coverImage : selectedVariant.image);
   const editionName = HOME_ALONE_EDITIONS.find((edition) => edition.code === areaCode)?.name || "Baton Rouge";
-  const displayName = previewOnly ? `Home Alone in ${editionName} ${homeAloneGarment === "tee" ? "Tee" : "Hoodie"}` : p.name;
-  const displayDescription = previewOnly
+  const displayName = alternateEdition ? `Home Alone in ${editionName} ${homeAloneGarment === "tee" ? "Tee" : "Hoodie"}` : p.name;
+  const displayDescription = alternateEdition
     ? productDescription(p).replace(/Baton Rouge/g, editionName).replace(/225/g, areaCode)
     : productDescription(p);
   const onAreaChange = (code: HomeAloneAreaCode) => {
@@ -196,10 +200,10 @@ function ProductPage() {
     if (previewOnly) return;
 
     addToCart({
-      id: selectedVariantId,
-      name: p.name,
+      id: shopVariant?.id ?? selectedVariant.id,
+      name: displayName,
       variant: selectedVariant.label,
-      price: variantPrice(p, selectedVariant),
+      price: currentPrice,
       image: currentImage,
       qty: 1,
     });
@@ -213,8 +217,8 @@ function ProductPage() {
       <CartDrawer />
       {lightboxOpen && (
         <ImageLightbox
-          images={gallery?.length ? [currentImage, ...gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
-          alt={previewOnly ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
+          images={alternatePreview ? [alternatePreview] : gallery?.length ? [currentImage, ...gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
+          alt={alternateEdition ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
           onClose={() => setLightboxOpen(false)}
         />
       )}
@@ -233,7 +237,7 @@ function ProductPage() {
           <div className="aspect-[3/4] overflow-hidden rounded-sm border border-border cursor-zoom-in bg-card" onClick={() => setLightboxOpen(true)}>
             <img
               src={currentImage}
-              alt={previewOnly ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
+              alt={alternateEdition ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
               className={`w-full h-full ${p.wideImage ? "object-contain" : "object-cover"} hover:scale-105 transition-transform duration-500`}
               width={800}
               height={1067}
@@ -245,7 +249,7 @@ function ProductPage() {
             <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight leading-tight text-white" style={{ fontFamily: "var(--font-display)" }}>
               {displayName}
             </h1>
-            <p className="mt-4 text-3xl font-bold text-primary">${variantPrice(p, selectedVariant)}</p>
+            <p className="mt-4 text-3xl font-bold text-primary">${currentPrice}</p>
 
             {p.availableUntil && <Countdown endsAt={p.availableUntil} />}
 

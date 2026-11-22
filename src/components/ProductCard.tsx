@@ -35,6 +35,7 @@ export function ProductCard({ p }: { p: Product }) {
         <Link to="/product/$slug" params={{ slug: p.slug }} className="block hover:text-primary transition-colors">
           <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white hover:text-primary">{p.name}</h3>
         </Link>
+        {p.slug.startsWith("home-alone-in-baton-rouge-") && <p className="mt-2 text-xs text-muted-foreground">Choose your area code: 225 • 504 • 318 • 337 • 985</p>}
         <p className="mt-2 text-primary font-bold text-lg">{(() => { const r = priceRange(p); return r.min === r.max ? `$${r.min}` : `From $${r.min}`; })()}</p>
         <select
           value={selectedVariantId}

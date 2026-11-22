@@ -10,6 +10,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { altForProduct } from "@/lib/image-alt";
 import { COMMUNITY_PHOTOS } from "@/lib/community";
+import { HOME_ALONE_EDITIONS, getHomeAlonePreview, isHomeAloneAreaCode, type HomeAloneAreaCode, type HomeAloneGarment } from "@/lib/home-alone-area-codes";
 
 const ORIGIN = "https://second-line-clothing.com";
 
@@ -157,17 +158,43 @@ function ProductPage() {
   const { product: p } = Route.useLoaderData() as { product: Product };
   const { addToCart } = useCart();
   const related = (p.collection === "hats" ? PRODUCTS : p.collection === "extras" ? EXTRAS_PRODUCTS : PRODUCTS).filter(item => item.slug !== p.slug).slice(0, 3);
+  const homeAloneGarment: HomeAloneGarment | null = p.slug === "home-alone-in-baton-rouge-tee" ? "tee" : p.slug === "home-alone-in-baton-rouge-hoodie" ? "hoodie" : null;
+  const [areaCode, setAreaCode] = useState<HomeAloneAreaCode>("225");
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [userPicked, setUserPicked] = useState(false);
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
 
+  useEffect(() => {
+    if (!homeAloneGarment) return;
+    const requested = new URLSearchParams(window.location.search).get("area");
+    if (isHomeAloneAreaCode(requested)) setAreaCode(requested);
+  }, [homeAloneGarment]);
+
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
-  const gallery = selectedVariant.gallery || p.gallery;
-  const currentImage = !userPicked && p.coverImage ? p.coverImage : selectedVariant.image;
+  const selectedColor = selectedVariant.label.startsWith("White") ? "White" : "Black";
+  const previewOnly = homeAloneGarment !== null && areaCode !== "225";
+  const alternatePreview = homeAloneGarment ? getHomeAlonePreview(areaCode, homeAloneGarment, selectedColor) : null;
+  const gallery = alternatePreview ? undefined : (selectedVariant.gallery || p.gallery);
+  const currentImage = alternatePreview || (!userPicked && p.coverImage ? p.coverImage : selectedVariant.image);
+  const editionName = HOME_ALONE_EDITIONS.find((edition) => edition.code === areaCode)?.name || "Baton Rouge";
+  const displayName = previewOnly ? `Home Alone in ${editionName} ${homeAloneGarment === "tee" ? "Tee" : "Hoodie"}` : p.name;
+  const displayDescription = previewOnly
+    ? productDescription(p).replace(/Baton Rouge/g, editionName).replace(/225/g, areaCode)
+    : productDescription(p);
+  const onAreaChange = (code: HomeAloneAreaCode) => {
+    setAreaCode(code);
+    setUserPicked(true);
+    const url = new URL(window.location.href);
+    if (code === "225") url.searchParams.delete("area");
+    else url.searchParams.set("area", code);
+    window.history.replaceState(window.history.state, "", url.toString());
+  };
 
   const handleAdd = () => {
+    if (previewOnly) return;
+
     addToCart({
       id: selectedVariantId,
       name: p.name,
@@ -187,7 +214,7 @@ function ProductPage() {
       {lightboxOpen && (
         <ImageLightbox
           images={gallery?.length ? [currentImage, ...gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
-          alt={altForProduct(p, selectedVariant.label)}
+          alt={previewOnly ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
           onClose={() => setLightboxOpen(false)}
         />
       )}
@@ -206,7 +233,7 @@ function ProductPage() {
           <div className="aspect-[3/4] overflow-hidden rounded-sm border border-border cursor-zoom-in bg-card" onClick={() => setLightboxOpen(true)}>
             <img
               src={currentImage}
-              alt={altForProduct(p, selectedVariant.label)}
+              alt={previewOnly ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
               className={`w-full h-full ${p.wideImage ? "object-contain" : "object-cover"} hover:scale-105 transition-transform duration-500`}
               width={800}
               height={1067}
@@ -216,13 +243,28 @@ function ProductPage() {
 
           <div className="flex flex-col">
             <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight leading-tight text-white" style={{ fontFamily: "var(--font-display)" }}>
-              {p.name}
+              {displayName}
             </h1>
             <p className="mt-4 text-3xl font-bold text-primary">${variantPrice(p, selectedVariant)}</p>
 
             {p.availableUntil && <Countdown endsAt={p.availableUntil} />}
 
-            <p className="mt-6 text-muted-foreground leading-relaxed whitespace-pre-line">{productDescription(p)}</p>
+            <p className="mt-6 text-muted-foreground leading-relaxed whitespace-pre-line">{displayDescription}</p>
+
+            {homeAloneGarment && (
+              <div className="mt-7 space-y-3">
+                <label htmlFor="home-alone-area" className="block text-xs font-bold tracking-widest uppercase text-white">Choose Your City / Area Code</label>
+                <select
+                  id="home-alone-area"
+                  value={areaCode}
+                  onChange={(e) => { if (isHomeAloneAreaCode(e.target.value)) onAreaChange(e.target.value); }}
+                  className="w-full px-3 py-3 bg-input border border-border rounded-sm text-foreground focus:outline-none focus:border-primary"
+                >
+                  {HOME_ALONE_EDITIONS.map((edition) => <option key={edition.code} value={edition.code}>{edition.label}</option>)}
+                </select>
+                {previewOnly && <p role="status" className="text-sm text-muted-foreground">Preview only. This edition is not available for checkout yet.</p>}
+              </div>
+            )}
 
             <div className="mt-8 space-y-3">
               <label htmlFor="variant" className="block text-xs font-bold tracking-widest uppercase text-white">
@@ -265,9 +307,11 @@ function ProductPage() {
 
             <button
               onClick={handleAdd}
-              className={`mt-6 w-full py-4 font-bold text-sm tracking-widest uppercase rounded-sm transition-all flex items-center justify-center gap-2 ${added ? "bg-green-600 text-white" : "bg-primary text-primary-foreground hover:brightness-110 shadow-lg shadow-primary/20"}`}
+              disabled={previewOnly}
+              aria-disabled={previewOnly}
+              className={`mt-6 w-full py-4 font-bold text-sm tracking-widest uppercase rounded-sm transition-all flex items-center justify-center gap-2 ${previewOnly ? "bg-muted text-muted-foreground cursor-not-allowed" : added ? "bg-green-600 text-white" : "bg-primary text-primary-foreground hover:brightness-110 shadow-lg shadow-primary/20"}`}
             >
-              {added ? (<><Check className="h-5 w-5" /> Added to Cart</>) : "Add to Cart"}
+              {previewOnly ? "Checkout Not Yet Available" : added ? (<><Check className="h-5 w-5" /> Added to Cart</>) : "Add to Cart"}
             </button>
 
             <div className="mt-8 p-5 bg-card border border-border rounded-sm">

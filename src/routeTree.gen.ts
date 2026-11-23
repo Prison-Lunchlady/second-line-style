@@ -30,6 +30,8 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BatonRougeRouteImport } from './routes/baton-rouge'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductHomeAloneInBatonRougeTeeRouteImport } from './routes/product.home-alone-in-baton-rouge-tee'
+import { Route as ProductHomeAloneInBatonRougeHoodieRouteImport } from './routes/product.home-alone-in-baton-rouge-hoodie'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 
@@ -138,6 +140,18 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductHomeAloneInBatonRougeTeeRoute =
+  ProductHomeAloneInBatonRougeTeeRouteImport.update({
+    id: '/product/home-alone-in-baton-rouge-tee',
+    path: '/product/home-alone-in-baton-rouge-tee',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProductHomeAloneInBatonRougeHoodieRoute =
+  ProductHomeAloneInBatonRougeHoodieRouteImport.update({
+    id: '/product/home-alone-in-baton-rouge-hoodie',
+    path: '/product/home-alone-in-baton-rouge-hoodie',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProductSlugRoute = ProductSlugRouteImport.update({
   id: '/product/$slug',
   path: '/product/$slug',
@@ -173,6 +187,8 @@ export interface FileRoutesByFullPath {
   '/video-sitemap.xml': typeof VideoSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
+  '/product/home-alone-in-baton-rouge-hoodie': typeof ProductHomeAloneInBatonRougeHoodieRoute
+  '/product/home-alone-in-baton-rouge-tee': typeof ProductHomeAloneInBatonRougeTeeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -198,6 +214,8 @@ export interface FileRoutesByTo {
   '/video-sitemap.xml': typeof VideoSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
+  '/product/home-alone-in-baton-rouge-hoodie': typeof ProductHomeAloneInBatonRougeHoodieRoute
+  '/product/home-alone-in-baton-rouge-tee': typeof ProductHomeAloneInBatonRougeTeeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -224,6 +242,8 @@ export interface FileRoutesById {
   '/video-sitemap.xml': typeof VideoSitemapDotxmlRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/product/$slug': typeof ProductSlugRoute
+  '/product/home-alone-in-baton-rouge-hoodie': typeof ProductHomeAloneInBatonRougeHoodieRoute
+  '/product/home-alone-in-baton-rouge-tee': typeof ProductHomeAloneInBatonRougeTeeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -251,6 +271,8 @@ export interface FileRouteTypes {
     | '/video-sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
+    | '/product/home-alone-in-baton-rouge-hoodie'
+    | '/product/home-alone-in-baton-rouge-tee'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -276,6 +298,8 @@ export interface FileRouteTypes {
     | '/video-sitemap.xml'
     | '/blog/$slug'
     | '/product/$slug'
+    | '/product/home-alone-in-baton-rouge-hoodie'
+    | '/product/home-alone-in-baton-rouge-tee'
   id:
     | '__root__'
     | '/'
@@ -301,6 +325,8 @@ export interface FileRouteTypes {
     | '/video-sitemap.xml'
     | '/blog_/$slug'
     | '/product/$slug'
+    | '/product/home-alone-in-baton-rouge-hoodie'
+    | '/product/home-alone-in-baton-rouge-tee'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -327,6 +353,8 @@ export interface RootRouteChildren {
   VideoSitemapDotxmlRoute: typeof VideoSitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductSlugRoute: typeof ProductSlugRoute
+  ProductHomeAloneInBatonRougeHoodieRoute: typeof ProductHomeAloneInBatonRougeHoodieRoute
+  ProductHomeAloneInBatonRougeTeeRoute: typeof ProductHomeAloneInBatonRougeTeeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -478,6 +506,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product/home-alone-in-baton-rouge-tee': {
+      id: '/product/home-alone-in-baton-rouge-tee'
+      path: '/product/home-alone-in-baton-rouge-tee'
+      fullPath: '/product/home-alone-in-baton-rouge-tee'
+      preLoaderRoute: typeof ProductHomeAloneInBatonRougeTeeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/home-alone-in-baton-rouge-hoodie': {
+      id: '/product/home-alone-in-baton-rouge-hoodie'
+      path: '/product/home-alone-in-baton-rouge-hoodie'
+      fullPath: '/product/home-alone-in-baton-rouge-hoodie'
+      preLoaderRoute: typeof ProductHomeAloneInBatonRougeHoodieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product/$slug': {
       id: '/product/$slug'
       path: '/product/$slug'
@@ -519,6 +561,9 @@ const rootRouteChildren: RootRouteChildren = {
   VideoSitemapDotxmlRoute: VideoSitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductSlugRoute: ProductSlugRoute,
+  ProductHomeAloneInBatonRougeHoodieRoute:
+    ProductHomeAloneInBatonRougeHoodieRoute,
+  ProductHomeAloneInBatonRougeTeeRoute: ProductHomeAloneInBatonRougeTeeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

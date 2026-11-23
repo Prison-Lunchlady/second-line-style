@@ -5,6 +5,30 @@ export type HomeAloneGarment = "tee" | "hoodie";
 export type HomeAloneColor = "Black" | "White";
 export type HomeAloneAltCode = Exclude<HomeAloneAreaCode, "225">;
 
+export const HOME_ALONE_PRODUCTS = {
+  tee: {
+    name: "Home Alone in the Boot Tee",
+    slug: "home-alone-in-the-boot-tee",
+    legacySlug: "home-alone-in-baton-rouge-tee",
+  },
+  hoodie: {
+    name: "Home Alone in the Boot Hoodie",
+    slug: "home-alone-in-the-boot-hoodie",
+    legacySlug: "home-alone-in-baton-rouge-hoodie",
+  },
+} as const satisfies Record<HomeAloneGarment, { name: string; slug: string; legacySlug: string }>;
+
+export function getHomeAloneGarment(slug: string): HomeAloneGarment | null {
+  if (slug === HOME_ALONE_PRODUCTS.tee.slug) return "tee";
+  if (slug === HOME_ALONE_PRODUCTS.hoodie.slug) return "hoodie";
+  return null;
+}
+
+export function getHomeAloneEditionName(code: HomeAloneAreaCode, garment: HomeAloneGarment): string {
+  const editionName = HOME_ALONE_EDITIONS.find((edition) => edition.code === code)?.name ?? "Baton Rouge";
+  return `Home Alone in ${editionName} ${garment === "tee" ? "Tee" : "Hoodie"}`;
+}
+
 export const HOME_ALONE_EDITIONS: Array<{ code: HomeAloneAreaCode; name: string; label: string }> = [
   { code: "225", name: "Baton Rouge", label: "Baton Rouge (225)" },
   { code: "504", name: "New Orleans", label: "New Orleans (504)" },

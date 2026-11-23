@@ -3,6 +3,7 @@ import { useState } from "react";
 import { type Product, variantPrice, priceRange } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { altForProduct } from "@/lib/image-alt";
+import { getHomeAloneEditionName, getHomeAloneGarment } from "@/lib/home-alone-area-codes";
 
 export function ProductCard({ p }: { p: Product }) {
   const { addToCart } = useCart();
@@ -12,11 +13,12 @@ export function ProductCard({ p }: { p: Product }) {
 
   const selectedVariant = p.variants.find((v) => v.id === selectedVariantId) || p.variants[0];
   const currentImage = !userPicked && p.coverImage ? p.coverImage : selectedVariant.image;
+  const homeAloneGarment = getHomeAloneGarment(p.slug);
 
   const handleAdd = () => {
     addToCart({
       id: selectedVariantId,
-      name: p.name,
+      name: homeAloneGarment ? getHomeAloneEditionName("225", homeAloneGarment) : p.name,
       variant: selectedVariant.label,
       price: variantPrice(p, selectedVariant),
       image: currentImage,
@@ -35,7 +37,7 @@ export function ProductCard({ p }: { p: Product }) {
         <Link to="/product/$slug" params={{ slug: p.slug }} className="block hover:text-primary transition-colors">
           <h3 className="text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white hover:text-primary">{p.name}</h3>
         </Link>
-        {p.slug.startsWith("home-alone-in-baton-rouge-") && <p className="mt-2 text-xs text-muted-foreground">Choose your area code: 225 • 504 • 318 • 337 • 985</p>}
+        {homeAloneGarment && <p className="mt-2 text-xs text-muted-foreground">Choose your area code: 225 • 504 • 318 • 337 • 985</p>}
         <p className="mt-2 text-primary font-bold text-lg">{(() => { const r = priceRange(p); return r.min === r.max ? `$${r.min}` : `From $${r.min}`; })()}</p>
         <select
           value={selectedVariantId}

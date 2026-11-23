@@ -10,7 +10,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { altForProduct } from "@/lib/image-alt";
 import { COMMUNITY_PHOTOS } from "@/lib/community";
-import { editionVariants, fulfilledEditions, HOME_ALONE_EDITIONS, getHomeAlonePreview, isHomeAloneAreaCode, type HomeAloneAreaCode, type HomeAloneGarment } from "@/lib/home-alone-area-codes";
+import { editionVariants, fulfilledEditions, HOME_ALONE_EDITIONS, getHomeAloneEditionName, getHomeAloneGarment, getHomeAlonePreview, isHomeAloneAreaCode, type HomeAloneAreaCode } from "@/lib/home-alone-area-codes";
 
 const ORIGIN = "https://second-line-clothing.com";
 
@@ -158,7 +158,7 @@ function ProductPage() {
   const { product: p } = Route.useLoaderData() as { product: Product };
   const { addToCart } = useCart();
   const related = (p.collection === "hats" ? PRODUCTS : p.collection === "extras" ? EXTRAS_PRODUCTS : PRODUCTS).filter(item => item.slug !== p.slug).slice(0, 3);
-  const homeAloneGarment: HomeAloneGarment | null = p.slug === "home-alone-in-baton-rouge-tee" ? "tee" : p.slug === "home-alone-in-baton-rouge-hoodie" ? "hoodie" : null;
+  const homeAloneGarment = getHomeAloneGarment(p.slug);
   const [areaCode, setAreaCode] = useState<HomeAloneAreaCode>("225");
   const [selectedVariantId, setSelectedVariantId] = useState(p.variants[0].id);
   const [added, setAdded] = useState(false);
@@ -183,7 +183,8 @@ function ProductPage() {
   const gallery = alternatePreview ? undefined : (selectedVariant.gallery || p.gallery);
   const currentImage = alternatePreview || (!userPicked && p.coverImage ? p.coverImage : selectedVariant.image);
   const editionName = HOME_ALONE_EDITIONS.find((edition) => edition.code === areaCode)?.name || "Baton Rouge";
-  const displayName = alternateEdition ? `Home Alone in ${editionName} ${homeAloneGarment === "tee" ? "Tee" : "Hoodie"}` : p.name;
+  const displayName = alternateEdition && homeAloneGarment ? getHomeAloneEditionName(areaCode, homeAloneGarment) : p.name;
+  const cartName = homeAloneGarment ? getHomeAloneEditionName(areaCode, homeAloneGarment) : p.name;
   const displayDescription = alternateEdition
     ? productDescription(p).replace(/Baton Rouge/g, editionName).replace(/225/g, areaCode)
     : productDescription(p);
@@ -201,7 +202,7 @@ function ProductPage() {
 
     addToCart({
       id: shopVariant?.id ?? selectedVariant.id,
-      name: displayName,
+      name: cartName,
       variant: selectedVariant.label,
       price: currentPrice,
       image: currentImage,

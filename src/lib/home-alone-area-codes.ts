@@ -64,8 +64,8 @@ export function getHomeAlonePreview(code: HomeAloneAreaCode, garment: HomeAloneG
   return code === "225" ? null : HOME_ALONE_PREVIEW_IMAGES[code][garment][color];
 }
 
-// Enable a garment here after its production mappings and publication are verified.
-export const fulfilledEditions = new Set<string>();
+// Verified: Printful 50/50 synced including all 104 new variants; all eight Shopify products active and published to Online Store.
+export const fulfilledEditions = new Set<string>(["504-tee", "504-hoodie", "318-tee", "318-hoodie", "337-tee", "337-hoodie", "985-tee", "985-hoodie"]);
 export const editionVariants: Record<string, Record<string, { id: string; price: number }>> = {
   "504-tee": {
     "Black / S": { id: "54604685541670", price: 29 },

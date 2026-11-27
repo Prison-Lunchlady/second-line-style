@@ -2,13 +2,12 @@ import { isSaleLive } from "@/lib/sale";
 import lsu from "@/assets/lsu_lowlife_front_model.png.asset.json";
 import raising from "@/assets/raising_hell_black_back.png.asset.json";
 import woods from "@/assets/br_woods_tee.png.asset.json";
-import homeAlone from "@/assets/home-alone-black-tee.jpeg.asset.json";
 
 const PHOTOS = [
   { src: lsu.url, alt: "LSU Lowlife Tee worn by a model", fit: "object-cover" },
   { src: raising.url, alt: "Raising Hell black tee back graphic", fit: "object-cover" },
   { src: woods.url, alt: "BR Woods Tee worn by a model", fit: "object-cover" },
-  { src: homeAlone.url, alt: "Home Alone in Baton Rouge black tee, front and back", fit: "object-contain" },
+  { src: "/media/home-alone-in-the-boot-all-area-codes.webp", alt: "Home Alone in the Boot tees and hoodies in all five Louisiana area codes", fit: "object-contain" },
 ];
 
 export function SaleHero() {

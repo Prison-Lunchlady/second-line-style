@@ -205,7 +205,7 @@ function ProductPage() {
       name: cartName,
       variant: selectedVariant.label,
       price: currentPrice,
-      image: currentImage,
+      image: homeAloneGarment ? alternatePreview || selectedVariant.image : currentImage,
       qty: 1,
     });
     setAdded(true);
@@ -218,8 +218,8 @@ function ProductPage() {
       <CartDrawer />
       {lightboxOpen && (
         <ImageLightbox
-          images={alternatePreview ? [alternatePreview] : gallery?.length ? [currentImage, ...gallery] : selectedVariant.back ? [selectedVariant.image, selectedVariant.back] : [currentImage]}
-          alt={alternateEdition ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
+          images={alternatePreview ? [alternatePreview] : gallery?.length ? [currentImage, ...gallery] : selectedVariant.back ? [...new Set([currentImage, selectedVariant.image, selectedVariant.back])] : [currentImage]}
+          alt={homeAloneGarment && !userPicked && !alternatePreview && p.coverImage ? "Home Alone in the Boot tees and hoodies: 225, 504, 318, 337 and 985" : alternateEdition ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
           onClose={() => setLightboxOpen(false)}
         />
       )}
@@ -238,7 +238,7 @@ function ProductPage() {
           <div className="aspect-[3/4] overflow-hidden rounded-sm border border-border cursor-zoom-in bg-card" onClick={() => setLightboxOpen(true)}>
             <img
               src={currentImage}
-              alt={alternateEdition ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
+              alt={homeAloneGarment && !userPicked && !alternatePreview && p.coverImage ? "Home Alone in the Boot tees and hoodies: 225, 504, 318, 337 and 985" : alternateEdition ? `${displayName}, ${selectedColor}` : altForProduct(p, selectedVariant.label)}
               className={`w-full h-full ${p.wideImage ? "object-contain" : "object-cover"} hover:scale-105 transition-transform duration-500`}
               width={800}
               height={1067}

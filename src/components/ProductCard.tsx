@@ -21,7 +21,7 @@ export function ProductCard({ p }: { p: Product }) {
       name: homeAloneGarment ? getHomeAloneEditionName("225", homeAloneGarment) : p.name,
       variant: selectedVariant.label,
       price: variantPrice(p, selectedVariant),
-      image: currentImage,
+      image: homeAloneGarment ? selectedVariant.image : currentImage,
       qty: 1,
     });
     setAdded(true);
@@ -31,7 +31,7 @@ export function ProductCard({ p }: { p: Product }) {
   return (
     <article className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary transition-colors">
       <Link to="/product/$slug" params={{ slug: p.slug }} className="block aspect-[3/4] overflow-hidden" aria-label={`View ${p.name}`}>
-        <img src={currentImage} alt={altForProduct(p, selectedVariant.label)} className={`w-full h-full ${p.wideImage ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-300`} loading="lazy" />
+        <img src={currentImage} alt={homeAloneGarment && !userPicked && p.coverImage ? "Home Alone in the Boot tees and hoodies: 225, 504, 318, 337 and 985" : altForProduct(p, selectedVariant.label)} className={`w-full h-full ${p.wideImage ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-300`} loading="lazy" />
       </Link>
       <div className="p-4 sm:p-5">
         <Link to="/product/$slug" params={{ slug: p.slug }} className="block hover:text-primary transition-colors">
